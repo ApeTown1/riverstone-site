@@ -1059,7 +1059,7 @@ export default function CryptoAdvisoryLanding() {
                 <div className="mt-2">
                   <textarea
                     id="message"
-                    rows="5"
+                    rows={5}
                     className="shadow-sm bg-neutral-50 border border-neutral-300 text-neutral-900 text-lg rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-3"
                     placeholder="Tell us about your project..."
                     required
