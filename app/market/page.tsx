@@ -1,17 +1,13 @@
-import { TeamSection } from "@/components/landing";
-import { AboutSection } from "@/components/landing/about-section";
+import { MarketInsightsSection } from "@/components/landing";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
-import { ThesisSection } from "@/components/landing/thesis-section";
 
 export default function AboutPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
-                <TeamSection />
-                <AboutSection />
-                <ThesisSection />
+                <MarketInsightsSection />
             </main>
             <Footer />
         </div>
