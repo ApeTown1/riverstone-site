@@ -2,8 +2,40 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export function ContactSection() {
+    const [status, setStatus] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setLoading(true);
+        setStatus(null);
+        const form = e.currentTarget;
+        const formData = {
+            name: (form.elements.namedItem("name") as HTMLInputElement).value,
+            email: (form.elements.namedItem("email") as HTMLInputElement).value,
+            message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+        };
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+            if (res.ok) {
+                setStatus("Your message has been sent!");
+                form.reset();
+            } else {
+                setStatus("There was an error sending your message. Please try again.");
+            }
+        } catch {
+            setStatus("There was an error sending your message. Please try again.");
+        }
+        setLoading(false);
+    }
+
     return (
         <section id="contact" className="py-24 bg-white/60 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
@@ -21,7 +53,7 @@ export function ContactSection() {
                 </div>
 
                 <div className="max-w-3xl mx-auto">
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>
                             <label
                                 htmlFor="name"
@@ -80,10 +112,16 @@ export function ContactSection() {
                             <Button
                                 type="submit"
                                 className="w-full bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-lg"
+                                disabled={loading}
                             >
-                                Send Message
+                                {loading ? "Sending..." : "Send Message"}
                             </Button>
                         </div>
+                        {status && (
+                            <div className={`text-center text-lg font-semibold mt-4 ${status.includes("error") ? "text-red-600" : "text-green-600"}`}>
+                                {status}
+                            </div>
+                        )}
                     </form>
                 </div>
             </div>

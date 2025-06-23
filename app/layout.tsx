@@ -25,9 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black min-h-screen`}
+        style={{ minHeight: '100vh' }}
       >
-        {children}
+        <div className="flex justify-center items-start min-h-screen w-full">
+          <div className="border border-foreground rounded-2xl p-2 m-2 min-h-screen w-full max-w-6xl bg-white/95 shadow-2xl overflow-hidden">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

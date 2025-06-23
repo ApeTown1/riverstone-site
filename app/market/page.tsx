@@ -1,15 +1,5 @@
-import { MarketInsightsSection } from "@/components/landing";
-import { Footer } from "@/components/landing/footer";
-import { Header } from "@/components/landing/header";
+import { CaseStudiesSection } from "@/components/landing/case-studies-section";
 
-export default function AboutPage() {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">
-                <MarketInsightsSection />
-            </main>
-            <Footer />
-        </div>
-    );
+export default function CaseStudiesPage() {
+    return <CaseStudiesSection />;
 }

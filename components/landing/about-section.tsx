@@ -64,6 +64,22 @@ export function AboutSection() {
                         </div>
                     </div>
                 </div>
+                <div className="text-center bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 text-white p-12 rounded-3xl shadow-2xl mt-16">
+                    <h3 className="text-3xl font-bold mb-6">
+                        Riverstone&apos;s Thesis
+                    </h3>
+                    <p className="text-xl leading-relaxed text-neutral-200 font-light max-w-4xl mx-auto">
+                        <strong className="text-white text-2xl">
+                            Crypto&apos;s potential lies not in its
+                            divergence from traditional finance but in
+                            its ability to complement and transform it.
+                        </strong>{" "}
+                        Riverstone stands at this intersection,
+                        committed to creating value, fostering
+                        innovation, and navigating the complexities of
+                        this dynamic industry.
+                    </p>
+                </div>
             </div>
         </section>
     );

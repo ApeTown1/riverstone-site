@@ -14,6 +14,7 @@ import {
     BarChart3,
     CheckCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 export function ServicesSection() {
     return (
@@ -34,69 +35,73 @@ export function ServicesSection() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
-                        <CardHeader className="pb-6">
-                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                <TrendingUp className="h-8 w-8 text-white" />
-                            </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
-                                Fundraising & Investor Strategy
-                            </CardTitle>
-                            <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                End-to-end fundraising support from deck
-                                refinement to investor introductions, backed by
-                                deep venture and PE experience.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-4 text-neutral-600">
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Deck refinement & narrative framing
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Investor targeting & warm introductions
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Portfolio advisory for VCs & angels
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
+                    <Link href="#gaming" className="group" style={{ textDecoration: 'none' }}>
+                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
+                            <CardHeader className="pb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <TrendingUp className="h-8 w-8 text-white" />
+                                </div>
+                                <CardTitle className="text-neutral-900 text-2xl">
+                                    Fundraising & Investor Strategy
+                                </CardTitle>
+                                <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
+                                    End-to-end fundraising support from deck
+                                    refinement to investor introductions, backed by
+                                    deep venture and PE experience.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <ul className="space-y-4 text-neutral-600">
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Deck refinement & narrative framing
+                                    </li>
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Investor targeting & warm introductions
+                                    </li>
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Portfolio advisory for VCs & angels
+                                    </li>
+                                </ul>
+                            </CardContent>
+                        </Card>
+                    </Link>
 
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
-                        <CardHeader className="pb-6">
-                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                <Target className="h-8 w-8 text-white" />
-                            </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
-                                Go-to-Market & Ecosystem Launch
-                            </CardTitle>
-                            <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                Strategic market entry that delivers real
-                                traction through brand positioning, growth
-                                loops, and ecosystem activation.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-4 text-neutral-600">
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Brand positioning & content strategy
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    KOL activations & community building
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Partnership & conference strategy
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
+                    <Link href="#gtm" className="group" style={{ textDecoration: 'none' }}>
+                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
+                            <CardHeader className="pb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <Target className="h-8 w-8 text-white" />
+                                </div>
+                                <CardTitle className="text-neutral-900 text-2xl">
+                                    Go-to-Market & Ecosystem Launch
+                                </CardTitle>
+                                <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
+                                    Strategic market entry that delivers real
+                                    traction through brand positioning, growth
+                                    loops, and ecosystem activation.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <ul className="space-y-4 text-neutral-600">
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Brand positioning & content strategy
+                                    </li>
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        KOL activations & community building
+                                    </li>
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Partnership & conference strategy
+                                    </li>
+                                </ul>
+                            </CardContent>
+                        </Card>
+                    </Link>
 
                     <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
                         <CardHeader className="pb-6">
@@ -162,37 +167,39 @@ export function ServicesSection() {
                         </CardContent>
                     </Card>
 
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
-                        <CardHeader className="pb-6">
-                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                <BarChart3 className="h-8 w-8 text-white" />
-                            </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
-                                Financial Modeling & Valuation
-                            </CardTitle>
-                            <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                Investor-grade financial models and valuations
-                                that translate complex tokenomics into
-                                actionable business insight.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-4 text-neutral-600">
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Tokenomics & revenue modeling
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Strategic business cases
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Board-level financial analysis
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
+                    <Link href="#ma" className="group" style={{ textDecoration: 'none' }}>
+                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
+                            <CardHeader className="pb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <BarChart3 className="h-8 w-8 text-white" />
+                                </div>
+                                <CardTitle className="text-neutral-900 text-2xl">
+                                    Financial Modeling & Valuation
+                                </CardTitle>
+                                <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
+                                    Investor-grade financial models and valuations
+                                    that translate complex tokenomics into
+                                    actionable business insight.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <ul className="space-y-4 text-neutral-600">
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Tokenomics & revenue modeling
+                                    </li>
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Strategic business cases
+                                    </li>
+                                    <li className="flex items-center text-lg">
+                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                        Board-level financial analysis
+                                    </li>
+                                </ul>
+                            </CardContent>
+                        </Card>
+                    </Link>
                 </div>
             </div>
         </section>

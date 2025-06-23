@@ -8,10 +8,11 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Target } from "lucide-react";
+import Link from "next/link";
 
 export function CaseStudiesSection() {
     return (
-        <section className="py-24 bg-gradient-to-br from-neutral-50 to-stone-50">
+        <section id="case-studies" className="py-24 bg-gradient-to-br from-neutral-50 to-stone-50">
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
                     <Badge className="bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
@@ -30,7 +31,7 @@ export function CaseStudiesSection() {
 
                 <div className="space-y-16">
                     {/* Case Study 1: Go-to-Market (moved to first) */}
-                    <Card className="bg-gradient-to-br from-emerald-50/80 to-green-50/80 backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden hover:shadow-3xl transition-all duration-500">
+                    <Card id="gtm" className="bg-gradient-to-br from-emerald-50/80 to-green-50/80 backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden hover:shadow-3xl transition-all duration-500">
                         <CardHeader className="bg-white/95 backdrop-blur-sm p-10">
                             <div className="flex items-center justify-between mb-6">
                                 <Badge className="bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
@@ -109,90 +110,8 @@ export function CaseStudiesSection() {
                         </CardContent>
                     </Card>
 
-                    {/* Case Study 2: Gaming */}
-                    <Card className="bg-gradient-to-br from-neutral-50/80 to-stone-50/80 backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden hover:shadow-3xl transition-all duration-500">
-                        <CardHeader className="bg-white/95 backdrop-blur-sm p-10">
-                            <div className="flex items-center justify-between mb-6">
-                                <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 text-neutral-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
-                                    Gaming & TON Ecosystem
-                                </Badge>
-                                <div className="text-3xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 bg-clip-text text-transparent">
-                                    $10M Raise
-                                </div>
-                            </div>
-                            <CardTitle className="text-3xl text-neutral-900 mb-4">
-                                Building a Financial Narrative for a $10M Raise
-                                in Gaming
-                            </CardTitle>
-                            <CardDescription className="text-neutral-600 text-xl font-light leading-relaxed">
-                                A high-potential Web3 gaming startup in the TON
-                                ecosystem needed to justify a $100M valuation to
-                                professional investors—and they needed it fast.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-8 p-10">
-                            <div className="grid md:grid-cols-2 gap-12">
-                                <div className="space-y-6">
-                                    <h4 className="font-semibold text-neutral-900 flex items-center text-xl">
-                                        <div className="w-8 h-8 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-xl flex items-center justify-center mr-3">
-                                            <Target className="h-4 w-4 text-white" />
-                                        </div>
-                                        The Challenge
-                                    </h4>
-                                    <p className="text-neutral-600 leading-relaxed text-lg font-light">
-                                        How could they justify a nine-figure
-                                        valuation to professional investors? How
-                                        could they present both revenue
-                                        potential and token dynamics without
-                                        overwhelming stakeholders? All in under
-                                        a week.
-                                    </p>
-                                </div>
-                                <div className="space-y-6">
-                                    <h4 className="font-semibold text-neutral-900 flex items-center text-xl">
-                                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center mr-3">
-                                            <CheckCircle className="h-4 w-4 text-white" />
-                                        </div>
-                                        The Solution
-                                    </h4>
-                                    <ul className="text-neutral-600 space-y-3 text-lg font-light">
-                                        <li>
-                                            • Vision translation into credible
-                                            financial narrative
-                                        </li>
-                                        <li>
-                                            • Web2/Web3 comparable benchmarking
-                                        </li>
-                                        <li>
-                                            • Dual revenue modeling (product +
-                                            token)
-                                        </li>
-                                        <li>
-                                            • Dynamic investor-ready financial
-                                            model
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-neutral-100/50 shadow-lg">
-                                <h4 className="font-semibold text-neutral-900 mb-4 text-xl">
-                                    The Impact
-                                </h4>
-                                <p className="text-neutral-600 leading-relaxed text-lg font-light">
-                                    In seven days, Riverstone delivered a
-                                    complete valuation and fundraising toolkit.
-                                    The financial model became a core component
-                                    of the investor pitch, helping founders move
-                                    conversations forward with clarity and
-                                    confidence. The $10M raise became not only
-                                    credible but compelling.
-                                </p>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* Case Study 3: M&A */}
-                    <Card className="bg-gradient-to-br from-stone-50/80 to-neutral-50/80 backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden hover:shadow-3xl transition-all duration-500">
+                    {/* Case Study 3: M&A (move this up) */}
+                    <Card id="ma" className="bg-gradient-to-br from-stone-50/80 to-neutral-50/80 backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden hover:shadow-3xl transition-all duration-500">
                         <CardHeader className="bg-white/95 backdrop-blur-sm p-10">
                             <div className="flex items-center justify-between mb-6">
                                 <Badge className="bg-gradient-to-r from-stone-100 to-neutral-100 text-stone-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
@@ -272,16 +191,88 @@ export function CaseStudiesSection() {
                             </div>
                         </CardContent>
                     </Card>
-                </div>
 
-                <div className="text-center mt-16">
-                    <Button
-                        size="lg"
-                        className="bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-12 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg"
-                    >
-                        Discuss Your Project
-                        <ArrowRight className="ml-3 h-5 w-5" />
-                    </Button>
+                    {/* Case Study 2: Gaming (move this down) */}
+                    <Card id="gaming" className="bg-gradient-to-br from-neutral-50/80 to-stone-50/80 backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden hover:shadow-3xl transition-all duration-500">
+                        <CardHeader className="bg-white/95 backdrop-blur-sm p-10">
+                            <div className="flex items-center justify-between mb-6">
+                                <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 text-neutral-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
+                                    Gaming & TON Ecosystem
+                                </Badge>
+                                <div className="text-3xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 bg-clip-text text-transparent">
+                                    $10M Raise
+                                </div>
+                            </div>
+                            <CardTitle className="text-3xl text-neutral-900 mb-4">
+                                Building a Financial Narrative for a $10M Raise
+                                in Gaming
+                            </CardTitle>
+                            <CardDescription className="text-neutral-600 text-xl font-light leading-relaxed">
+                                A high-potential Web3 gaming startup in the TON
+                                ecosystem needed to justify a $100M valuation to
+                                professional investors—and they needed it fast.
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-8 p-10">
+                            <div className="grid md:grid-cols-2 gap-12">
+                                <div className="space-y-6">
+                                    <h4 className="font-semibold text-neutral-900 flex items-center text-xl">
+                                        <div className="w-8 h-8 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-xl flex items-center justify-center mr-3">
+                                            <Target className="h-4 w-4 text-white" />
+                                        </div>
+                                        The Challenge
+                                    </h4>
+                                    <p className="text-neutral-600 leading-relaxed text-lg font-light">
+                                        How could they justify a nine-figure
+                                        valuation to professional investors? How
+                                        could they present both revenue
+                                        potential and token dynamics without
+                                        overwhelming stakeholders? All in under
+                                        a week.
+                                    </p>
+                                </div>
+                                <div className="space-y-6">
+                                    <h4 className="font-semibold text-neutral-900 flex items-center text-xl">
+                                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center mr-3">
+                                            <CheckCircle className="h-4 w-4 text-white" />
+                                        </div>
+                                        The Solution
+                                    </h4>
+                                    <ul className="text-neutral-600 space-y-3 text-lg font-light">
+                                        <li>
+                                            • Vision translation into credible
+                                            financial narrative
+                                        </li>
+                                        <li>
+                                            • Web2/Web3 comparable benchmarking
+                                        </li>
+                                        <li>
+                                            • Dual revenue modeling (product +
+                                            token)
+                                        </li>
+                                        <li>
+                                            • Dynamic investor-ready financial
+                                            model
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-neutral-100/50 shadow-lg">
+                                <h4 className="font-semibold text-neutral-900 mb-4 text-xl">
+                                    The Impact
+                                </h4>
+                                <p className="text-neutral-600 leading-relaxed text-lg font-light">
+                                    In seven days, Riverstone delivered a
+                                    complete valuation and fundraising toolkit.
+                                    The financial model became a core component
+                                    of the investor pitch, helping founders move
+                                    conversations forward with clarity and
+                                    confidence. The $10M raise became not only
+                                    credible but compelling.
+                                </p>
+                            </div>
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
         </section>

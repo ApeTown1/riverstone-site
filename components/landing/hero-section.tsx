@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HeroSection() {
     return (
@@ -50,13 +51,15 @@ export function HeroSection() {
                                 Start Your Journey
                                 <ArrowRight className="ml-3 h-5 w-5" />
                             </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="border-2 border-neutral-200 text-neutral-700 hover:bg-neutral-50 px-10 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg"
-                            >
-                                View Our Track Record
-                            </Button>
+                            <Link href="#case-studies" passHref legacyBehavior>
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    className="border-2 border-neutral-200 text-neutral-700 hover:bg-neutral-50 px-10 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg"
+                                >
+                                    View Our Track Record
+                                </Button>
+                            </Link>
                         </div>
                         <div className="grid grid-cols-3 gap-10 pt-12">
                             <div className="text-center group">
@@ -83,18 +86,6 @@ export function HeroSection() {
                                     Riverstone Founded
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-neutral-200/40 to-stone-200/40 rounded-3xl blur-3xl opacity-60 animate-pulse" />
-                        <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-2 shadow-2xl border border-white/50">
-                            <Image
-                                src="/placeholder.svg?height=600&width=600"
-                                alt="Crypto Trading Dashboard"
-                                width={600}
-                                height={600}
-                                className="rounded-2xl"
-                            />
                         </div>
                     </div>
                 </div>

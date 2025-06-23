@@ -37,9 +37,9 @@ export function TeamSection() {
                     <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
                         <CardHeader className="pb-6 pt-10">
                             <div className="relative mx-auto mb-6">
-                                <div className="absolute inset-0 bg-gradient-to-r from-neutral-400 to-stone-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                                 <Image
-                                    src="/asher-profile.jpg"
+                                    src="/Asher.jpeg"
                                     alt="Asher Weinstein"
                                     width={120}
                                     height={120}
@@ -49,17 +49,13 @@ export function TeamSection() {
                             <CardTitle className="text-neutral-900 text-2xl">
                                 Asher Weinstein
                             </CardTitle>
-                            <CardDescription className="text-neutral-700 font-semibold text-lg">
+                            <CardDescription className="text-emerald-700 font-semibold text-lg">
                                 Co-Founder
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
-                                Career foundation in equity research, corporate
-                                finance and venture capital. Deep passion for
-                                blockchain technology with hands-on startup
-                                experience across SaaS, fintech, and Web3
-                                verticals.
+                                Career foundation in equity research, corporate finance, and venture capital. Passionate about blockchain technology, with hands-on startup experience across SaaS, fintech, and Web3 verticals. Brings a strategic lens to early-stage growth and investor positioning.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
@@ -96,6 +92,22 @@ export function TeamSection() {
                                     </svg>
                                     LinkedIn
                                 </Button>
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    onClick={() =>
+                                        window.open(
+                                            "https://x.com/apetown_",
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
+                                    X
+                                </Button>
                             </div>
                         </CardContent>
                     </Card>
@@ -103,10 +115,10 @@ export function TeamSection() {
                     <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
                         <CardHeader className="pb-6 pt-10">
                             <div className="relative mx-auto mb-6">
-                                <div className="absolute inset-0 bg-gradient-to-r from-stone-400 to-neutral-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                                 <Image
-                                    src="/ryan-profile.jpg"
-                                    alt="Ryan Berelozitz"
+                                    src="/Ryan.jpeg"
+                                    alt="Ryan Berelowitz"
                                     width={120}
                                     height={120}
                                     className="relative rounded-full border-4 border-white shadow-xl object-cover"
@@ -115,17 +127,13 @@ export function TeamSection() {
                             <CardTitle className="text-neutral-900 text-2xl">
                                 Ryan Berelowitz
                             </CardTitle>
-                            <CardDescription className="text-neutral-700 font-semibold text-lg">
+                            <CardDescription className="text-emerald-700 font-semibold text-lg">
                                 Co-Founder
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
-                                Former corporate finance and private equity
-                                consultant specializing in M&A and strategy.
-                                Avid Web3 enthusiast with hands-on startup
-                                experience, having contributed to and co-founded
-                                two companies.
+                                Former corporate finance and private equity consultant focused on M&A and strategy. Experienced startup operator, having contributed to and co-founded two companies. Brings sharp execution and leadership across Web3 and emerging tech.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
@@ -162,6 +170,22 @@ export function TeamSection() {
                                     </svg>
                                     LinkedIn
                                 </Button>
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    onClick={() =>
+                                        window.open(
+                                            "https://x.com/Kay_the_great_",
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
+                                    X
+                                </Button>
                             </div>
                         </CardContent>
                     </Card>
@@ -171,15 +195,15 @@ export function TeamSection() {
                             <div className="relative mx-auto mb-6">
                                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                                 <Image
-                                    src="/george-profile.jpg"
-                                    alt="George Saracco"
+                                    src="/Jorge.jpeg"
+                                    alt="Jorge Saracco"
                                     width={120}
                                     height={120}
                                     className="relative rounded-full border-4 border-white shadow-xl object-cover"
                                 />
                             </div>
                             <CardTitle className="text-neutral-900 text-2xl">
-                                George Saracco
+                                Jorge Saracco
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
                                 Head of Investment Strategy
@@ -187,14 +211,7 @@ export function TeamSection() {
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
-                                A qualified industrial engineer with deep
-                                expertise in institutional onboarding and
-                                systems analysis. With experience at Genesis
-                                Capital facilitating institutional entry via
-                                U.S. banks, tenure at Binance as systems
-                                analyst, and leadership as COO of Rabadon, he
-                                brings structured precision to DeFi&apos;s
-                                evolving landscape.
+                                Qualified industrial engineer with deep expertise in institutional onboarding and systems analysis. Formerly at Genesis Capital and Binance, and COO at Rabadon. Brings structured precision and operational strength to the DeFi landscape.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
@@ -231,18 +248,25 @@ export function TeamSection() {
                                     </svg>
                                     LinkedIn
                                 </Button>
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    onClick={() =>
+                                        window.open(
+                                            "https://x.com/KingJojajito",
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                    </svg>
+                                    X
+                                </Button>
                             </div>
                         </CardContent>
                     </Card>
-                </div>
-
-                <div className="text-center mt-16">
-                    <Button
-                        size="lg"
-                        className="bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-12 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg"
-                    >
-                        Discuss Your Project
-                    </Button>
                 </div>
             </div>
         </section>
