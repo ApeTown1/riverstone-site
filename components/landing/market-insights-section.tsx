@@ -5,8 +5,74 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function MarketInsightsSection() {
+    const [prices, setPrices] = useState({
+        bitcoin: { price: null as number | null, change: null as number | null },
+        ethereum: { price: null as number | null, change: null as number | null },
+        solana: { price: null as number | null, change: null as number | null },
+    });
+    const [posts, setPosts] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [postsLoading, setPostsLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchPrices() {
+            setLoading(true);
+            try {
+                const res = await fetch(
+                    "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true"
+                );
+                const data = await res.json();
+                setPrices({
+                    bitcoin: {
+                        price: data.bitcoin.usd,
+                        change: data.bitcoin.usd_24h_change,
+                    },
+                    ethereum: {
+                        price: data.ethereum.usd,
+                        change: data.ethereum.usd_24h_change,
+                    },
+                    solana: {
+                        price: data.solana.usd,
+                        change: data.solana.usd_24h_change,
+                    },
+                });
+            } catch {
+                setPrices({
+                    bitcoin: { price: null, change: null },
+                    ethereum: { price: null, change: null },
+                    solana: { price: null, change: null },
+                });
+            }
+            setLoading(false);
+        }
+        fetchPrices();
+        const interval = setInterval(fetchPrices, 60000);
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        async function fetchPosts() {
+            setPostsLoading(true);
+            try {
+                const res = await fetch(
+                    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fapetown.substack.com%2Ffeed"
+                );
+                const data = await res.json();
+                if (data.items) {
+                    setPosts(data.items.slice(0, 2));
+                }
+            } catch (error) {
+                console.error("Failed to fetch Substack posts:", error);
+                setPosts([]);
+            }
+            setPostsLoading(false);
+        }
+        fetchPosts();
+    }, []);
+
     return (
         <section id="insights" className="py-24 bg-white/60 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
@@ -24,189 +90,145 @@ export function MarketInsightsSection() {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <div className="space-y-12">
-                        <div className="grid grid-cols-3 gap-6">
-                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="text-sm font-semibold text-neutral-500">
-                                        Bitcoin
+                <div className="flex justify-center mt-16">
+                    <div className="space-y-12 lg:max-w-4xl">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center">
+                            {/* Bitcoin */}
+                            <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener noreferrer" className="block">
+                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                                    <div className="flex items-center justify-between mb-2 sm:mb-4">
+                                        <div className="text-sm font-semibold text-neutral-500">
+                                            Bitcoin
+                                        </div>
+                                        <TrendingUp className="h-5 w-5 text-emerald-500" />
                                     </div>
-                                    <TrendingUp className="h-5 w-5 text-emerald-500" />
-                                </div>
-                                <div className="text-2xl font-bold text-neutral-900">
-                                    $67,234
-                                </div>
-                                <div className="text-sm text-emerald-500 font-semibold">
-                                    +5.2% (24h)
-                                </div>
-                            </Card>
+                                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 whitespace-nowrap">
+                                        {loading || prices.bitcoin.price === null ? '—' : `$${prices.bitcoin.price.toLocaleString()}`}
+                                    </div>
+                                    <div className={`text-xs sm:text-sm font-semibold ${prices.bitcoin.change !== null && prices.bitcoin.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                                        {loading || prices.bitcoin.change === null ? '' : `${prices.bitcoin.change > 0 ? '+' : ''}${prices.bitcoin.change.toFixed(2)}% (24h)`}
+                                    </div>
+                                </Card>
+                            </a>
 
-                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="text-sm font-semibold text-neutral-500">
-                                        Ethereum
+                            {/* Ethereum */}
+                            <a href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer" className="block">
+                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                                    <div className="flex items-center justify-between mb-2 sm:mb-4">
+                                        <div className="text-sm font-semibold text-neutral-500">
+                                            Ethereum
+                                        </div>
+                                        <TrendingUp className="h-5 w-5 text-emerald-500" />
                                     </div>
-                                    <TrendingUp className="h-5 w-5 text-emerald-500" />
-                                </div>
-                                <div className="text-2xl font-bold text-neutral-900">
-                                    $3,456
-                                </div>
-                                <div className="text-sm text-emerald-500 font-semibold">
-                                    +3.8% (24h)
-                                </div>
-                            </Card>
+                                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 whitespace-nowrap">
+                                        {loading || prices.ethereum.price === null ? '—' : `$${prices.ethereum.price.toLocaleString()}`}
+                                    </div>
+                                    <div className={`text-xs sm:text-sm font-semibold ${prices.ethereum.change !== null && prices.ethereum.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                                        {loading || prices.ethereum.change === null ? '' : `${prices.ethereum.change > 0 ? '+' : ''}${prices.ethereum.change.toFixed(2)}% (24h)`}
+                                    </div>
+                                </Card>
+                            </a>
 
-                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="text-sm font-semibold text-neutral-500">
-                                        Solana
+                            {/* Solana */}
+                            <a href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer" className="block">
+                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                                    <div className="flex items-center justify-between mb-2 sm:mb-4">
+                                        <div className="text-sm font-semibold text-neutral-500">
+                                            Solana
+                                        </div>
+                                        <TrendingUp className="h-5 w-5 text-emerald-500" />
                                     </div>
-                                    <TrendingUp className="h-5 w-5 text-emerald-500" />
-                                </div>
-                                <div className="text-2xl font-bold text-neutral-900">
-                                    $198
-                                </div>
-                                <div className="text-sm text-emerald-500 font-semibold">
-                                    +7.1% (24h)
-                                </div>
-                            </Card>
-                        </div>
-
-                        <div className="space-y-8">
-                            <h3 className="text-3xl font-bold text-neutral-900">
-                                This Week&apos;s Key Insights
-                            </h3>
-                            <div className="space-y-8">
-                                <div className="flex items-start space-x-6">
-                                    <div className="w-3 h-3 bg-gradient-to-r from-neutral-700 to-neutral-800 rounded-full mt-4 flex-shrink-0" />
-                                    <div>
-                                        <div className="font-semibold text-neutral-900 mb-2 text-xl">
-                                            Web3 Funding Landscape Evolving
-                                        </div>
-                                        <div className="text-neutral-600 leading-relaxed text-lg font-light">
-                                            Strategic investors are focusing on
-                                            real utility and revenue models,
-                                            moving beyond pure speculation to
-                                            sustainable business fundamentals.
-                                        </div>
+                                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 whitespace-nowrap">
+                                        {loading || prices.solana.price === null ? '—' : `$${prices.solana.price.toLocaleString()}`}
                                     </div>
-                                </div>
-                                <div className="flex items-start space-x-6">
-                                    <div className="w-3 h-3 bg-gradient-to-r from-neutral-700 to-neutral-800 rounded-full mt-4 flex-shrink-0" />
-                                    <div>
-                                        <div className="font-semibold text-neutral-900 mb-2 text-xl">
-                                            RWA Tokenization Gaining Momentum
-                                        </div>
-                                        <div className="text-neutral-600 leading-relaxed text-lg font-light">
-                                            Real-world asset tokenization is
-                                            attracting institutional capital as
-                                            traditional finance embraces
-                                            blockchain infrastructure.
-                                        </div>
+                                    <div className={`text-xs sm:text-sm font-semibold ${prices.solana.change !== null && prices.solana.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                                        {loading || prices.solana.change === null ? '' : `${prices.solana.change > 0 ? '+' : ''}${prices.solana.change.toFixed(2)}% (24h)`}
                                     </div>
-                                </div>
-                                <div className="flex items-start space-x-6">
-                                    <div className="w-3 h-3 bg-gradient-to-r from-neutral-700 to-neutral-800 rounded-full mt-4 flex-shrink-0" />
-                                    <div>
-                                        <div className="font-semibold text-neutral-900 mb-2 text-xl">
-                                            Narrative Strategy More Critical
-                                            Than Ever
-                                        </div>
-                                        <div className="text-neutral-600 leading-relaxed text-lg font-light">
-                                            In a crowded market, clear
-                                            positioning and compelling
-                                            storytelling separate successful
-                                            raises from failed attempts.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-neutral-200/40 to-stone-200/40 rounded-3xl blur-3xl opacity-60" />
-                        <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-2 shadow-2xl border border-white/50">
-                            <Image
-                                src="/placeholder.svg?height=500&width=600"
-                                alt="Market Analysis Dashboard"
-                                width={600}
-                                height={500}
-                                className="rounded-2xl"
-                            />
+                                </Card>
+                            </a>
                         </div>
                     </div>
                 </div>
+
                 {/* Blog Insights Section */}
                 <div className="mt-16 space-y-8">
                     <div className="flex items-center justify-between">
                         <h3 className="text-3xl font-bold text-neutral-900">
                             Latest from Our Substack
                         </h3>
-                        <Button
-                            variant="outline"
-                            className="border-neutral-200 text-neutral-700 hover:bg-neutral-50 px-6 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
-                        >
-                            View All Posts
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        <a href="https://apetown.substack.com/" target="_blank" rel="noopener noreferrer">
+                            <Button
+                                variant="outline"
+                                className="border-neutral-200 text-neutral-700 hover:bg-neutral-50 px-6 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
+                            >
+                                View All Posts
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                        </a>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden">
-                            <div className="h-48 bg-gradient-to-br from-neutral-100 to-stone-100 relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                                <div className="absolute bottom-4 left-6">
-                                    <Badge className="bg-white/90 text-neutral-800 border-0 px-3 py-1 text-xs font-semibold rounded-full">
-                                        Market Analysis
-                                    </Badge>
-                                </div>
-                            </div>
-                            <CardContent className="p-8">
-                                <h4 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-700 transition-colors">
-                                    The Institutional Crypto Adoption Wave:
-                                    What&apos;s Driving the Shift
-                                </h4>
-                                <p className="text-neutral-600 leading-relaxed mb-4 font-light">
-                                    Exploring how traditional financial
-                                    institutions are finally embracing crypto
-                                    infrastructure and what this means for the
-                                    broader market...
-                                </p>
-                                <div className="flex items-center justify-between text-sm text-neutral-500">
-                                    <span>5 min read</span>
-                                    <span>2 days ago</span>
-                                </div>
-                            </CardContent>
-                        </Card>
-
-                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden">
-                            <div className="h-48 bg-gradient-to-br from-emerald-100 to-green-100 relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                                <div className="absolute bottom-4 left-6">
-                                    <Badge className="bg-white/90 text-neutral-800 border-0 px-3 py-1 text-xs font-semibold rounded-full">
-                                        Strategy
-                                    </Badge>
-                                </div>
-                            </div>
-                            <CardContent className="p-8">
-                                <h4 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-700 transition-colors">
-                                    Fundraising in 2024: Why Narrative Beats
-                                    Numbers
-                                </h4>
-                                <p className="text-neutral-600 leading-relaxed mb-4 font-light">
-                                    In today&apos;s competitive funding
-                                    landscape, having great metrics isn&apos;t
-                                    enough. Here&apos;s how to craft a
-                                    compelling story that resonates...
-                                </p>
-                                <div className="flex items-center justify-between text-sm text-neutral-500">
-                                    <span>7 min read</span>
-                                    <span>1 week ago</span>
-                                </div>
-                            </CardContent>
-                        </Card>
+                        {postsLoading
+                            ? Array.from({ length: 2 }).map((_, i) => (
+                                  <Card key={i} className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden">
+                                      <div className="h-48 bg-neutral-200 animate-pulse" />
+                                      <CardContent className="p-8">
+                                          <div className="h-6 w-3/4 bg-neutral-200 rounded animate-pulse mb-4" />
+                                          <div className="h-4 w-full bg-neutral-200 rounded animate-pulse mb-2" />
+                                          <div className="h-4 w-5/6 bg-neutral-200 rounded animate-pulse" />
+                                      </CardContent>
+                                  </Card>
+                              ))
+                            : posts.map((post, index) => (
+                                  <a
+                                      href={post.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      key={post.guid}
+                                      className="block"
+                                  >
+                                      <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
+                                          <div className="h-48 bg-gradient-to-br from-neutral-100 to-stone-100 relative">
+                                              {post.thumbnail && (
+                                                  <Image
+                                                      src={post.thumbnail}
+                                                      alt={post.title}
+                                                      layout="fill"
+                                                      objectFit="cover"
+                                                      className="transition-transform duration-500 group-hover:scale-110"
+                                                  />
+                                              )}
+                                              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                                              <div className="absolute bottom-4 left-6">
+                                                  <Badge className="bg-white/90 text-neutral-800 border-0 px-3 py-1 text-xs font-semibold rounded-full">
+                                                      {index === 0 ? "Deep Dive" : "Protocol Overview"}
+                                                  </Badge>
+                                              </div>
+                                          </div>
+                                          <CardContent className="p-8">
+                                              <h4 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-700 transition-colors">
+                                                  {post.title}
+                                              </h4>
+                                              <p className="text-neutral-600 leading-relaxed mb-4 font-light text-sm">
+                                                  {`${post.description
+                                                      .replace(/<[^>]*>?/gm, "")
+                                                      .substring(0, 120)}...`}
+                                              </p>
+                                              <div className="flex items-center justify-between text-sm text-neutral-500">
+                                                  <span>
+                                                      {new Date(
+                                                          post.pubDate
+                                                      ).toLocaleDateString("en-US", {
+                                                          year: "numeric",
+                                                          month: "long",
+                                                          day: "numeric",
+                                                      })}
+                                                  </span>
+                                              </div>
+                                          </CardContent>
+                                      </Card>
+                                  </a>
+                              ))}
                     </div>
                 </div>
             </div>

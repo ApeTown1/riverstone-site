@@ -68,8 +68,8 @@ export function AboutSection() {
                     <h3 className="text-3xl font-bold mb-6">
                         Riverstone&apos;s Thesis
                     </h3>
-                    <p className="text-xl leading-relaxed text-neutral-200 font-light max-w-4xl mx-auto">
-                        <strong className="text-white text-2xl">
+                    <p className="leading-relaxed text-neutral-200 font-light max-w-4xl mx-auto text-[65%] md:text-base">
+                        <strong className="text-white font-semibold">
                             Crypto&apos;s potential lies not in its
                             divergence from traditional finance but in
                             its ability to complement and transform it.

@@ -1,15 +1,15 @@
 "use client";
 
 import {
-    ContactSection,
     Footer,
     Header,
     HeroSection,
+    AboutSection,
     ServicesSection,
     CaseStudiesSection,
-    AboutSection,
     MarketInsightsSection,
 } from "@/components/landing";
+import { TeamSection } from '@/components/landing/team-section';
 
 export default function CryptoAdvisoryLanding() {
     return (
@@ -20,6 +20,7 @@ export default function CryptoAdvisoryLanding() {
             <ServicesSection />
             <CaseStudiesSection />
             <MarketInsightsSection />
+            <TeamSection />
             <Footer />
         </div>
     );
