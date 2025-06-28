@@ -16,27 +16,22 @@ export function MarketInsightsSection() {
     const [posts, setPosts] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
     const [postsLoading, setPostsLoading] = useState(true);
+    const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
     const scrollRef = useRef<HTMLDivElement>(null);
 
-    const scrollToCard = useCallback((direction: 'next' | 'prev') => {
+    const scrollToCard = useCallback((direction: number) => {
         if (!scrollRef.current) return;
         
         const container = scrollRef.current;
-        const cardWidth = container.offsetWidth * 0.85; // 85% of container width
-        const scrollAmount = direction === 'next' ? cardWidth : -cardWidth;
+        const firstChild = container.firstChild as HTMLElement;
+        const cardWidth = firstChild?.clientWidth || 0;
         
-        // Check if we need to loop
-        if (direction === 'next' && container.scrollLeft >= container.scrollWidth - container.offsetWidth - 10) {
-            // At the end, scroll to beginning
-            container.scrollTo({ left: 0, behavior: 'auto' });
-        } else if (direction === 'prev' && container.scrollLeft <= 10) {
-            // At the beginning, scroll to end
-            container.scrollTo({ left: container.scrollWidth, behavior: 'auto' });
-        } else {
-            // Normal scroll
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-    }, []);
+        // Scroll exactly one card
+        container.scrollBy({ left: cardWidth * direction, behavior: "smooth" });
+        
+        // Update active index with looping
+        setMobileActiveIndex((prev) => (prev + direction + posts.length) % posts.length);
+    }, [posts.length]);
 
     useEffect(() => {
         async function fetchPrices() {
@@ -193,7 +188,7 @@ export function MarketInsightsSection() {
                         {/* Left Arrow */}
                         <button
                             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
-                            onClick={() => scrollToCard('prev')}
+                            onClick={() => scrollToCard(-1)}
                             aria-label="Previous Post"
                         >
                             <ChevronLeft size={20} />
@@ -201,20 +196,20 @@ export function MarketInsightsSection() {
                         {/* Right Arrow */}
                         <button
                             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
-                            onClick={() => scrollToCard('next')}
+                            onClick={() => scrollToCard(1)}
                             aria-label="Next Post"
                         >
                             <ChevronRight size={20} />
                         </button>
                         <div 
                             ref={scrollRef}
-                            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 px-4"
+                            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4"
                             style={{ WebkitOverflowScrolling: "touch" }}
                         >
                             {postsLoading
                                 ? Array.from({ length: 2 }).map((_, i) => (
-                                      <div key={i} className="min-w-[85%] snap-center flex-shrink-0">
-                                          <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden">
+                                      <div key={i} className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                                          <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden h-full">
                                               <div className="h-32 bg-neutral-200 animate-pulse" />
                                               <CardContent className="p-6">
                                                   <div className="h-5 w-3/4 bg-neutral-200 rounded animate-pulse mb-3" />
@@ -225,12 +220,12 @@ export function MarketInsightsSection() {
                                       </div>
                                   ))
                                 : posts.map((post, index) => (
-                                      <div key={post.guid} className="min-w-[85%] snap-center flex-shrink-0">
+                                      <div key={post.guid} className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
                                           <a
                                               href={post.link}
                                               target="_blank"
                                               rel="noopener noreferrer"
-                                              className="block"
+                                              className="block h-full"
                                           >
                                               <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
                                                   <div className="h-32 bg-gradient-to-br from-neutral-100 to-stone-100 relative">
@@ -251,10 +246,10 @@ export function MarketInsightsSection() {
                                                       </div>
                                                   </div>
                                                   <CardContent className="p-6">
-                                                      <h4 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-neutral-700 transition-colors">
+                                                      <h4 className="text-lg font-bold break-words text-neutral-900 mb-2 group-hover:text-neutral-700 transition-colors">
                                                           {post.title}
                                                       </h4>
-                                                      <p className="text-neutral-600 leading-relaxed mb-3 font-light text-sm">
+                                                      <p className="text-sm leading-relaxed break-words text-neutral-600 mb-3 font-light">
                                                           {`${post.description
                                                               .replace(/<[^>]*>?/gm, "")
                                                               .substring(0, 100)}...`}
