@@ -92,24 +92,35 @@ export function CaseStudiesSection() {
         );
     };
 
-    const scrollToCard = useCallback((direction: 'next' | 'prev') => {
+    const scrollToCard = useCallback((direction: number) => {
         if (!scrollRef.current) return;
         
         const container = scrollRef.current;
-        const cardWidth = container.offsetWidth * 0.9; // 90% of container width
+        const firstChild = container.firstChild as HTMLElement;
+        const cardWidth = firstChild?.clientWidth || 0;
         
-        let newIndex = mobileActiveIndex;
-        if (direction === 'next') {
-            newIndex = (newIndex + 1) % caseStudiesData.length;
-        } else {
-            newIndex = (newIndex - 1 + caseStudiesData.length) % caseStudiesData.length;
+        // Scroll exactly one card
+        container.scrollBy({ left: cardWidth * direction, behavior: "smooth" });
+        
+        // Update active index
+        let newIndex = mobileActiveIndex + direction;
+        
+        // Handle continuous loop
+        if (newIndex >= caseStudiesData.length) {
+            newIndex = 0;
+            // Reset to first card after scroll completes
+            setTimeout(() => {
+                container.scrollTo({ left: 0, behavior: "instant" });
+            }, 300);
+        } else if (newIndex < 0) {
+            newIndex = caseStudiesData.length - 1;
+            // Scroll to last card after scroll completes
+            setTimeout(() => {
+                container.scrollTo({ left: cardWidth * (caseStudiesData.length - 1), behavior: "instant" });
+            }, 300);
         }
         
         setMobileActiveIndex(newIndex);
-        
-        // Scroll to the exact position to prevent cumulative rounding errors
-        const scrollPosition = newIndex * cardWidth;
-        container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
     }, [mobileActiveIndex]);
 
     useEffect(() => {
@@ -162,7 +173,7 @@ export function CaseStudiesSection() {
                     {/* Left Arrow */}
                     <button
                         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
-                        onClick={() => scrollToCard('prev')}
+                        onClick={() => scrollToCard(-1)}
                         aria-label="Previous Case Study"
                     >
                         <ChevronLeft size={20} />
@@ -170,21 +181,21 @@ export function CaseStudiesSection() {
                     {/* Right Arrow */}
                     <button
                         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
-                        onClick={() => scrollToCard('next')}
+                        onClick={() => scrollToCard(1)}
                         aria-label="Next Case Study"
                     >
                         <ChevronRight size={20} />
                     </button>
                     <div 
                         ref={scrollRef}
-                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 px-4"
+                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4"
                         style={{ WebkitOverflowScrolling: "touch" }}
                     >
                         {caseStudiesData.map((study) => (
-                            <div key={study.id} className="min-w-[90%] snap-center flex-shrink-0">
+                            <div key={study.id} className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
                                 <Card
                                     id={study.id}
-                                    className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col max-h-[75vh]`}
+                                    className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col h-full`}
                                 >
                                     <CardHeader className="bg-white/95 backdrop-blur-sm p-6 flex-shrink-0">
                                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
@@ -199,10 +210,10 @@ export function CaseStudiesSection() {
                                                 {study.category}
                                             </div>
                                         </div>
-                                        <CardTitle className="text-lg font-bold text-neutral-900 mb-3">
+                                        <CardTitle className="text-lg font-bold leading-tight break-words text-neutral-900 mb-3">
                                             {study.title}
                                         </CardTitle>
-                                        <CardDescription className="text-sm text-neutral-600 font-light leading-relaxed break-words">
+                                        <CardDescription className="text-sm leading-relaxed break-words text-neutral-600 font-light">
                                             {study.description}
                                         </CardDescription>
                                     </CardHeader>
@@ -217,7 +228,7 @@ export function CaseStudiesSection() {
                                                     </div>
                                                     The Challenge
                                                 </h4>
-                                                <p className="text-sm text-neutral-600 leading-relaxed font-light break-words">
+                                                <p className="text-sm leading-relaxed break-words text-neutral-600 font-light">
                                                     {study.challenge}
                                                 </p>
                                             </div>
@@ -230,7 +241,7 @@ export function CaseStudiesSection() {
                                                     </div>
                                                     The Solution
                                                 </h4>
-                                                <ul className="text-sm text-neutral-600 space-y-2 font-light break-words">
+                                                <ul className="text-sm leading-relaxed break-words text-neutral-600 space-y-2 font-light">
                                                     {study.solution.map((item) => (
                                                         <li key={item}>• {item}</li>
                                                     ))}
@@ -241,7 +252,7 @@ export function CaseStudiesSection() {
                                             <h4 className="font-semibold text-neutral-900 mb-3 text-sm">
                                                 The Impact
                                             </h4>
-                                            <p className="text-sm text-neutral-600 leading-relaxed font-light break-words">
+                                            <p className="text-sm leading-relaxed break-words text-neutral-600 font-light">
                                                 {study.impact}
                                             </p>
                                         </div>
