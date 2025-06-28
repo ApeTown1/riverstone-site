@@ -79,16 +79,7 @@ const services = [
 ];
 
 export function ServicesSection() {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const scrollRef = useRef<HTMLDivElement>(null);
-
-    const goToNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
-    };
-
-    const goToPrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + services.length) % services.length);
-    };
 
     const scrollToCard = useCallback((direction: 'next' | 'prev') => {
         if (!scrollRef.current) return;
@@ -177,94 +168,6 @@ export function ServicesSection() {
                                 </Card>
                             </div>
                         ))}
-                    </div>
-                </div>
-
-                {/* Desktop Roulette Carousel */}
-                <div className="hidden md:block relative min-h-[480px]">
-                    {/* Left Arrow */}
-                    <button
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-90 hover:opacity-100"
-                        onClick={goToPrev}
-                        aria-label="Previous Service"
-                    >
-                        <ChevronLeft className="h-6 w-6 text-white" />
-                    </button>
-                    {/* Right Arrow */}
-                    <button
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-90 hover:opacity-100"
-                        onClick={goToNext}
-                        aria-label="Next Service"
-                    >
-                        <ChevronRight className="h-6 w-6 text-white" />
-                    </button>
-                    <div className="relative w-full flex items-start justify-center overflow-visible h-full max-w-5xl mx-auto">
-                        {services.map((service, index) => {
-                            const isActive = index === currentIndex;
-                            const isPrev = index === (currentIndex - 1 + services.length) % services.length;
-                            const isNext = index === (currentIndex + 1) % services.length;
-
-                            let base = "absolute left-1/2 top-1/2 w-full max-w-4xl px-2 transition-all duration-500 ease-in-out flex justify-center items-center";
-                            let style: React.CSSProperties = {
-                                zIndex: 0,
-                                opacity: 0,
-                                pointerEvents: "none",
-                                transform: "translate(-50%, -50%) scale(0.7)",
-                                filter: "blur(4px)",
-                            };
-                            if (isActive) {
-                                style = {
-                                    zIndex: 20,
-                                    opacity: 1,
-                                    pointerEvents: "auto",
-                                    transform: "translate(-50%, -50%) scale(1)",
-                                    filter: "none",
-                                };
-                            } else if (isPrev) {
-                                style = {
-                                    zIndex: 10,
-                                    opacity: 0.5,
-                                    pointerEvents: "none",
-                                    transform: "translate(-80%, -50%) scale(0.85)",
-                                    filter: "blur(2px)",
-                                };
-                            } else if (isNext) {
-                                style = {
-                                    zIndex: 10,
-                                    opacity: 0.5,
-                                    pointerEvents: "none",
-                                    transform: "translate(-20%, -50%) scale(0.85)",
-                                    filter: "blur(2px)",
-                                };
-                            }
-                            return (
-                                <div key={service.title} className={base} style={style}>
-                                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 cursor-pointer">
-                                        <CardHeader className="pb-6">
-                                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                                {service.icon}
-                                            </div>
-                                            <CardTitle className="text-neutral-900 text-xl font-bold">
-                                                {service.title}
-                                            </CardTitle>
-                                            <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
-                                                {service.description}
-                                            </CardDescription>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <ul className="space-y-4 text-neutral-600">
-                                                {service.bullets.map((b) => (
-                                                    <li key={b} className="flex items-center text-base">
-                                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                                        {b}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            );
-                        })}
                     </div>
                 </div>
 
