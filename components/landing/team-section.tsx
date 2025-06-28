@@ -21,26 +21,27 @@ export function TeamSection() {
         if (!scrollRef.current) return;
         
         const container = scrollRef.current;
-        const cardWidth = container.offsetWidth * 0.75; // 75% of container width
+        const firstChild = container.firstChild as HTMLElement;
+        const cardWidth = firstChild?.clientWidth || 0;
         
-        // Scroll by the calculated amount
+        // Scroll exactly one card
         container.scrollBy({ left: cardWidth * direction, behavior: "smooth" });
         
-        // Update active index
+        // Update active index with looping
         let newIndex = mobileActiveIndex + direction;
         
-        // Handle circular looping
+        // Handle infinite loop
         if (newIndex >= 3) {
             newIndex = 0;
-            // Reset to first card after a brief delay
+            // Reset to first card after scroll completes
             setTimeout(() => {
-                container.scrollTo({ left: 0, behavior: 'auto' });
+                container.scrollTo({ left: 0, behavior: "instant" });
             }, 300);
         } else if (newIndex < 0) {
             newIndex = 2;
-            // Scroll to last card after a brief delay
+            // Scroll to last card after scroll completes
             setTimeout(() => {
-                container.scrollTo({ left: container.scrollWidth, behavior: 'auto' });
+                container.scrollTo({ left: cardWidth * 2, behavior: "instant" });
             }, 300);
         }
         
@@ -88,11 +89,11 @@ export function TeamSection() {
                     </button>
                     <div 
                         ref={scrollRef}
-                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 px-4"
+                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4"
                         style={{ WebkitOverflowScrolling: "touch" }}
                     >
-                        <div className="min-w-[75%] snap-center mx-4 flex-shrink-0">
-                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
                                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
@@ -104,7 +105,7 @@ export function TeamSection() {
                                             className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
                                         />
                                     </div>
-                                    <CardTitle className="text-lg font-bold text-neutral-900">
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
                                         Asher Weinstein
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
@@ -112,7 +113,7 @@ export function TeamSection() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words max-h-[70vh] overflow-y-auto text-neutral-600 mb-4 font-light">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
                                         Career foundation in equity research, corporate finance, and venture capital. Passionate about blockchain technology, with hands-on startup experience across SaaS, fintech, and Web3 verticals.
                                     </p>
                                     <div className="flex justify-center space-x-2">
@@ -171,8 +172,8 @@ export function TeamSection() {
                             </Card>
                         </div>
 
-                        <div className="min-w-[75%] snap-center mx-4 flex-shrink-0">
-                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
                                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
@@ -184,7 +185,7 @@ export function TeamSection() {
                                             className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
                                         />
                                     </div>
-                                    <CardTitle className="text-lg font-bold text-neutral-900">
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
                                         Ryan Berelowitz
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
@@ -192,7 +193,7 @@ export function TeamSection() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words max-h-[70vh] overflow-y-auto text-neutral-600 mb-4 font-light">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
                                         Former corporate finance and private equity consultant focused on M&A and strategy. Experienced startup operator, having contributed to and co-founded two companies.
                                     </p>
                                     <div className="flex justify-center space-x-2">
@@ -251,8 +252,8 @@ export function TeamSection() {
                             </Card>
                         </div>
 
-                        <div className="min-w-[75%] snap-center mx-4 flex-shrink-0">
-                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
                                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
@@ -264,7 +265,7 @@ export function TeamSection() {
                                             className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
                                         />
                                     </div>
-                                    <CardTitle className="text-lg font-bold text-neutral-900">
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
                                         Jorge Saracco
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
@@ -272,7 +273,7 @@ export function TeamSection() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words max-h-[70vh] overflow-y-auto text-neutral-600 mb-4 font-light">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
                                         Former corporate finance and private equity consultant focused on M&A and strategy. Experienced startup operator, having contributed to and co-founded two companies.
                                     </p>
                                     <div className="flex justify-center space-x-2">
