@@ -52,77 +52,15 @@ export function ContactSection() {
                     </p>
                 </div>
 
-                <div className="max-w-3xl mx-auto">
-                    <form className="space-y-6" onSubmit={handleSubmit}>
-                        <div>
-                            <label
-                                htmlFor="name"
-                                className="block text-lg font-medium text-neutral-900"
-                            >
-                                Your Name
-                            </label>
-                            <div className="mt-2">
-                                <input
-                                    type="text"
-                                    id="name"
-                                    className="shadow-sm bg-neutral-50 border border-neutral-300 text-neutral-900 text-lg rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-3"
-                                    placeholder="John Doe"
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className="block text-lg font-medium text-neutral-900"
-                            >
-                                Your Email
-                            </label>
-                            <div className="mt-2">
-                                <input
-                                    type="email"
-                                    id="email"
-                                    className="shadow-sm bg-neutral-50 border border-neutral-300 text-neutral-900 text-lg rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-3"
-                                    placeholder="john.doe@example.com"
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="message"
-                                className="block text-lg font-medium text-neutral-900"
-                            >
-                                Your Message
-                            </label>
-                            <div className="mt-2">
-                                <textarea
-                                    id="message"
-                                    rows={5}
-                                    className="shadow-sm bg-neutral-50 border border-neutral-300 text-neutral-900 text-lg rounded-lg focus:ring-neutral-500 focus:border-neutral-500 block w-full p-3"
-                                    placeholder="Tell us about your project..."
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <Button
-                                type="submit"
-                                className="w-full bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-lg"
-                                disabled={loading}
-                            >
-                                {loading ? "Sending..." : "Send Message"}
-                            </Button>
-                        </div>
-                        {status && (
-                            <div className={`text-center text-lg font-semibold mt-4 ${status.includes("error") ? "text-red-600" : "text-green-600"}`}>
-                                {status}
-                            </div>
-                        )}
-                    </form>
+                <div className="max-w-3xl mx-auto flex flex-col items-center">
+                    <a
+                        href="https://t.me/apetown1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full sm:w-auto bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-lg mt-8"
+                    >
+                        Message Us on Telegram
+                    </a>
                 </div>
             </div>
         </section>

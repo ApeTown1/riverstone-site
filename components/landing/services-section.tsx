@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import {
     Card,
@@ -13,10 +14,102 @@ import {
     Users,
     BarChart3,
     CheckCircle,
+    ChevronLeft,
+    ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import { useState, useRef, useCallback } from "react";
+
+const services = [
+    {
+        icon: <TrendingUp className="h-8 w-8 text-white" />,
+        title: "Fundraising & Investor Strategy",
+        link: "#gaming",
+        description: "End-to-end fundraising support from deck refinement to investor introductions, backed by deep venture and PE experience.",
+        bullets: [
+            "Deck refinement & narrative framing",
+            "Investor targeting & warm introductions",
+            "Portfolio advisory for VCs & angels",
+        ],
+    },
+    {
+        icon: <Target className="h-8 w-8 text-white" />,
+        title: "Go-to-Market & Ecosystem Launch",
+        link: "#gtm",
+        description: "Strategic market entry that delivers real traction through brand positioning, growth loops, and ecosystem activation.",
+        bullets: [
+            "Brand positioning & content strategy",
+            "KOL activations & community building",
+            "Partnership & conference strategy",
+        ],
+    },
+    {
+        icon: <Globe className="h-8 w-8 text-white" />,
+        title: "Public Relations & Narrative Strategy",
+        link: null,
+        description: "KPI-backed media strategies that secure coverage in top-tier publications and build trust with key stakeholders.",
+        bullets: [
+            "Tier-1 media placements & coverage",
+            "Podcast bookings & speaking slots",
+            "Twitter/X Spaces & thought leadership",
+        ],
+    },
+    {
+        icon: <Users className="h-8 w-8 text-white" />,
+        title: "Corporate & Investor Services",
+        link: null,
+        description: "Institutional-grade advisory for M&A strategy, investor communications, and portfolio-level strategic planning.",
+        bullets: [
+            "M&A strategy & deal planning",
+            "Token treasury management",
+            "Strategic outreach & partnerships",
+        ],
+    },
+    {
+        icon: <BarChart3 className="h-8 w-8 text-white" />,
+        title: "Financial Modeling & Valuation",
+        link: "#ma",
+        description: "Investor-grade financial models and valuations that translate complex tokenomics into actionable business insight.",
+        bullets: [
+            "Tokenomics & revenue modeling",
+            "Strategic business cases",
+            "Board-level financial analysis",
+        ],
+    },
+];
 
 export function ServicesSection() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const goToNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+    };
+
+    const goToPrev = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + services.length) % services.length);
+    };
+
+    const scrollToCard = useCallback((direction: 'next' | 'prev') => {
+        if (!scrollRef.current) return;
+        
+        const container = scrollRef.current;
+        const cardWidth = container.offsetWidth * 0.85; // 85% of container width
+        const scrollAmount = direction === 'next' ? cardWidth : -cardWidth;
+        
+        // Check if we need to loop
+        if (direction === 'next' && container.scrollLeft >= container.scrollWidth - container.offsetWidth - 10) {
+            // At the end, scroll to beginning
+            container.scrollTo({ left: 0, behavior: 'auto' });
+        } else if (direction === 'prev' && container.scrollLeft <= 10) {
+            // At the beginning, scroll to end
+            container.scrollTo({ left: container.scrollWidth, behavior: 'auto' });
+        } else {
+            // Normal scroll
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }, []);
+
     return (
         <section id="services" className="py-24 bg-white/60 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
@@ -34,172 +127,176 @@ export function ServicesSection() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <Link href="#gaming" className="group" style={{ textDecoration: 'none' }}>
-                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
-                            <CardHeader className="pb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <TrendingUp className="h-8 w-8 text-white" />
-                                </div>
-                                <CardTitle className="text-neutral-900 text-2xl">
-                                    Fundraising & Investor Strategy
-                                </CardTitle>
-                                <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                    End-to-end fundraising support from deck
-                                    refinement to investor introductions, backed by
-                                    deep venture and PE experience.
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <ul className="space-y-4 text-neutral-600">
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Deck refinement & narrative framing
-                                    </li>
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Investor targeting & warm introductions
-                                    </li>
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Portfolio advisory for VCs & angels
-                                    </li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </Link>
-
-                    <Link href="#gtm" className="group" style={{ textDecoration: 'none' }}>
-                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
-                            <CardHeader className="pb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <Target className="h-8 w-8 text-white" />
-                                </div>
-                                <CardTitle className="text-neutral-900 text-2xl">
-                                    Go-to-Market & Ecosystem Launch
-                                </CardTitle>
-                                <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                    Strategic market entry that delivers real
-                                    traction through brand positioning, growth
-                                    loops, and ecosystem activation.
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <ul className="space-y-4 text-neutral-600">
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Brand positioning & content strategy
-                                    </li>
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        KOL activations & community building
-                                    </li>
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Partnership & conference strategy
-                                    </li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </Link>
-
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
-                        <CardHeader className="pb-6">
-                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                <Globe className="h-8 w-8 text-white" />
+                {/* Mobile Swipe Carousel */}
+                <div className="block md:hidden mt-24 sm:mt-32 relative">
+                    {/* Left Arrow */}
+                    <button
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
+                        onClick={() => scrollToCard('prev')}
+                        aria-label="Previous Service"
+                    >
+                        <ChevronLeft size={20} />
+                    </button>
+                    {/* Right Arrow */}
+                    <button
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
+                        onClick={() => scrollToCard('next')}
+                        aria-label="Next Service"
+                    >
+                        <ChevronRight size={20} />
+                    </button>
+                    <div 
+                        ref={scrollRef}
+                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 px-4"
+                        style={{ WebkitOverflowScrolling: "touch" }}
+                    >
+                        {services.map((service) => (
+                            <div key={service.title} className="min-w-[85%] snap-center flex-shrink-0">
+                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 cursor-pointer h-full">
+                                    <CardHeader className="pb-6">
+                                        <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                            {service.icon}
+                                        </div>
+                                        <CardTitle className="text-neutral-900 text-xl font-bold">
+                                            {service.title}
+                                        </CardTitle>
+                                        <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                            {service.description}
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <ul className="space-y-4 text-neutral-600">
+                                            {service.bullets.map((b) => (
+                                                <li key={b} className="flex items-center text-base">
+                                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                                    {b}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                </Card>
                             </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
-                                Public Relations & Narrative Strategy
-                            </CardTitle>
-                            <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                KPI-backed media strategies that secure coverage
-                                in top-tier publications and build trust with
-                                key stakeholders.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-4 text-neutral-600">
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Tier-1 media placements & coverage
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Podcast bookings & speaking slots
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Twitter/X Spaces & thought leadership
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
+                        ))}
+                    </div>
+                </div>
 
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
-                        <CardHeader className="pb-6">
-                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                <Users className="h-8 w-8 text-white" />
-                            </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
-                                Corporate & Investor Services
-                            </CardTitle>
-                            <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                Institutional-grade advisory for M&A strategy,
-                                investor communications, and portfolio-level
-                                strategic planning.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-4 text-neutral-600">
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    M&A strategy & deal planning
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Token treasury management
-                                </li>
-                                <li className="flex items-center text-lg">
-                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                    Strategic outreach & partnerships
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
+                {/* Desktop Roulette Carousel */}
+                <div className="hidden md:block relative min-h-[480px]">
+                    {/* Left Arrow */}
+                    <button
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-90 hover:opacity-100"
+                        onClick={goToPrev}
+                        aria-label="Previous Service"
+                    >
+                        <ChevronLeft className="h-6 w-6 text-white" />
+                    </button>
+                    {/* Right Arrow */}
+                    <button
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-90 hover:opacity-100"
+                        onClick={goToNext}
+                        aria-label="Next Service"
+                    >
+                        <ChevronRight className="h-6 w-6 text-white" />
+                    </button>
+                    <div className="relative w-full flex items-start justify-center overflow-visible h-full max-w-5xl mx-auto">
+                        {services.map((service, index) => {
+                            const isActive = index === currentIndex;
+                            const isPrev = index === (currentIndex - 1 + services.length) % services.length;
+                            const isNext = index === (currentIndex + 1) % services.length;
 
-                    <Link href="#ma" className="group" style={{ textDecoration: 'none' }}>
-                        <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer">
-                            <CardHeader className="pb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <BarChart3 className="h-8 w-8 text-white" />
+                            let base = "absolute left-1/2 top-1/2 w-full max-w-4xl px-2 transition-all duration-500 ease-in-out flex justify-center items-center";
+                            let style: React.CSSProperties = {
+                                zIndex: 0,
+                                opacity: 0,
+                                pointerEvents: "none",
+                                transform: "translate(-50%, -50%) scale(0.7)",
+                                filter: "blur(4px)",
+                            };
+                            if (isActive) {
+                                style = {
+                                    zIndex: 20,
+                                    opacity: 1,
+                                    pointerEvents: "auto",
+                                    transform: "translate(-50%, -50%) scale(1)",
+                                    filter: "none",
+                                };
+                            } else if (isPrev) {
+                                style = {
+                                    zIndex: 10,
+                                    opacity: 0.5,
+                                    pointerEvents: "none",
+                                    transform: "translate(-80%, -50%) scale(0.85)",
+                                    filter: "blur(2px)",
+                                };
+                            } else if (isNext) {
+                                style = {
+                                    zIndex: 10,
+                                    opacity: 0.5,
+                                    pointerEvents: "none",
+                                    transform: "translate(-20%, -50%) scale(0.85)",
+                                    filter: "blur(2px)",
+                                };
+                            }
+                            return (
+                                <div key={service.title} className={base} style={style}>
+                                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 cursor-pointer">
+                                        <CardHeader className="pb-6">
+                                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                                {service.icon}
+                                            </div>
+                                            <CardTitle className="text-neutral-900 text-xl font-bold">
+                                                {service.title}
+                                            </CardTitle>
+                                            <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                                {service.description}
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <ul className="space-y-4 text-neutral-600">
+                                                {service.bullets.map((b) => (
+                                                    <li key={b} className="flex items-center text-base">
+                                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                                        {b}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </CardContent>
+                                    </Card>
                                 </div>
-                                <CardTitle className="text-neutral-900 text-2xl">
-                                    Financial Modeling & Valuation
-                                </CardTitle>
-                                <CardDescription className="text-neutral-600 text-lg font-light leading-relaxed">
-                                    Investor-grade financial models and valuations
-                                    that translate complex tokenomics into
-                                    actionable business insight.
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <ul className="space-y-4 text-neutral-600">
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Tokenomics & revenue modeling
-                                    </li>
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Strategic business cases
-                                    </li>
-                                    <li className="flex items-center text-lg">
-                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                        Board-level financial analysis
-                                    </li>
-                                </ul>
-                            </CardContent>
-                        </Card>
-                    </Link>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Desktop Grid */}
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {services.map((service) => (
+                        <div key={service.title}>
+                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
+                                <CardHeader className="pb-6">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                        {service.icon}
+                                    </div>
+                                    <CardTitle className="text-neutral-900 text-xl font-bold">
+                                        {service.title}
+                                    </CardTitle>
+                                    <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                        {service.description}
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-4 text-neutral-600">
+                                        {service.bullets.map((b) => (
+                                            <li key={b} className="flex items-center text-base">
+                                                <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                                {b}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

@@ -9,7 +9,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { CheckCircle, Target, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const caseStudiesData = [
     {
@@ -77,7 +77,9 @@ const caseStudiesData = [
 
 export function CaseStudiesSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
     const sectionRef = useRef<HTMLDivElement>(null);
+    const scrollRef = useRef<HTMLDivElement>(null);
 
     const goToNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % caseStudiesData.length);
@@ -89,6 +91,26 @@ export function CaseStudiesSection() {
                 (prevIndex - 1 + caseStudiesData.length) % caseStudiesData.length
         );
     };
+
+    const scrollToCard = useCallback((direction: 'next' | 'prev') => {
+        if (!scrollRef.current) return;
+        
+        const container = scrollRef.current;
+        const cardWidth = container.offsetWidth * 0.9; // 90% of container width
+        
+        let newIndex = mobileActiveIndex;
+        if (direction === 'next') {
+            newIndex = (newIndex + 1) % caseStudiesData.length;
+        } else {
+            newIndex = (newIndex - 1 + caseStudiesData.length) % caseStudiesData.length;
+        }
+        
+        setMobileActiveIndex(newIndex);
+        
+        // Scroll to the exact position to prevent cumulative rounding errors
+        const scrollPosition = newIndex * cardWidth;
+        container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    }, [mobileActiveIndex]);
 
     useEffect(() => {
         function handleSelectCaseStudy(e: any) {
@@ -120,7 +142,7 @@ export function CaseStudiesSection() {
             className="py-16 md:py-20 bg-gradient-to-br from-neutral-50 to-stone-50"
         >
             <div className="container mx-auto px-4 lg:px-6">
-                <div className="text-center space-y-6 mb-10 md:mb-14">
+                <div className="text-center space-y-6 mb-8">
                     <Badge className="bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                         Case Studies
                     </Badge>
@@ -135,140 +157,242 @@ export function CaseStudiesSection() {
                     </p>
                 </div>
 
-                <div className="relative flex items-center justify-center min-h-[630px] md:min-h-[750px] lg:min-h-[810px]">
+                {/* Mobile Swipe Carousel */}
+                <div className="block md:hidden mt-24 sm:mt-32 relative">
                     {/* Left Arrow */}
                     <button
-                        onClick={goToPrev}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/50 hover:bg-white/90 transition-all duration-300 opacity-70 hover:opacity-100"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
+                        onClick={() => scrollToCard('prev')}
                         aria-label="Previous Case Study"
                     >
-                        <ChevronLeft className="h-6 w-6 text-neutral-800" />
+                        <ChevronLeft size={20} />
                     </button>
-
-                    {/* Cards */}
-                    <div className="relative w-full flex items-center justify-center h-full max-w-5xl mx-auto">
-                        {caseStudiesData.map((study, index) => {
-                            const isActive = index === currentIndex;
-                            const isPrev =
-                                index ===
-                                (currentIndex - 1 + caseStudiesData.length) %
-                                    caseStudiesData.length;
-                            const isNext =
-                                index === (currentIndex + 1) % caseStudiesData.length;
-
-                            let base = "absolute left-1/2 top-1/2 w-full max-w-4xl px-2 transition-all duration-500 ease-in-out flex justify-center items-center";
-                            let style: React.CSSProperties = {
-                                zIndex: 0,
-                                opacity: 0,
-                                pointerEvents: "none",
-                                transform: "translate(-50%, -50%) scale(0.7)",
-                                filter: "blur(4px)",
-                            };
-                            if (isActive) {
-                                style = {
-                                    zIndex: 20,
-                                    opacity: 1,
-                                    pointerEvents: "auto",
-                                    transform: "translate(-50%, -50%) scale(1)",
-                                    filter: "none",
-                                };
-                            } else if (isPrev) {
-                                style = {
-                                    zIndex: 10,
-                                    opacity: 0.5,
-                                    pointerEvents: "none",
-                                    transform: "translate(-80%, -50%) scale(0.85)",
-                                    filter: "blur(2px)",
-                                };
-                            } else if (isNext) {
-                                style = {
-                                    zIndex: 10,
-                                    opacity: 0.5,
-                                    pointerEvents: "none",
-                                    transform: "translate(-20%, -50%) scale(0.85)",
-                                    filter: "blur(2px)",
-                                };
-                            }
-                            return (
-                                <div key={study.id} className={base} style={style}>
-                                    <Card
-                                        id={study.id}
-                                        className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-500 w-full max-w-5xl flex flex-col`}
-                                    >
-                                        <CardHeader className="bg-white/95 backdrop-blur-sm p-8 md:p-10">
-                            <div className="flex items-center justify-between mb-6">
-                                                <Badge
-                                                    className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-6 py-3 text-sm font-semibold rounded-full`}
-                                                >
-                                                    {study.badge}
-                                </Badge>
-                                                <div
-                                                    className={`text-3xl font-bold bg-gradient-to-r ${study.categoryColor} bg-clip-text text-transparent`}
-                                                >
-                                                    {study.category}
-                                </div>
-                            </div>
-                            <CardTitle className="text-3xl text-neutral-900 mb-4">
-                                                {study.title}
-                            </CardTitle>
-                            <CardDescription className="text-neutral-600 text-xl font-light leading-relaxed">
-                                                {study.description}
-                            </CardDescription>
-                        </CardHeader>
-                                        <CardContent className="space-y-8 p-8 md:p-10">
-                                            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                                <div className="space-y-6">
-                                                    <h4 className="font-semibold text-neutral-900 flex items-center text-xl text-[65%] md:text-base">
-                                                        <div
-                                                            className={`w-8 h-8 bg-gradient-to-br ${study.iconBg} rounded-xl flex items-center justify-center mr-3`}
-                                                        >
-                                            <Target className="h-4 w-4 text-white" />
-                                        </div>
-                                        The Challenge
-                                    </h4>
-                                                    <p className="text-neutral-600 leading-relaxed font-light text-[65%] md:text-base">
-                                                        {study.challenge}
-                                    </p>
-                                </div>
-                                <div className="space-y-6">
-                                                    <h4 className="font-semibold text-neutral-900 flex items-center text-xl text-[65%] md:text-base">
-                                                        <div
-                                                            className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center mr-3"
-                                                        >
-                                            <CheckCircle className="h-4 w-4 text-white" />
-                                        </div>
-                                        The Solution
-                                    </h4>
-                                                    <ul className="text-neutral-600 space-y-3 font-light text-[65%] md:text-base">
-                                                        {study.solution.map((item) => (
-                                                            <li key={item}>• {item}</li>
-                                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                                            <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-neutral-100/50 shadow-lg">
-                                                <h4 className="font-semibold text-neutral-900 mb-4 text-xl text-[65%] md:text-base">
-                                    The Impact
-                                </h4>
-                                                <p className="text-neutral-600 leading-relaxed font-light text-[65%] md:text-base">
-                                                    {study.impact}
-                                </p>
-                            </div>
-                        </CardContent>
-                    </Card>
-                                </div>
-                            );
-                        })}
-                            </div>
-
                     {/* Right Arrow */}
                     <button
-                        onClick={goToNext}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/50 hover:bg-white/90 transition-all duration-300 opacity-70 hover:opacity-100"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
+                        onClick={() => scrollToCard('next')}
                         aria-label="Next Case Study"
                     >
-                        <ChevronRight className="h-6 w-6 text-neutral-800" />
+                        <ChevronRight size={20} />
                     </button>
+                    <div 
+                        ref={scrollRef}
+                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 px-4"
+                        style={{ WebkitOverflowScrolling: "touch" }}
+                    >
+                        {caseStudiesData.map((study) => (
+                            <div key={study.id} className="min-w-[90%] snap-center flex-shrink-0">
+                                <Card
+                                    id={study.id}
+                                    className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col max-h-[75vh]`}
+                                >
+                                    <CardHeader className="bg-white/95 backdrop-blur-sm p-6 flex-shrink-0">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                                            <Badge
+                                                className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-4 py-2 text-xs font-semibold rounded-full w-fit`}
+                                            >
+                                                {study.badge}
+                                            </Badge>
+                                            <div
+                                                className={`text-lg font-bold bg-gradient-to-r ${study.categoryColor} bg-clip-text text-transparent`}
+                                            >
+                                                {study.category}
+                                            </div>
+                                        </div>
+                                        <CardTitle className="text-lg font-bold text-neutral-900 mb-3">
+                                            {study.title}
+                                        </CardTitle>
+                                        <CardDescription className="text-sm text-neutral-600 font-light leading-relaxed break-words">
+                                            {study.description}
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="space-y-6 p-6 overflow-y-auto flex-1">
+                                        <div className="space-y-6">
+                                            <div className="space-y-4">
+                                                <h4 className="font-semibold text-neutral-900 flex items-center text-sm">
+                                                    <div
+                                                        className={`w-6 h-6 bg-gradient-to-br ${study.iconBg} rounded-lg flex items-center justify-center mr-3`}
+                                                    >
+                                                        <Target className="h-3 w-3 text-white" />
+                                                    </div>
+                                                    The Challenge
+                                                </h4>
+                                                <p className="text-sm text-neutral-600 leading-relaxed font-light break-words">
+                                                    {study.challenge}
+                                                </p>
+                                            </div>
+                                            <div className="space-y-4">
+                                                <h4 className="font-semibold text-neutral-900 flex items-center text-sm">
+                                                    <div
+                                                        className="w-6 h-6 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg flex items-center justify-center mr-3"
+                                                    >
+                                                        <CheckCircle className="h-3 w-3 text-white" />
+                                                    </div>
+                                                    The Solution
+                                                </h4>
+                                                <ul className="text-sm text-neutral-600 space-y-2 font-light break-words">
+                                                    {study.solution.map((item) => (
+                                                        <li key={item}>• {item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-neutral-100/50 shadow-lg">
+                                            <h4 className="font-semibold text-neutral-900 mb-3 text-sm">
+                                                The Impact
+                                            </h4>
+                                            <p className="text-sm text-neutral-600 leading-relaxed font-light break-words">
+                                                {study.impact}
+                                            </p>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Desktop Roulette Carousel */}
+                <div className="hidden md:block relative mt-32 md:mt-40 lg:mt-48 xl:mt-56">
+                    <div className="relative flex items-center justify-center min-h-[350px] md:min-h-[630px] lg:min-h-[810px]">
+                        {/* Left Arrow */}
+                        <button
+                            onClick={goToPrev}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-70 hover:opacity-100"
+                            aria-label="Previous Case Study"
+                        >
+                            <ChevronLeft className="h-6 w-6 text-white" />
+                        </button>
+
+                        {/* Cards */}
+                        <div className="relative w-full flex items-center justify-center h-full max-w-5xl mx-auto">
+                            {caseStudiesData.map((study, index) => {
+                                const isActive = index === currentIndex;
+                                const isPrev =
+                                    index ===
+                                    (currentIndex - 1 + caseStudiesData.length) %
+                                        caseStudiesData.length;
+                                const isNext =
+                                    index === (currentIndex + 1) % caseStudiesData.length;
+
+                                let base = "absolute left-1/2 top-1/2 w-full max-w-4xl px-2 transition-all duration-500 ease-in-out flex justify-center items-center";
+                                let style: React.CSSProperties = {
+                                    zIndex: 0,
+                                    opacity: 0,
+                                    pointerEvents: "none",
+                                    transform: "translate(-50%, -50%) scale(0.7)",
+                                    filter: "blur(4px)",
+                                };
+                                if (isActive) {
+                                    style = {
+                                        zIndex: 20,
+                                        opacity: 1,
+                                        pointerEvents: "auto",
+                                        transform: "translate(-50%, -50%) scale(0.9)",
+                                        filter: "none",
+                                    };
+                                    // Responsive scaling
+                                    base += " scale-90 sm:scale-95 md:scale-100";
+                                } else if (isPrev) {
+                                    style = {
+                                        zIndex: 10,
+                                        opacity: 0.5,
+                                        pointerEvents: "none",
+                                        transform: "translate(-80%, -50%) scale(0.85)",
+                                        filter: "blur(2px)",
+                                    };
+                                    base += " scale-90 sm:scale-95 md:scale-100";
+                                } else if (isNext) {
+                                    style = {
+                                        zIndex: 10,
+                                        opacity: 0.5,
+                                        pointerEvents: "none",
+                                        transform: "translate(-20%, -50%) scale(0.85)",
+                                        filter: "blur(2px)",
+                                    };
+                                    base += " scale-90 sm:scale-95 md:scale-100";
+                                }
+                                return (
+                                    <div key={study.id} className={base + " scale-90 sm:scale-95 md:scale-100"} style={style}>
+                                        <Card
+                                            id={study.id}
+                                            className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-500 w-full max-w-5xl flex flex-col`}
+                                        >
+                                            <CardHeader className="bg-white/95 backdrop-blur-sm p-8 md:p-10">
+                                <div className="flex items-center justify-between mb-6">
+                                                    <Badge
+                                                        className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-6 py-3 text-sm font-semibold rounded-full`}
+                                                    >
+                                                        {study.badge}
+                                    </Badge>
+                                                    <div
+                                                        className={`text-3xl font-bold bg-gradient-to-r ${study.categoryColor} bg-clip-text text-transparent`}
+                                                    >
+                                                        {study.category}
+                                    </div>
+                                </div>
+                                <CardTitle className="text-3xl text-neutral-900 mb-4">
+                                                    {study.title}
+                                </CardTitle>
+                                <CardDescription className="text-neutral-600 text-xl font-light leading-relaxed">
+                                                    {study.description}
+                                </CardDescription>
+                            </CardHeader>
+                                            <CardContent className="space-y-8 p-8 md:p-10">
+                                                <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+                                    <div className="space-y-6">
+                                                        <h4 className="font-semibold text-neutral-900 flex items-center text-xl text-[65%] md:text-base">
+                                                            <div
+                                                                className={`w-8 h-8 bg-gradient-to-br ${study.iconBg} rounded-xl flex items-center justify-center mr-3`}
+                                                            >
+                                                <Target className="h-4 w-4 text-white" />
+                                            </div>
+                                            The Challenge
+                                        </h4>
+                                                        <p className="text-neutral-600 leading-relaxed font-light text-[65%] md:text-base">
+                                                            {study.challenge}
+                                    </p>
+                                    </div>
+                                    <div className="space-y-6">
+                                                        <h4 className="font-semibold text-neutral-900 flex items-center text-xl text-[65%] md:text-base">
+                                                            <div
+                                                                className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center mr-3"
+                                                            >
+                                                <CheckCircle className="h-4 w-4 text-white" />
+                                            </div>
+                                            The Solution
+                                        </h4>
+                                                        <ul className="text-neutral-600 space-y-3 font-light text-[65%] md:text-base">
+                                                            {study.solution.map((item) => (
+                                                                <li key={item}>• {item}</li>
+                                                            ))}
+                                    </ul>
+                                    </div>
+                                </div>
+                                                <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-neutral-100/50 shadow-lg">
+                                                    <h4 className="font-semibold text-neutral-900 mb-4 text-xl text-[65%] md:text-base">
+                                        The Impact
+                                    </h4>
+                                                    <p className="text-neutral-600 leading-relaxed font-light text-[65%] md:text-base">
+                                                        {study.impact}
+                                    </p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                                    </div>
+                                );
+                            })}
+                                </div>
+
+                        {/* Right Arrow */}
+                        <button
+                            onClick={goToNext}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-70 hover:opacity-100"
+                            aria-label="Next Case Study"
+                        >
+                            <ChevronRight className="h-6 w-6 text-white" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
