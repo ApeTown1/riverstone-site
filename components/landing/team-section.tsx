@@ -92,7 +92,7 @@ export function TeamSection() {
                         className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4"
                         style={{ WebkitOverflowScrolling: "touch" }}
                     >
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
                             <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
@@ -172,7 +172,7 @@ export function TeamSection() {
                             </Card>
                         </div>
 
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
                             <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
@@ -252,7 +252,7 @@ export function TeamSection() {
                             </Card>
                         </div>
 
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
                             <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
