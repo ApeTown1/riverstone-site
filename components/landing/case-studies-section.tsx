@@ -192,10 +192,10 @@ export function CaseStudiesSection() {
                         style={{ WebkitOverflowScrolling: "touch" }}
                     >
                         {caseStudiesData.map((study) => (
-                            <div key={study.id} className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                            <div key={study.id} className="min-w-[90%] max-w-[90%] snap-center mx-auto p-4 flex-shrink-0">
                                 <Card
                                     id={study.id}
-                                    className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col h-full`}
+                                    className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col min-h-[70vh] max-h-[85vh]`}
                                 >
                                     <CardHeader className="bg-white/95 backdrop-blur-sm p-6 flex-shrink-0">
                                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
@@ -210,40 +210,40 @@ export function CaseStudiesSection() {
                                                 {study.category}
                                             </div>
                                         </div>
-                                        <CardTitle className="text-lg font-bold leading-tight break-words text-neutral-900 mb-3">
+                                        <CardTitle className="text-lg font-bold leading-tight break-words hyphens-auto text-neutral-900 mb-3">
                                             {study.title}
                                         </CardTitle>
-                                        <CardDescription className="text-sm leading-relaxed break-words text-neutral-600 font-light">
+                                        <CardDescription className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 font-light">
                                             {study.description}
                                         </CardDescription>
                                     </CardHeader>
-                                    <CardContent className="space-y-6 p-6 overflow-y-auto flex-1">
-                                        <div className="space-y-6">
-                                            <div className="space-y-4">
-                                                <h4 className="font-semibold text-neutral-900 flex items-center text-sm">
+                                    <CardContent className="space-y-4 p-4 overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-300">
+                                        <div className="space-y-4">
+                                            <div className="space-y-3">
+                                                <h4 className="font-semibold text-neutral-900 flex items-start text-sm">
                                                     <div
-                                                        className={`w-6 h-6 bg-gradient-to-br ${study.iconBg} rounded-lg flex items-center justify-center mr-3`}
+                                                        className={`w-6 h-6 bg-gradient-to-br ${study.iconBg} rounded-lg flex items-center justify-center mr-3 flex-shrink-0 mt-0.5`}
                                                     >
                                                         <Target className="h-3 w-3 text-white" />
                                                     </div>
                                                     The Challenge
                                                 </h4>
-                                                <p className="text-sm leading-relaxed break-words text-neutral-600 font-light">
+                                                <p className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 font-light word-wrap">
                                                     {study.challenge}
                                                 </p>
                                             </div>
-                                            <div className="space-y-4">
-                                                <h4 className="font-semibold text-neutral-900 flex items-center text-sm">
+                                            <div className="space-y-3">
+                                                <h4 className="font-semibold text-neutral-900 flex items-start text-sm">
                                                     <div
-                                                        className="w-6 h-6 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg flex items-center justify-center mr-3"
+                                                        className="w-6 h-6 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 mt-0.5"
                                                     >
                                                         <CheckCircle className="h-3 w-3 text-white" />
                                                     </div>
                                                     The Solution
                                                 </h4>
-                                                <ul className="text-sm leading-relaxed break-words text-neutral-600 space-y-2 font-light">
+                                                <ul className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 space-y-2 font-light">
                                                     {study.solution.map((item) => (
-                                                        <li key={item}>• {item}</li>
+                                                        <li key={item} className="word-wrap">• {item}</li>
                                                     ))}
                                                 </ul>
                                             </div>
@@ -252,7 +252,7 @@ export function CaseStudiesSection() {
                                             <h4 className="font-semibold text-neutral-900 mb-3 text-sm">
                                                 The Impact
                                             </h4>
-                                            <p className="text-sm leading-relaxed break-words text-neutral-600 font-light">
+                                            <p className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 font-light word-wrap">
                                                 {study.impact}
                                             </p>
                                         </div>
