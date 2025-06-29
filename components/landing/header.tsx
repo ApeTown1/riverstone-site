@@ -17,20 +17,21 @@ export function Header() {
     const [menuLeft, setMenuLeft] = useState(0);
 
     useEffect(() => {
-        function checkOverflow() {
-            if (!navRef.current || !logoRef.current) return;
-            const navRect = navRef.current.getBoundingClientRect();
-            const logoRect = logoRef.current.getBoundingClientRect();
-            // If nav overlaps logo or goes off the right edge, force mobile
-            if (navRect.left < logoRect.right + 16 || navRect.right > window.innerWidth - 32) {
-                setForceMobile(true);
-            } else {
+        function handleResize() {
+            // Use a simple breakpoint approach - if window is wide enough, show desktop nav
+            // This is more reliable than trying to measure hidden elements
+            if (window.innerWidth >= 1000) {
                 setForceMobile(false);
+                // Reset dropdown when switching back to desktop
+                setDropdownOpen(false);
+                setMobileMenuOpen(false);
+            } else {
+                setForceMobile(true);
             }
         }
-        checkOverflow();
-        window.addEventListener("resize", checkOverflow);
-        return () => window.removeEventListener("resize", checkOverflow);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     // Adjust dropdown position to keep it on screen
@@ -77,7 +78,7 @@ export function Header() {
                         </span>
                     </div>
                 </Link>
-                <nav ref={navRef} className={`items-center space-x-10 ${forceMobile ? 'hidden' : 'hidden md:flex'}`}>
+                <nav ref={navRef} className={`items-center space-x-10 ${forceMobile ? 'hidden' : 'flex'}`}>
                     <Link href="/about" className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105">About</Link>
                     <Link href="/#services" className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105">Services</Link>
                     <Link href="/#insights" className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105">Market Insights</Link>
@@ -96,7 +97,7 @@ export function Header() {
                     <Link href="/contact" className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105">Contact</Link>
                 </nav>
                 <div
-                    className={`${forceMobile ? 'flex' : 'md:hidden'} items-center relative`}
+                    className={`${forceMobile ? 'flex' : 'hidden'} items-center relative`}
                     ref={setDropdownAnchor}
                 >
                     <button
