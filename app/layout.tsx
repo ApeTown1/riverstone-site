@@ -33,6 +33,16 @@ export default function RootLayout({
           sizes="32x32"
           href="/riverstone-logo.png"
         />
+        {/* --- Social preview --- */}
+        <meta property="og:title" content="Riverstone" />
+        <meta property="og:description" content="Capital, Strategy, and Narrative" />
+        <meta property="og:image" content="https://riverstone.one/riverstone-logo.png" />
+        <meta property="og:url" content="https://riverstone.one" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Riverstone" />
+        <meta name="twitter:description" content="Capital, Strategy, and Narrative" />
+        <meta name="twitter:image" content="https://riverstone.one/riverstone-logo.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white min-h-screen`}
