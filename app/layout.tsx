@@ -27,6 +27,12 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content="#ffffff" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/riverstone-logo.png"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white min-h-screen`}
