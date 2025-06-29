@@ -14,22 +14,22 @@ export function Footer() {
                     href="https://www.linkedin.com/company/riverstoneone"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black text-white p-3 rounded-full shadow-lg hover:bg-neutral-800 transition-colors duration-200"
+                    className="bg-black text-white p-3 rounded-full shadow-lg opacity-80 hover:opacity-100 transition-all duration-200"
                     aria-label="Riverstone on LinkedIn"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-                        <path d="M4.98 3.5C4.98 2.12 6.1 1 7.48 1s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5S4.98 4.88 4.98 3.5zM.5 8h5.95v15H.5V8zM13.5 8c-3.54 0-6.4 2.83-6.4 6.3v8.7h5.95v-8.2c0-1.18.9-2.1 2.05-2.1 1.14 0 2.05.92 2.05 2.1v8.2H23v-8.8C23 11.1 19.9 8 16.1 8c-1.79 0-3.37.7-4.6 1.8V8h-2z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-4 h-4 fill-current">
+                        <path d="M100.28 448H7.4V148.9h92.88zm-46.44-340a53.59 53.59 0 1153.59-53.59 53.58 53.58 0 01-53.6 53.59zM447.9 448h-92.68V302.4c0-34.7-.7-79.4-48.35-79.4-48.36 0-55.8 37.8-55.8 76.9V448h-92.7V148.9h89.06v40.8h1.3c12.4-23.4 42.7-48.3 87.82-48.3 93.96 0 111.3 61.9 111.3 142.3V448z"/>
                     </svg>
                 </a>
                 <a
                     href="https://x.com/Riverstone_one"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black text-white p-3 rounded-full shadow-lg hover:bg-neutral-800 transition-colors duration-200"
+                    className="bg-black text-white p-3 rounded-full shadow-lg opacity-80 hover:opacity-100 transition-all duration-200"
                     aria-label="Riverstone on X"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-                        <path d="M22 3H2L11.5 12 2 21h20L12.5 12 22 3z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" className="w-4 h-4 fill-current">
+                        <path d="M720.3 516.5l438.7-516.5h-101.5l-377 443.6L389.1 0H0l450.2 641.1L0 1227h101.5l413.2-486.3 287.8 486.3h389.1L720.3 516.5zm-147.9 173.9l-48.2-81.8L136.4 78.7h190.7l300.6 508.2 48.2 81.8 405.6 683.1h-190.6L572.4 690.4z"/>
                     </svg>
                 </a>
             </div>
