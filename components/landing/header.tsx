@@ -36,13 +36,15 @@ export function Header() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Adjust dropdown position to keep it on screen
+    // Adjust dropdown position to keep it on screen (bottom right)
     useEffect(() => {
         if (mobileMenuOpen && burgerButtonRef.current) {
             const buttonRect = burgerButtonRef.current.getBoundingClientRect();
             const menuWidth = 224; // w-56 = 14rem = 224px
-            let left = buttonRect.left - menuWidth;
-            if (left < 8) left = 8; // 8px padding from left edge
+            let left = buttonRect.right - menuWidth;
+            const rightEdge = window.innerWidth - 8; // 8px padding from right edge
+            if (left + menuWidth > rightEdge) left = rightEdge - menuWidth;
+            if (left < 8) left = 8; // fallback: 8px padding from left edge
             setMenuLeft(left);
         }
     }, [mobileMenuOpen]);
@@ -193,12 +195,15 @@ export function Header() {
                                 />
                             </svg>
                         </button>
-                        {/* Dropdown menu to the left and beneath the burger button, always on screen */}
-                        {mobileMenuOpen && (
-                            <div
-                                className="fixed z-50 w-56 bg-white shadow-2xl rounded-2xl flex flex-col p-4 space-y-4 border border-neutral-200"
-                                style={{ left: menuLeft, top: "5rem" }}
-                            >
+                        {/* Dropdown menu to the right and beneath the burger button, always on screen */}
+                        <div
+                            className={`fixed z-50 w-56 bg-white shadow-2xl rounded-2xl flex flex-col p-4 space-y-4 border border-neutral-200 transition-all duration-300 ease-out ${
+                                mobileMenuOpen 
+                                    ? "opacity-100 translate-y-0 pointer-events-auto" 
+                                    : "opacity-0 -translate-y-2 pointer-events-none"
+                            }`}
+                            style={{ left: menuLeft, top: "5rem" }}
+                        >
                                 <Link
                                     href="/about"
                                     className="text-lg font-semibold text-neutral-700 hover:text-neutral-900"
@@ -234,8 +239,7 @@ export function Header() {
                                 >
                                     Contact
                                 </Link>
-                            </div>
-                        )}
+                        </div>
                     </div>
                 </div>
             </header>
