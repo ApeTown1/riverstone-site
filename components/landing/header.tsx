@@ -123,7 +123,7 @@ export function Header() {
                                 Case Studies
                             </Link>
                             <div
-                                className={`absolute left-0 mt-2 w-56 bg-white border border-neutral-200 rounded-xl shadow-lg transition-opacity duration-200 z-50 ${
+                                className={`absolute left-0 top-full w-56 bg-white border border-neutral-200 rounded-xl shadow-lg transition-opacity duration-200 z-50 ${
                                     dropdownOpen
                                         ? "opacity-100 pointer-events-auto"
                                         : "opacity-0 pointer-events-none"
