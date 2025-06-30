@@ -14,7 +14,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Web3 Growth, Powered by Insight",
-  description: "Web3 Growth, Powered by Insight",
+  description: "Precision Advisory for Web3 Leaders",
+  openGraph: {
+    title: "Web3 Growth, Powered by Insight",
+    description: "Precision Advisory for Web3 Leaders",
+    url: "https://riverstone.one",
+    images: ["https://riverstone.one/riverstone-logo.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web3 Growth, Powered by Insight",
+    description: "Precision Advisory for Web3 Leaders",
+    images: ["https://riverstone.one/riverstone-logo.png"],
+  },
 };
 
 export default function RootLayout({
