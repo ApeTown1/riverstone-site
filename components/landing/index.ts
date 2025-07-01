@@ -7,4 +7,4 @@ export * from "./hero-section";
 export * from "./market-insights-section";
 export * from "./services-section";
 export * from "./team-section";
-export * from "./thesis-section";
+
