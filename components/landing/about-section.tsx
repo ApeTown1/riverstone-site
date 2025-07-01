@@ -4,7 +4,7 @@ export function AboutSection() {
     return (
         <section id="about" className="py-24 bg-white/60 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
-                <div className="max-w-6xl mx-auto text-center space-y-12">
+                <div className="max-w-6xl mx-auto text-center space-y-6 sm:space-y-12">
                     <div className="space-y-6">
                         <Badge className="bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                             About Riverstone
@@ -53,32 +53,8 @@ export function AboutSection() {
                                 world of change, we are your trusted partner for
                                 growth.
                             </p>
-                            <div className="bg-gradient-to-r from-neutral-50 to-stone-50 p-8 rounded-3xl border border-neutral-100/50 shadow-lg">
-                                <p className="text-neutral-900 font-semibold text-center text-lg italic">
-                                    &quot;We aim to provide an exceptional
-                                    service to our clients. We want to be
-                                    measured against the best in the
-                                    world.&quot;
-                                </p>
-                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="text-center bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 text-white p-12 rounded-3xl shadow-2xl mt-16">
-                    <h3 className="text-3xl font-bold mb-6">
-                        Riverstone&apos;s Thesis
-                    </h3>
-                    <p className="text-base md:text-xl text-neutral-200 font-light max-w-4xl mx-auto text-[65%] md:text-base">
-                        <strong className="text-white font-semibold">
-                            Crypto&apos;s potential lies not in its
-                            divergence from traditional finance but in
-                            its ability to complement and transform it.
-                        </strong>{" "}
-                        Riverstone stands at this intersection,
-                        committed to creating value, fostering
-                        innovation, and navigating the complexities of
-                        this dynamic industry.
-                    </p>
                 </div>
             </div>
         </section>
