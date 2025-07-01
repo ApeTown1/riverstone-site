@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Web3 Growth, Powered by Insight",
     description: "Precision Advisory for Web3 Leaders",
-    url: "https://riverstone.one",
+    url: "https://www.riverstone.one",
     images: ["https://riverstone.one/riverstone-logo.png"],
     type: "website",
   },
@@ -46,6 +46,7 @@ export default function RootLayout({
           sizes="32x32"
           href="/riverstone-logo.png"
         />
+        <link rel="canonical" href="https://www.riverstone.one" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white min-h-screen`}
