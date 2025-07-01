@@ -14,7 +14,7 @@ export function AboutSection() {
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-16 items-center text-left">
+                    <div className="grid md:grid-cols-2 gap-16 items-start text-left">
                         <div className="space-y-8">
                             <p className="text-base md:text-xl text-neutral-600 leading-relaxed font-light">
                                 Since 2016, we have worked with investments in
