@@ -97,13 +97,8 @@ export function MarketInsightsSection() {
                         Market Intelligence
                     </Badge>
                     <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 tracking-tight">
-                        Strategic Insights That Drive Decisions
+                        Strategic Insights, Research, and Blog
                     </h2>
-                    <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
-                        Stay ahead with our analysis of market trends, funding
-                        patterns, and strategic opportunities across Web2 and
-                        Web3.
-                    </p>
                 </div>
 
                 <div className="flex justify-center mt-16">
@@ -240,9 +235,7 @@ export function MarketInsightsSection() {
                                                       )}
                                                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                                                       <div className="absolute bottom-3 left-4">
-                                                          <Badge className="bg-white/90 text-neutral-800 border-0 px-2 py-1 text-xs font-semibold rounded-full">
-                                                              {index === 0 ? "Deep Dive" : "Protocol Overview"}
-                                                          </Badge>
+                                                          {/* Badge removed as requested */}
                                                       </div>
                                                   </div>
                                                   <CardContent className="p-6">
@@ -305,9 +298,7 @@ export function MarketInsightsSection() {
                                               )}
                                               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                                               <div className="absolute bottom-4 left-6">
-                                                  <Badge className="bg-white/90 text-neutral-800 border-0 px-3 py-1 text-xs font-semibold rounded-full">
-                                                      {index === 0 ? "Deep Dive" : "Protocol Overview"}
-                                                  </Badge>
+                                                  {/* Badge removed as requested */}
                                               </div>
                                           </div>
                                           <CardContent className="p-8">
