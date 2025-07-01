@@ -46,10 +46,6 @@ export function ContactSection() {
                     <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 tracking-tight">
                         Let&apos;s Discuss Your Project
                     </h2>
-                    <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
-                        Get in touch to learn more about our services and how we
-                        can help your business thrive.
-                    </p>
                 </div>
 
                 <div className="max-w-3xl mx-auto flex flex-col items-center">
