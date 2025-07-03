@@ -161,10 +161,7 @@ export function CaseStudiesSection() {
                         Driving Impact Through Financial Expertise
                     </h2>
                     <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
-                        Discover how Riverstone helps innovative companies
-                        overcome complex financial and strategic challenges. Our
-                        case studies highlight tailored strategies, actionable
-                        insights, and measurable results.
+                    Case studies showcasing bespoke strategies, actionable insight, and proven outcomes.
                     </p>
                 </div>
 

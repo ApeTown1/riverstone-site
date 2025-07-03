@@ -62,10 +62,7 @@ export function TeamSection() {
                         Traditional Finance Meets Web3 Innovation
                     </h2>
                     <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
-                        Our team has been working together since 2021, combining
-                        over a decade of traditional finance expertise with deep
-                        Web3 experience across global markets including London,
-                        Cape Town, Tel Aviv, and Argentina.
+                    Partnered since 2021, we bring 10+ years of TradFi and Web3 expertise across major markets worldwide.
                     </p>
                 </div>
 

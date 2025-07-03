@@ -112,9 +112,7 @@ export function ServicesSection() {
                         Strategic Advisory That Drives Growth
                     </h2>
                     <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
-                        From fundraising to go-to-market, we design strategies
-                        around what actually drives growth — in revenue, users,
-                        markets, and reputation.
+                    We shape fundraising and go-to-market plans that deliver revenue, users, and market presence.
                     </p>
                 </div>
 
