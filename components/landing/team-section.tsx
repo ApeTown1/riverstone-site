@@ -51,7 +51,7 @@ export function TeamSection() {
     return (
         <section
             id="team"
-            className="py-24 bg-gradient-to-br from-neutral-50 to-stone-50"
+            className="pt-20 pb-24 bg-gradient-to-br from-neutral-50 to-stone-50"
         >
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
@@ -67,7 +67,7 @@ export function TeamSection() {
                 </div>
 
                 {/* Mobile Swipe Carousel */}
-                <div className="block md:hidden mt-24 sm:mt-32 relative">
+                <div className="block md:hidden mt-7 sm:mt-10 relative">
                     {/* Left Arrow */}
                     <button
                         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"

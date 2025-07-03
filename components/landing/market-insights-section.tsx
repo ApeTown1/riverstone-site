@@ -90,7 +90,7 @@ export function MarketInsightsSection() {
     }, []);
 
     return (
-        <section id="insights" className="py-24 bg-white/60 backdrop-blur-sm">
+        <section id="insights" className="pt-8 pb-24 bg-white/60 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
                     <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 text-neutral-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
