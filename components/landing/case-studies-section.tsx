@@ -75,6 +75,25 @@ const caseStudiesData = [
     },
 ];
 
+function MobileDropdown({ label, children }: { label: string; children: React.ReactNode }) {
+    const [open, setOpen] = useState(false);
+    return (
+        <div className="mb-2">
+            <button
+                className="w-full flex justify-between items-center py-2 px-3 bg-neutral-100 rounded-lg font-semibold text-neutral-800 text-left focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
+                onClick={() => setOpen((o) => !o)}
+                aria-expanded={open}
+            >
+                <span>{label}</span>
+                <span className={`transform transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>▶</span>
+            </button>
+            {open && (
+                <div className="mt-2 px-2 pb-2">{children}</div>
+            )}
+        </div>
+    );
+}
+
 export function CaseStudiesSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
@@ -197,7 +216,7 @@ export function CaseStudiesSection() {
                                     <CardHeader className="bg-white/95 backdrop-blur-sm p-6 flex-shrink-0">
                                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
                                             <Badge
-                                                className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-4 py-2 text-xs font-semibold rounded-full w-fit`}
+                                                className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-2 py-1 text-[0.6rem] md:px-4 md:py-2 md:text-xs font-semibold rounded-full w-fit`}
                                             >
                                                 {study.badge}
                                             </Badge>
@@ -215,36 +234,18 @@ export function CaseStudiesSection() {
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent className="space-y-4 p-4 overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-300">
-                                        <div className="space-y-4">
-                                            <div className="space-y-3">
-                                                <h4 className="font-semibold text-neutral-900 flex items-start text-sm">
-                                                    <div
-                                                        className={`w-6 h-6 bg-gradient-to-br ${study.iconBg} rounded-lg flex items-center justify-center mr-3 flex-shrink-0 mt-0.5`}
-                                                    >
-                                                        <Target className="h-3 w-3 text-white" />
-                                                    </div>
-                                                    The Challenge
-                                                </h4>
-                                                <p className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 font-light word-wrap">
-                                                    {study.challenge}
-                                                </p>
+                                        <MobileDropdown label="The Challenge">
+                                            <div className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 font-light word-wrap">
+                                                {study.challenge}
                                             </div>
-                                            <div className="space-y-3">
-                                                <h4 className="font-semibold text-neutral-900 flex items-start text-sm">
-                                                    <div
-                                                        className="w-6 h-6 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-lg flex items-center justify-center mr-3 flex-shrink-0 mt-0.5"
-                                                    >
-                                                        <CheckCircle className="h-3 w-3 text-white" />
-                                                    </div>
-                                                    The Solution
-                                                </h4>
-                                                <ul className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 space-y-2 font-light">
-                                                    {study.solution.map((item) => (
-                                                        <li key={item} className="word-wrap">• {item}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        </MobileDropdown>
+                                        <MobileDropdown label="The Solution">
+                                            <ul className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 space-y-2 font-light">
+                                                {study.solution.map((item) => (
+                                                    <li key={item} className="word-wrap">• {item}</li>
+                                                ))}
+                                            </ul>
+                                        </MobileDropdown>
                                         <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-neutral-100/50 shadow-lg">
                                             <h4 className="font-semibold text-neutral-900 mb-3 text-sm">
                                                 The Impact
@@ -329,7 +330,7 @@ export function CaseStudiesSection() {
                                             <CardHeader className="bg-white/95 backdrop-blur-sm p-8 md:p-10">
                                 <div className="flex items-center justify-between mb-6">
                                                     <Badge
-                                                        className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-6 py-3 text-sm font-semibold rounded-full`}
+                                                        className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-2 py-1 text-[0.7rem] md:px-6 md:py-3 md:text-sm font-semibold rounded-full`}
                                                     >
                                                         {study.badge}
                                     </Badge>
