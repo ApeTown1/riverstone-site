@@ -25,7 +25,7 @@ const services = [
         icon: <TrendingUp className="h-8 w-8 text-white" />,
         title: "Fundraising & Investor Strategy",
         link: "#gaming",
-        description: "End-to-end fundraising support from deck refinement to investor introductions, backed by deep venture and PE experience.",
+        description: "Structured capital raise support: decks, targeting, and warm intros.",
         bullets: [
             "Deck refinement & narrative framing",
             "Investor targeting & warm introductions",
@@ -36,7 +36,7 @@ const services = [
         icon: <Target className="h-8 w-8 text-white" />,
         title: "Go-to-Market & Ecosystem Launch",
         link: "#gtm",
-        description: "Strategic market entry that delivers real traction through brand positioning, growth loops, and ecosystem activation.",
+        description: "Strategic GTM with brand positioning and partner activations.",
         bullets: [
             "Brand positioning & content strategy",
             "KOL activations & community building",
@@ -47,7 +47,7 @@ const services = [
         icon: <Globe className="h-8 w-8 text-white" />,
         title: "Public Relations & Narrative Strategy",
         link: null,
-        description: "KPI-backed media strategies that secure coverage in top-tier publications and build trust with key stakeholders.",
+        description: "KPI-driven PR with top-tier media building stakeholder trust.",
         bullets: [
             "Tier-1 media placements & coverage",
             "Podcast bookings & speaking slots",
@@ -58,7 +58,7 @@ const services = [
         icon: <Users className="h-8 w-8 text-white" />,
         title: "Corporate & Investor Services",
         link: null,
-        description: "Institutional-grade advisory for M&A strategy, investor communications, and portfolio-level strategic planning.",
+        description: "M&A advisory and investor communications for growth.",
         bullets: [
             "M&A strategy & deal planning",
             "Token treasury management",
@@ -69,7 +69,7 @@ const services = [
         icon: <BarChart3 className="h-8 w-8 text-white" />,
         title: "Financial Modeling & Valuation",
         link: "#ma",
-        description: "Investor-grade financial models and valuations that translate complex tokenomics into actionable business insight.",
+        description: "Data-driven valuations that align with investor criteria.",
         bullets: [
             "Tokenomics & revenue modeling",
             "Strategic business cases",

@@ -24,15 +24,14 @@ export function HeroSection() {
                     {/* Text - below image on mobile */}
                     <div className="flex flex-col items-center sm:items-start text-center sm:text-left w-full max-w-2xl mx-auto sm:mx-0 order-2 sm:order-1">
                         <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-                            <span>Bridge</span>{"\n"}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 block">Traditional</span>{"\n"}
-                            <span>Finance with</span>{"\n"}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 block">Web3 Innovation</span>
+                            <span>Fuel for</span>{"\n"}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 block">Web3 Frounders</span>{"\n"}
+                            <span>Who Play to Win</span>{"\n"}
                         </h1>
                     </div>
                 </div>
                 <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 leading-relaxed font-light max-w-2xl mx-auto mt-2 text-center">
-                    Boutique strategic advisory for startups, protocols, and investors. We help you tell sharper stories, attract the right capital, and scale with credibility across Web2, Web3, and everything in between.
+                    Boutique strategic advisory for startups, protocols, and investors. We help startups raise smarter, tell sharper stories, and scale with authority across Web2 and Web3.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
                     <Link href="/contact" passHref legacyBehavior>
