@@ -24,7 +24,7 @@ export function HeroSection() {
                     {/* Text - below image on mobile */}
                     <div className="flex flex-col items-center sm:items-start text-center sm:text-left w-full max-w-2xl mx-auto sm:mx-0 order-2 sm:order-1">
                         <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-                            <span>Fuel for</span>{"\n"}
+                            <span>Startup Advisory for</span>{"\n"}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 block">Web3 Founders</span>{"\n"}
                             <span>Who Play to Win</span>{"\n"}
                         </h1>
