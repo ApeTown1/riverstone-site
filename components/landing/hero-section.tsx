@@ -31,7 +31,7 @@ export function HeroSection() {
                     </div>
                 </div>
                 <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 leading-relaxed font-light max-w-2xl mx-auto mt-2 text-center">
-                    Boutique strategic advisory for startups, protocols, and investors. We help startups raise smarter, tell sharper stories, and scale with authority across Web2 and Web3.
+                    Riverstone is a Web3 first startup advisory. We help startups raise smarter, tell sharper stories, and scale.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
                     <Link href="/contact" passHref legacyBehavior>
