@@ -78,6 +78,38 @@ const services = [
     },
 ];
 
+function MobileServiceDropdown({ icon, title, description, bullets }: { icon: React.ReactNode, title: string, description: string, bullets: string[] }) {
+    const [open, setOpen] = useState(false);
+    return (
+        <div className="mb-4">
+            <button
+                className="w-full flex items-center gap-4 py-4 px-4 bg-white/90 rounded-2xl shadow group border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
+                onClick={() => setOpen((o) => !o)}
+                aria-expanded={open}
+            >
+                <span className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-2xl shadow-lg">
+                    {icon}
+                </span>
+                <span className="flex-1 text-left text-lg font-bold text-neutral-900">{title}</span>
+                <span className={`ml-2 transform transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>▶</span>
+            </button>
+            {open && (
+                <div className="px-4 pb-4 pt-2">
+                    <div className="text-neutral-600 text-base font-light leading-relaxed mb-2">{description}</div>
+                    <ul className="space-y-3 text-neutral-600">
+                        {bullets.map((b) => (
+                            <li key={b} className="flex items-center text-base">
+                                <CheckCircle className="h-5 w-5 text-emerald-500 mr-3 flex-shrink-0" />
+                                {b}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+        </div>
+    );
+}
+
 export function ServicesSection() {
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -116,57 +148,17 @@ export function ServicesSection() {
                     </p>
                 </div>
 
-                {/* Mobile Swipe Carousel */}
-                <div className="block md:hidden mt-24 sm:mt-32 relative">
-                    {/* Left Arrow */}
-                    <button
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
-                        onClick={() => scrollToCard('prev')}
-                        aria-label="Previous Service"
-                    >
-                        <ChevronLeft size={20} />
-                    </button>
-                    {/* Right Arrow */}
-                    <button
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
-                        onClick={() => scrollToCard('next')}
-                        aria-label="Next Service"
-                    >
-                        <ChevronRight size={20} />
-                    </button>
-                    <div 
-                        ref={scrollRef}
-                        className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 px-4"
-                        style={{ WebkitOverflowScrolling: "touch" }}
-                    >
-                        {services.map((service) => (
-                            <div key={service.title} className="min-w-[85%] snap-center flex-shrink-0">
-                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 cursor-pointer h-full">
-                                    <CardHeader className="pb-6">
-                                        <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                            {service.icon}
-                                        </div>
-                                        <CardTitle className="text-neutral-900 text-xl font-bold">
-                                            {service.title}
-                                        </CardTitle>
-                                        <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
-                                            {service.description}
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <ul className="space-y-4 text-neutral-600">
-                                            {service.bullets.map((b) => (
-                                                <li key={b} className="flex items-center text-base">
-                                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                                    {b}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        ))}
-                    </div>
+                {/* Mobile Swipe Carousel replaced with vertical dropdown list */}
+                <div className="block md:hidden mt-10 sm:mt-12">
+                    {services.map((service) => (
+                        <MobileServiceDropdown
+                            key={service.title}
+                            icon={service.icon}
+                            title={service.title}
+                            description={service.description}
+                            bullets={service.bullets}
+                        />
+                    ))}
                 </div>
 
                 {/* Desktop Grid */}
