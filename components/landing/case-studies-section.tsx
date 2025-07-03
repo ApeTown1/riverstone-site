@@ -261,7 +261,7 @@ export function CaseStudiesSection() {
                 </div>
 
                 {/* Desktop Roulette Carousel */}
-                <div className="hidden md:block relative mt-32 md:mt-40 lg:mt-48 xl:mt-56">
+                <div className="hidden md:block relative mt-10 md:mt-12 lg:mt-14 xl:mt-16">
                     <div className="relative flex items-center justify-center min-h-[350px] md:min-h-[630px] lg:min-h-[810px]">
                         {/* Left Arrow */}
                         <button

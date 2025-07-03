@@ -30,16 +30,16 @@ export default function CryptoAdvisoryLanding() {
                 <meta name="twitter:description" content="Precision Advisory for Web3 Leaders" />
                 <meta name="twitter:image" content="https://www.riverstone.one/riverstone-logo.png" />
             </Head>
-            <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-stone-50/30">
-                <Header />
-                <HeroSection />
+        <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-stone-50/30">
+            <Header />
+            <HeroSection />
                 <CaseStudiesSection />
                 <ServicesSection />
-                <AboutSection />
-                <MarketInsightsSection />
-                <TeamSection />
-                <Footer />
-            </div>
+            <AboutSection />
+            <MarketInsightsSection />
+            <TeamSection />
+            <Footer />
+        </div>
         </>
     );
 }
