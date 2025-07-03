@@ -185,7 +185,7 @@ export function CaseStudiesSection() {
                 </div>
 
                 {/* Mobile Swipe Carousel */}
-                <div className="block md:hidden mt-24 sm:mt-32 relative">
+                <div className="block md:hidden mt-10 sm:mt-12 relative">
                     {/* Left Arrow */}
                     <button
                         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
