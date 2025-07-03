@@ -39,7 +39,7 @@ export function HeroSection() {
                             size="lg"
                             className="w-full sm:w-auto bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-10 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg"
                         >
-                            Start Your Journey
+                            Message Us Now
                             <ArrowRight className="ml-3 h-5 w-5" />
                         </Button>
                     </Link>
