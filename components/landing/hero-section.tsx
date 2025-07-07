@@ -56,7 +56,7 @@ export function HeroSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 pt-8 sm:pt-12 w-full">
                     <div className="text-center group">
                         <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                            3 Years
+                            4 Years
                         </div>
                         <div className="text-xs sm:text-sm lg:text-base text-neutral-500 font-medium mt-1 sm:mt-2">
                             Team Since 2021
