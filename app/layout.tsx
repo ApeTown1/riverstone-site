@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-white">
       <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-62NC39PQZ5"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-KK97HC5HHN"></script>
         
       </head>
       <body
@@ -50,7 +50,7 @@ export default function RootLayout({
       >
         {children}
         <Script
-  src={`https://www.googletagmanager.com/gtag/js?id=G-62NC39PQZ5`}
+  src={`https://www.googletagmanager.com/gtag/js?id=G-KK97HC5HHN`}
   strategy="afterInteractive"
 />
 <Script id="gtag-init" strategy="afterInteractive">
@@ -58,7 +58,7 @@ export default function RootLayout({
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-62NC39PQZ5');
+    gtag('config', 'G-KK97HC5HHN');
   `}
 </Script>
       </body>
