@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
@@ -39,32 +40,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-white">
       <head>
-        <meta name="color-scheme" content="light" />
-        <meta name="theme-color" content="#ffffff" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/riverstone-logo.png"
-        />
-        <link rel="canonical" href="https://www.riverstone.one" />
-        <Head>
-          {/* Google tag (gtag.js) */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-KMBWL96DR9"
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-KMBWL96DR9');
-              `,
-            }}
-          />
-        </Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-62NC39PQZ5"></script>
+        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white min-h-screen`}
@@ -72,6 +49,18 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <Script
+  src={`https://www.googletagmanager.com/gtag/js?id=G-62NC39PQZ5`}
+  strategy="afterInteractive"
+/>
+<Script id="gtag-init" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-62NC39PQZ5');
+  `}
+</Script>
       </body>
     </html>
   );
