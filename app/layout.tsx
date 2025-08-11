@@ -1,7 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Head from "next/head";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Web3 Growth, Powered by Insight",
   description: "Precision Advisory for Web3 Leaders",
+  verification: {
+    google: "4RG0_WjIazwIP-7gNEQiDIlnJ2Pl5RDkm8le4dwQ_Is",
+  },
   openGraph: {
     title: "Web3 Growth, Powered by Insight",
     description: "Precision Advisory for Web3 Leaders",
@@ -39,10 +41,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-white">
-      <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-KK97HC5HHN"></script>
-        
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white min-h-screen`}
         style={{ minHeight: '100vh' }}
@@ -50,17 +48,17 @@ export default function RootLayout({
       >
         {children}
         <Script
-  src={`https://www.googletagmanager.com/gtag/js?id=G-KK97HC5HHN`}
-  strategy="afterInteractive"
-/>
-<Script id="gtag-init" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KK97HC5HHN');
-  `}
-</Script>
+          src={`https://www.googletagmanager.com/gtag/js?id=G-KK97HC5HHN`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KK97HC5HHN');
+          `}
+        </Script>
       </body>
     </html>
   );
