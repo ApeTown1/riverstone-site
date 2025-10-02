@@ -1,7 +1,24 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export function Footer() {
     return (
         <footer className="py-12 bg-neutral-50 border-t border-neutral-100">
             <div className="container mx-auto px-4 lg:px-6 text-center">
+                <div className="container mx-auto px-4 py-8 flex items-center justify-center">
+                    <div className="w-40 md:w-56">
+                        <Link href="/" aria-label="Go to home">
+                            <Image
+                                src="/Riverstone Letterhead White.png"
+                                alt="Riverstone logo"
+                                width={240}
+                                height={240}
+                                className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-200"
+                                priority={false}
+                            />
+                        </Link>
+                    </div>
+                </div>
                 <p className="text-sm text-neutral-500">
                     © {new Date().getFullYear()} Riverstone. All rights
                     reserved.
