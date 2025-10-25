@@ -90,6 +90,11 @@ export default function RootLayout({
             gtag('config', 'G-KK97HC5HHN');
           `}
         </Script>
+        {/* Clay Website Tracking */}
+        <Script
+          src="https://static.claydar.com/init.v1.js?id=ck65lkwpOg"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
