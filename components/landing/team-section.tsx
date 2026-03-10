@@ -266,25 +266,25 @@ export function TeamSection() {
                                         Jorge Saracco
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
-                                        Co-Founder
+                                        Head of Investment Strategy
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
                                     <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
-                                        Former corporate finance and private equity consultant focused on M&A and strategy. Experienced startup operator, having contributed to and co-founded two companies.
+                                        Qualified industrial engineer with deep expertise in institutional onboarding and systems analysis. Formerly at Genesis Capital and Binance, and COO at Rabadon. Brings structured precision and operational strength to the DeFi landscape.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
                                             variant="secondary"
                                             className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
                                         >
-                                            Private Equity
+                                            Industrial Engineer
                                         </Badge>
                                         <Badge
                                             variant="secondary"
                                             className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
                                         >
-                                            M&A Strategy
+                                            DeFi Specialist
                                         </Badge>
                                     </div>
                                     <div className="flex justify-center space-x-3 mt-4">

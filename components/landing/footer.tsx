@@ -9,7 +9,7 @@ export function Footer() {
                     <div className="w-40 md:w-56">
                         <Link href="/" aria-label="Go to home">
                             <Image
-                                src="/Riverstone Letterhead White.png"
+                                src="/riverstone-letterhead-white.png"
                                 alt="Riverstone logo"
                                 width={240}
                                 height={240}
