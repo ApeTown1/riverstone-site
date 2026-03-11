@@ -37,9 +37,10 @@ export function MarketInsightsSection() {
         async function fetchPrices() {
             setLoading(true);
             try {
-                const res = await fetch(
-                    "/api/prices"
-                );
+                const res = await fetch("/api/prices");
+                if (!res.ok) {
+                    throw new Error(`Failed to fetch prices: ${res.status}`);
+                }
                 const data = await res.json();
                 setPrices({
                     bitcoin: {
