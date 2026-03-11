@@ -271,7 +271,7 @@ export function TeamSection() {
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
                                     <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
-                                        After two decades in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice — helping Web3 funds develop the standards and documentation frameworks required by traditional investors.
+                                        After over a decade in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice, helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
@@ -574,7 +574,7 @@ export function TeamSection() {
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
-                                After two decades in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice — helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
+                                After over a decade in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice, helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
