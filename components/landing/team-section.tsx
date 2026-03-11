@@ -31,17 +31,17 @@ export function TeamSection() {
         let newIndex = mobileActiveIndex + direction;
         
         // Handle infinite loop
-        if (newIndex >= 3) {
+        if (newIndex >= 4) {
             newIndex = 0;
             // Reset to first card after scroll completes
             setTimeout(() => {
                 container.scrollTo({ left: 0, behavior: "instant" });
             }, 300);
         } else if (newIndex < 0) {
-            newIndex = 2;
+            newIndex = 3;
             // Scroll to last card after scroll completes
             setTimeout(() => {
-                container.scrollTo({ left: cardWidth * 2, behavior: "instant" });
+                container.scrollTo({ left: cardWidth * 3, behavior: "instant" });
             }, 300);
         }
         
@@ -106,12 +106,12 @@ export function TeamSection() {
                                         Asher Weinstein
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
-                                        Co-Founder
+                                        Co-Founder & Managing Partner
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
                                     <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
-                                        Career foundation in equity research, corporate finance, and venture capital. Passionate about blockchain technology, with hands-on startup experience across SaaS, fintech, and Web3 verticals.
+                                        Brings a foundation in equity research, corporate finance, and venture capital to lead Riverstone's global advisory practice. Maintains relationships with 400+ VCs while specializing in crypto infrastructure and institutional capital formation.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
@@ -186,12 +186,12 @@ export function TeamSection() {
                                         Ryan Berelowitz
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
-                                        Co-Founder
+                                        Co-Founder & Head of Quantitative Strategy
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
                                     <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
-                                        Former corporate finance and private equity consultant focused on M&A and strategy. Experienced startup operator, having contributed to and co-founded two companies.
+                                        Former private equity consultant who now pioneers systematic investment approaches in crypto markets. Combines theoretical physics background with institutional-grade quantitative methodologies for emerging digital assets.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
@@ -255,6 +255,70 @@ export function TeamSection() {
                                     <div className="relative mx-auto mb-6">
                                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                                         <Image
+                                            src="/Mike.jpeg"
+                                            alt="Mike Weinstein"
+                                            width={96}
+                                            height={96}
+                                            className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
+                                        />
+                                    </div>
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
+                                        Mike Weinstein
+                                    </CardTitle>
+                                    <CardDescription className="text-sm font-medium text-emerald-700">
+                                        Managing Partner, Institutional Services
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent className="px-6 pb-8">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
+                                        After two decades in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice — helping Web3 funds develop the standards and documentation frameworks required by traditional investors.
+                                    </p>
+                                    <div className="flex justify-center space-x-2">
+                                        <Badge
+                                            variant="secondary"
+                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                        >
+                                            Private Equity
+                                        </Badge>
+                                        <Badge
+                                            variant="secondary"
+                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                        >
+                                            Institutional Capital
+                                        </Badge>
+                                    </div>
+                                    <div className="flex justify-center space-x-3 mt-4">
+                                        <Button
+                                            size="sm"
+                                            variant="outline"
+                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            onClick={() =>
+                                                window.open(
+                                                    "https://www.linkedin.com/in/michael-weinstein/",
+                                                    "_blank"
+                                                )
+                                            }
+                                        >
+                                            <svg
+                                                className="w-3 h-3 mr-1"
+                                                fill="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                            </svg>
+                                            LinkedIn
+                                        </Button>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
+                                <CardHeader className="pb-6 pt-10">
+                                    <div className="relative mx-auto mb-6">
+                                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                                        <Image
                                             src="/Jorge.jpeg"
                                             alt="Jorge Saracco"
                                             width={96}
@@ -266,12 +330,12 @@ export function TeamSection() {
                                         Jorge Saracco
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
-                                        Head of Investment Strategy
+                                        Head of Investment Strategy & Latin American Operations
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
                                     <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
-                                        Qualified industrial engineer with deep expertise in institutional onboarding and systems analysis. Formerly at Genesis Capital and Binance, and COO at Rabadon. Brings structured precision and operational strength to the DeFi landscape.
+                                        Orchestrates complex multi-jurisdictional investment structures across Latin American crypto markets. Brings a structured engineering approach to DeFi transactions and cross-border investment facilitation.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
@@ -349,12 +413,12 @@ export function TeamSection() {
                                 Asher Weinstein
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
-                                Co-Founder
+                                Co-Founder & Managing Partner
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
-                                Career foundation in equity research, corporate finance, and venture capital. Passionate about blockchain technology, with hands-on startup experience across SaaS, fintech, and Web3 verticals. Brings a strategic lens to early-stage growth and investor positioning.
+                                Brings a foundation in equity research, corporate finance, and venture capital to lead Riverstone's global advisory practice. Maintains relationships with 400+ VCs across the ecosystem while specializing in crypto infrastructure and institutional capital formation. Combines traditional finance expertise with hands-on Web3 experience to guide early-stage growth companies through strategic positioning and investor relations.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
@@ -427,12 +491,12 @@ export function TeamSection() {
                                 Ryan Berelowitz
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
-                                Co-Founder
+                                Co-Founder & Head of Quantitative Strategy
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
-                                Former corporate finance and private equity consultant focused on M&A and strategy. Experienced startup operator, having contributed to and co-founded two companies. Brings sharp execution and leadership across Web3 and emerging tech.
+                                Former private equity consultant with deep M&A and strategy experience who now pioneers systematic investment approaches in crypto markets. Develops algorithmic trading strategies with superior risk-adjusted returns while combining theoretical physics background with practical Web3 execution. Brings institutional-grade quantitative methodologies to emerging digital asset opportunities.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
@@ -494,6 +558,68 @@ export function TeamSection() {
                             <div className="relative mx-auto mb-6">
                                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                                 <Image
+                                    src="/Mike.jpeg"
+                                    alt="Mike Weinstein"
+                                    width={120}
+                                    height={120}
+                                    className="relative rounded-full border-4 border-white shadow-xl object-cover"
+                                />
+                            </div>
+                            <CardTitle className="text-neutral-900 text-2xl">
+                                Mike Weinstein
+                            </CardTitle>
+                            <CardDescription className="text-emerald-700 font-semibold text-lg">
+                                Managing Partner, Institutional Services
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="px-8 pb-10">
+                            <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
+                                After two decades in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice — helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
+                            </p>
+                            <div className="flex justify-center space-x-3">
+                                <Badge
+                                    variant="secondary"
+                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                >
+                                    Private Equity
+                                </Badge>
+                                <Badge
+                                    variant="secondary"
+                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                >
+                                    Institutional Capital
+                                </Badge>
+                            </div>
+                            <div className="flex justify-center space-x-4 mt-6">
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    onClick={() =>
+                                        window.open(
+                                            "https://www.linkedin.com/in/michael-weinstein/",
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <svg
+                                        className="w-4 h-4 mr-2"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                    LinkedIn
+                                </Button>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                        <CardHeader className="pb-6 pt-10">
+                            <div className="relative mx-auto mb-6">
+                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                                <Image
                                     src="/Jorge.jpeg"
                                     alt="Jorge Saracco"
                                     width={120}
@@ -505,12 +631,12 @@ export function TeamSection() {
                                 Jorge Saracco
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
-                                Head of Investment Strategy
+                                Head of Investment Strategy & Latin American Operations
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
-                                Qualified industrial engineer with deep expertise in institutional onboarding and systems analysis. Formerly at Genesis Capital and Binance, and COO at Rabadon. Brings structured precision and operational strength to the DeFi landscape.
+                                Orchestrates complex multi-jurisdictional investment structures while maintaining strategic networks across Latin American crypto markets. Specializes in revenue-sharing agreements and international partnership development with systematic operational precision. Brings structured engineering approach to DeFi transactions and cross-border investment facilitation.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
