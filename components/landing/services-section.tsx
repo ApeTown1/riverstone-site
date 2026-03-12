@@ -14,29 +14,30 @@ import {
     Users,
     BarChart3,
     CheckCircle,
-    ChevronLeft,
-    ChevronRight,
+    ArrowUpRight,
 } from "lucide-react";
-import Link from "next/link";
 import { useState, useRef, useCallback } from "react";
 
 const services = [
     {
         icon: <TrendingUp className="h-8 w-8 text-white" />,
         title: "Fundraising & Investor Strategy",
-        link: "#gaming",
-        description: "Structured capital raise support: decks, targeting, and warm intros.",
+        link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-Fundraising-Services-07a2ba45a819498aad73fbb330a7090c",
+        description:
+            "We connect exceptional founders with the right investors — through warm relationships, strategic positioning, and hands-on process management from first meeting to close.",
         bullets: [
-            "Deck refinement & narrative framing",
-            "Investor targeting & warm introductions",
-            "Portfolio advisory for VCs & angels",
+            "Curated shortlist of 20–40 investor targets by sector & stage",
+            "Warm introductions across 40+ top-tier VCs & strategic investors",
+            "Deck refinement, narrative framing & materials optimization",
+            "Full process management: timelines, follow-ups & term sheet guidance",
         ],
     },
     {
         icon: <Target className="h-8 w-8 text-white" />,
         title: "Go-to-Market & Ecosystem Launch",
-        link: "#gtm",
-        description: "Strategic GTM with brand positioning and partner activations.",
+        link: null,
+        description:
+            "Strategic GTM execution with brand positioning, community growth, and partner activations that drive real market traction.",
         bullets: [
             "Brand positioning & content strategy",
             "KOL activations & community building",
@@ -47,7 +48,8 @@ const services = [
         icon: <Globe className="h-8 w-8 text-white" />,
         title: "Public Relations & Narrative Strategy",
         link: null,
-        description: "KPI-driven PR with top-tier media building stakeholder trust.",
+        description:
+            "KPI-driven PR that earns top-tier media coverage and builds lasting stakeholder trust.",
         bullets: [
             "Tier-1 media placements & coverage",
             "Podcast bookings & speaking slots",
@@ -58,7 +60,8 @@ const services = [
         icon: <Users className="h-8 w-8 text-white" />,
         title: "Corporate & Investor Services",
         link: null,
-        description: "M&A advisory and investor communications for growth.",
+        description:
+            "M&A advisory and strategic investor communications that support long-term growth.",
         bullets: [
             "M&A strategy & deal planning",
             "Token treasury management",
@@ -68,8 +71,9 @@ const services = [
     {
         icon: <BarChart3 className="h-8 w-8 text-white" />,
         title: "Financial Modeling & Valuation",
-        link: "#ma",
-        description: "Data-driven valuations that align with investor criteria.",
+        link: null,
+        description:
+            "Institutional-grade financial models and valuations built to align with investor criteria and support capital raises.",
         bullets: [
             "Tokenomics & revenue modeling",
             "Strategic business cases",
@@ -78,7 +82,19 @@ const services = [
     },
 ];
 
-function MobileServiceDropdown({ icon, title, description, bullets }: { icon: React.ReactNode, title: string, description: string, bullets: string[] }) {
+function MobileServiceDropdown({
+    icon,
+    title,
+    description,
+    bullets,
+    link,
+}: {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    bullets: string[];
+    link?: string | null;
+}) {
     const [open, setOpen] = useState(false);
     return (
         <div className="mb-4">
@@ -90,7 +106,12 @@ function MobileServiceDropdown({ icon, title, description, bullets }: { icon: Re
                 <span className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-2xl shadow-lg">
                     {icon}
                 </span>
-                <span className="flex-1 text-left text-lg font-bold text-neutral-900">{title}</span>
+                <span className="flex-1 text-left text-lg font-bold text-neutral-900 flex items-center gap-2">
+                    {title}
+                    {link ? (
+                        <ArrowUpRight className="h-4 w-4 text-emerald-500" />
+                    ) : null}
+                </span>
                 <span className={`ml-2 transform transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>▶</span>
             </button>
             {open && (
@@ -104,6 +125,18 @@ function MobileServiceDropdown({ icon, title, description, bullets }: { icon: Re
                             </li>
                         ))}
                     </ul>
+                    {link ? (
+                        <div className="pt-4">
+                            <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-emerald-700 font-semibold"
+                            >
+                                View Full Overview →
+                            </a>
+                        </div>
+                    ) : null}
                 </div>
             )}
         </div>
@@ -157,6 +190,7 @@ export function ServicesSection() {
                             title={service.title}
                             description={service.description}
                             bullets={service.bullets}
+                            link={service.link}
                         />
                     ))}
                 </div>
@@ -165,29 +199,66 @@ export function ServicesSection() {
                 <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => (
                         <div key={service.title}>
-                            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
-                                <CardHeader className="pb-6">
-                                    <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                        {service.icon}
-                                    </div>
-                                    <CardTitle className="text-neutral-900 text-xl font-bold">
-                                        {service.title}
-                                    </CardTitle>
-                                    <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
-                                        {service.description}
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="space-y-4 text-neutral-600">
-                                        {service.bullets.map((b) => (
-                                            <li key={b} className="flex items-center text-base">
-                                                <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
-                                                {b}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                            </Card>
+                            {service.title === "Fundraising & Investor Strategy" && service.link ? (
+                                <a
+                                    href={service.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
+                                        <CardHeader className="pb-6">
+                                            <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                                {service.icon}
+                                            </div>
+                                            <CardTitle className="text-neutral-900 text-xl font-bold">
+                                                {service.title}
+                                            </CardTitle>
+                                            <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                                {service.description}
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <ul className="space-y-4 text-neutral-600">
+                                                {service.bullets.map((b) => (
+                                                    <li key={b} className="flex items-center text-base">
+                                                        <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                                        {b}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <div className="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between text-sm font-semibold text-emerald-700">
+                                                <span>Learn More →</span>
+                                                <ArrowUpRight className="h-4 w-4 text-emerald-700" />
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </a>
+                            ) : (
+                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
+                                    <CardHeader className="pb-6">
+                                        <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                            {service.icon}
+                                        </div>
+                                        <CardTitle className="text-neutral-900 text-xl font-bold">
+                                            {service.title}
+                                        </CardTitle>
+                                        <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                            {service.description}
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <ul className="space-y-4 text-neutral-600">
+                                            {service.bullets.map((b) => (
+                                                <li key={b} className="flex items-center text-base">
+                                                    <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
+                                                    {b}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                </Card>
+                            )}
                         </div>
                     ))}
                 </div>
