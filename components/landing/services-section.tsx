@@ -20,6 +20,18 @@ import { useState, useRef, useCallback } from "react";
 
 const services = [
     {
+        icon: <Users className="h-8 w-8 text-white" />,
+        title: "Corporate & Investor Services",
+        link: null,
+        description:
+            "M&A advisory and strategic investor communications that support long-term growth.",
+        bullets: [
+            "M&A strategy & deal planning",
+            "Token treasury management",
+            "Strategic outreach & partnerships",
+        ],
+    },
+    {
         icon: <TrendingUp className="h-8 w-8 text-white" />,
         title: "Fundraising & Investor Strategy",
         link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-Fundraising-Services-07a2ba45a819498aad73fbb330a7090c",
@@ -55,18 +67,6 @@ const services = [
             "Podcast bookings, speaking slots & X Spaces",
             "Founder positioning & narrative strategy",
             "9+ guaranteed organic deliverables per quarter",
-        ],
-    },
-    {
-        icon: <Users className="h-8 w-8 text-white" />,
-        title: "Corporate & Investor Services",
-        link: null,
-        description:
-            "M&A advisory and strategic investor communications that support long-term growth.",
-        bullets: [
-            "M&A strategy & deal planning",
-            "Token treasury management",
-            "Strategic outreach & partnerships",
         ],
     },
     {
