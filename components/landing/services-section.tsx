@@ -47,13 +47,14 @@ const services = [
     {
         icon: <Globe className="h-8 w-8 text-white" />,
         title: "Public Relations & Narrative Strategy",
-        link: null,
+        link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-PR-Services-and-Case-Studies-29517b522e4180e08970fb6817aaa8ee",
         description:
-            "KPI-driven PR that earns top-tier media coverage and builds lasting stakeholder trust.",
+            "We guarantee measurable results — 9+ organic deliverables per quarter across top-tier media, podcasts, speaking slots, and thought leadership. If KPIs aren't met, we pause billing until they are.",
         bullets: [
-            "Tier-1 media placements & coverage",
-            "Podcast bookings & speaking slots",
-            "Twitter/X Spaces & thought leadership",
+            "Tier-1 placements: TechCrunch, Bloomberg, Forbes, CoinDesk & more",
+            "Podcast bookings, speaking slots & X Spaces",
+            "Founder positioning & narrative strategy",
+            "Dedicated PR executive + weekly reporting per client",
         ],
     },
     {
