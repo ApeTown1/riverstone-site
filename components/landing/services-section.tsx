@@ -47,13 +47,14 @@ const services = [
     {
         icon: <Globe className="h-8 w-8 text-white" />,
         title: "Public Relations & Narrative Strategy",
-        link: null,
+        link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-PR-Services-and-Case-Studies-29517b522e4180e08970fb6817aaa8ee",
         description:
-            "KPI-driven PR that earns top-tier media coverage and builds lasting stakeholder trust.",
+            "Full-service PR that builds credibility where it counts — tier-1 media, podcasts, speaking stages, and thought leadership that investors and partners actually read.",
         bullets: [
-            "Tier-1 media placements & coverage",
-            "Podcast bookings & speaking slots",
-            "Twitter/X Spaces & thought leadership",
+            "Tier-1 placements: TechCrunch, Bloomberg, Forbes, CoinDesk & more",
+            "Podcast bookings, speaking slots & X Spaces",
+            "Founder positioning & narrative strategy",
+            "9+ guaranteed organic deliverables per quarter",
         ],
     },
     {
@@ -199,7 +200,7 @@ export function ServicesSection() {
                 <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => (
                         <div key={service.title}>
-                            {service.title === "Fundraising & Investor Strategy" && service.link ? (
+                            {service.link ? (
                                 <a
                                     href={service.link}
                                     target="_blank"
