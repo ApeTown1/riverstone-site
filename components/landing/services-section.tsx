@@ -47,13 +47,14 @@ const services = [
     {
         icon: <Target className="h-8 w-8 text-white" />,
         title: "Go-to-Market & Ecosystem Launch",
-        link: null,
+        link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-Go-to-Market-Ecosystem-Launch-32217b522e4180f7a282f79b4ed09805",
         description:
-            "Strategic GTM execution with brand positioning, community growth, and partner activations that drive real market traction.",
+            "We embed with your team to own the ecosystem relationships, protocol partnerships, and BD execution that most founding teams don't have the bandwidth or network to build fast enough.",
         bullets: [
-            "Brand positioning & content strategy",
-            "KOL activations & community building",
-            "Partnership & conference strategy",
+            "Protocol & ecosystem BD across Solana, Cosmos, Avalanche, Sui & more",
+            "KOL & alpha group relationships that drive genuine adoption",
+            "Conference strategy & on-the-ground partnership execution",
+            "Narrative & positioning tailored for BD outreach",
         ],
     },
     {
