@@ -22,13 +22,14 @@ const services = [
     {
         icon: <Users className="h-8 w-8 text-white" />,
         title: "Corporate & Investor Services",
-        link: null,
+        link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-Corporate-Investor-Services-32517b522e41807e97ecc59f9f3155c4",
         description:
-            "M&A advisory and strategic investor communications that support long-term growth.",
+            "We help founders and operators navigate complex transactions — from rigorous financial modeling and defensible valuations to hands-on M&A execution from first number to final close.",
         bullets: [
-            "M&A strategy & deal planning",
-            "Token treasury management",
-            "Strategic outreach & partnerships",
+            "Business valuation & multi-scenario acquisition analysis",
+            "Strategic financial modeling built to be used, not filed away",
+            "M&A advisory: deal structuring, data room & negotiation support",
+            "New venture & fund structuring for complex financial products",
         ],
     },
     {
