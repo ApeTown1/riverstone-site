@@ -150,21 +150,22 @@ function ClientLogo({ study, className }: { study: typeof caseStudiesData[0]; cl
             className={`inline-flex items-center shrink-0 ${className ?? ""}`}
             onClick={(e) => e.stopPropagation()}
         >
-            {study.logoDarkBg ? (
-                <span className="inline-flex items-center bg-slate-800 rounded-lg px-3 py-1.5">
-                    <img
-                        src={study.logoSrc}
-                        alt={study.logoAlt}
-                        style={{ maxHeight: "40px", width: "auto", display: "block" }}
-                    />
-                </span>
-            ) : (
+            <span
+                style={{
+                    background: "#f3f4f6",
+                    borderRadius: "8px",
+                    padding: "8px 16px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    maxHeight: "56px",
+                }}
+            >
                 <img
                     src={study.logoSrc}
                     alt={study.logoAlt}
-                    style={{ maxHeight: "40px", width: "auto", display: "block" }}
+                    style={{ maxHeight: "32px", width: "auto", objectFit: "contain", display: "block" }}
                 />
-            )}
+            </span>
         </a>
     );
 }
