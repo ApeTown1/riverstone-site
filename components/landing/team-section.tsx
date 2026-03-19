@@ -51,17 +51,17 @@ export function TeamSection() {
     return (
         <section
             id="team"
-            className="pt-20 pb-24 bg-gradient-to-br from-neutral-50 to-stone-50"
+            className="pt-20 pb-24 bg-gradient-to-br from-neutral-50 to-stone-50 dark:from-neutral-950 dark:to-neutral-950"
         >
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
                     <Badge className="bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                         Our Team
                     </Badge>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 tracking-tight">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">
                         Traditional Finance Meets Web3 Innovation
                     </h2>
-                    <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
+                    <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-4xl mx-auto font-light leading-relaxed">
                     Partnered since 2021, we bring 10+ years of TradFi and Web3 expertise across major markets worldwide.
                     </p>
                 </div>
@@ -99,10 +99,10 @@ export function TeamSection() {
                                             alt="Asher Weinstein"
                                             width={96}
                                             height={96}
-                                            className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
+                                            className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover w-24 h-24"
                                         />
                                     </div>
-                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900 dark:text-white">
                                         Asher Weinstein
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
@@ -110,19 +110,19 @@ export function TeamSection() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
                                         Brings a foundation in equity research, corporate finance, and venture capital to lead Riverstone's global advisory practice. Maintains relationships with 400+ VCs while specializing in crypto infrastructure and institutional capital formation.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             Equity Research
                                         </Badge>
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             Venture Capital
                                         </Badge>
@@ -131,7 +131,7 @@ export function TeamSection() {
                                         <Button
                                             size="sm"
                                             variant="outline"
-                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
                                                     "https://www.linkedin.com/in/asher-jonathan-weinstein/",
@@ -151,7 +151,7 @@ export function TeamSection() {
                                         <Button
                                             size="sm"
                                             variant="outline"
-                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
                                                     "https://x.com/apetown_",
@@ -179,10 +179,10 @@ export function TeamSection() {
                                             alt="Ryan Berelowitz"
                                             width={96}
                                             height={96}
-                                            className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
+                                            className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover w-24 h-24"
                                         />
                                     </div>
-                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900 dark:text-white">
                                         Ryan Berelowitz
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
@@ -190,19 +190,19 @@ export function TeamSection() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
                                         Former private equity consultant who now pioneers systematic investment approaches in crypto markets. Combines theoretical physics background with institutional-grade quantitative methodologies for emerging digital assets.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             Private Equity
                                         </Badge>
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             M&A Strategy
                                         </Badge>
@@ -211,7 +211,7 @@ export function TeamSection() {
                                         <Button
                                             size="sm"
                                             variant="outline"
-                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
                                                     "https://www.linkedin.com/in/ryan-berelowitz-69a426107/",
@@ -231,7 +231,7 @@ export function TeamSection() {
                                         <Button
                                             size="sm"
                                             variant="outline"
-                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
                                                     "https://x.com/Kay_the_great_",
@@ -259,10 +259,10 @@ export function TeamSection() {
                                             alt="Mike Weinstein"
                                             width={96}
                                             height={96}
-                                            className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
+                                            className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover w-24 h-24"
                                         />
                                     </div>
-                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900 dark:text-white">
                                         Mike Weinstein
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
@@ -270,19 +270,19 @@ export function TeamSection() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
                                         After over a decade in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice, helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             Private Equity
                                         </Badge>
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             Institutional Capital
                                         </Badge>
@@ -291,7 +291,7 @@ export function TeamSection() {
                                         <Button
                                             size="sm"
                                             variant="outline"
-                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
                                                     "https://www.linkedin.com/in/michael-weinstein/",
@@ -323,10 +323,10 @@ export function TeamSection() {
                                             alt="Jorge Saracco"
                                             width={96}
                                             height={96}
-                                            className="relative rounded-full border-4 border-white shadow-xl object-cover w-24 h-24"
+                                            className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover w-24 h-24"
                                         />
                                     </div>
-                                    <CardTitle className="text-lg font-bold break-words text-neutral-900">
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900 dark:text-white">
                                         Jorge Saracco
                                     </CardTitle>
                                     <CardDescription className="text-sm font-medium text-emerald-700">
@@ -334,19 +334,19 @@ export function TeamSection() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words text-neutral-600 mb-4 font-light">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
                                         Orchestrates complex multi-jurisdictional investment structures across Latin American crypto markets. Brings a structured engineering approach to DeFi transactions and cross-border investment facilitation.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             Industrial Engineer
                                         </Badge>
                                         <Badge
                                             variant="secondary"
-                                            className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-full text-xs"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
                                         >
                                             DeFi Specialist
                                         </Badge>
@@ -355,7 +355,7 @@ export function TeamSection() {
                                         <Button
                                             size="sm"
                                             variant="outline"
-                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
                                                     "https://www.linkedin.com/in/jorge-saracco/",
@@ -375,7 +375,7 @@ export function TeamSection() {
                                         <Button
                                             size="sm"
                                             variant="outline"
-                                            className="border-neutral-200 hover:bg-neutral-50 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
                                                     "https://x.com/jorgesaracco",
@@ -397,7 +397,7 @@ export function TeamSection() {
 
                 {/* Desktop Grid */}
                 <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                    <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
                         <CardHeader className="pb-6 pt-10">
                             <div className="relative mx-auto mb-6">
                                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
@@ -406,10 +406,10 @@ export function TeamSection() {
                                     alt="Asher Weinstein"
                                     width={120}
                                     height={120}
-                                    className="relative rounded-full border-4 border-white shadow-xl object-cover"
+                                    className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover"
                                 />
                             </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
+                            <CardTitle className="text-neutral-900 dark:text-white text-2xl">
                                 Asher Weinstein
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
@@ -417,19 +417,19 @@ export function TeamSection() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
-                            <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
+                            <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
                                 Brings a foundation in equity research, corporate finance, and venture capital to lead Riverstone's global advisory practice. Maintains relationships with 400+ VCs across the ecosystem while specializing in crypto infrastructure and institutional capital formation. Combines traditional finance expertise with hands-on Web3 experience to guide early-stage growth companies through strategic positioning and investor relations.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     Equity Research
                                 </Badge>
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     Venture Capital
                                 </Badge>
@@ -438,7 +438,7 @@ export function TeamSection() {
                                 <Button
                                     size="sm"
                                     variant="outline"
-                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
                                             "https://www.linkedin.com/in/asher-jonathan-weinstein/",
@@ -458,7 +458,7 @@ export function TeamSection() {
                                 <Button
                                     size="sm"
                                     variant="outline"
-                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
                                             "https://x.com/apetown_",
@@ -475,7 +475,7 @@ export function TeamSection() {
                         </CardContent>
                     </Card>
 
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                    <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
                         <CardHeader className="pb-6 pt-10">
                             <div className="relative mx-auto mb-6">
                                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
@@ -484,10 +484,10 @@ export function TeamSection() {
                                     alt="Ryan Berelowitz"
                                     width={120}
                                     height={120}
-                                    className="relative rounded-full border-4 border-white shadow-xl object-cover"
+                                    className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover"
                                 />
                             </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
+                            <CardTitle className="text-neutral-900 dark:text-white text-2xl">
                                 Ryan Berelowitz
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
@@ -495,19 +495,19 @@ export function TeamSection() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
-                            <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
+                            <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
                                 Former private equity consultant with deep M&A and strategy experience who now pioneers systematic investment approaches in crypto markets. Develops algorithmic trading strategies with superior risk-adjusted returns while combining theoretical physics background with practical Web3 execution. Brings institutional-grade quantitative methodologies to emerging digital asset opportunities.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     Private Equity
                                 </Badge>
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     M&A Strategy
                                 </Badge>
@@ -516,7 +516,7 @@ export function TeamSection() {
                                 <Button
                                     size="sm"
                                     variant="outline"
-                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
                                             "https://www.linkedin.com/in/ryan-berelowitz-69a426107/",
@@ -536,7 +536,7 @@ export function TeamSection() {
                                 <Button
                                     size="sm"
                                     variant="outline"
-                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
                                             "https://x.com/Kay_the_great_",
@@ -553,7 +553,7 @@ export function TeamSection() {
                         </CardContent>
                     </Card>
 
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                    <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
                         <CardHeader className="pb-6 pt-10">
                             <div className="relative mx-auto mb-6">
                                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
@@ -562,10 +562,10 @@ export function TeamSection() {
                                     alt="Mike Weinstein"
                                     width={120}
                                     height={120}
-                                    className="relative rounded-full border-4 border-white shadow-xl object-cover"
+                                    className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover"
                                 />
                             </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
+                            <CardTitle className="text-neutral-900 dark:text-white text-2xl">
                                 Mike Weinstein
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
@@ -573,19 +573,19 @@ export function TeamSection() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
-                            <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
+                            <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
                                 After over a decade in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice, helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     Private Equity
                                 </Badge>
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     Institutional Capital
                                 </Badge>
@@ -594,7 +594,7 @@ export function TeamSection() {
                                 <Button
                                     size="sm"
                                     variant="outline"
-                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
                                             "https://www.linkedin.com/in/michael-weinstein/",
@@ -615,7 +615,7 @@ export function TeamSection() {
                         </CardContent>
                     </Card>
 
-                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                    <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
                         <CardHeader className="pb-6 pt-10">
                             <div className="relative mx-auto mb-6">
                                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
@@ -624,10 +624,10 @@ export function TeamSection() {
                                     alt="Jorge Saracco"
                                     width={120}
                                     height={120}
-                                    className="relative rounded-full border-4 border-white shadow-xl object-cover"
+                                    className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover"
                                 />
                             </div>
-                            <CardTitle className="text-neutral-900 text-2xl">
+                            <CardTitle className="text-neutral-900 dark:text-white text-2xl">
                                 Jorge Saracco
                             </CardTitle>
                             <CardDescription className="text-emerald-700 font-semibold text-lg">
@@ -635,19 +635,19 @@ export function TeamSection() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
-                            <p className="text-neutral-600 mb-6 leading-relaxed text-lg font-light">
+                            <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
                                 Orchestrates complex multi-jurisdictional investment structures while maintaining strategic networks across Latin American crypto markets. Specializes in revenue-sharing agreements and international partnership development with systematic operational precision. Brings structured engineering approach to DeFi transactions and cross-border investment facilitation.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     Industrial Engineer
                                 </Badge>
                                 <Badge
                                     variant="secondary"
-                                    className="bg-neutral-100 text-neutral-700 px-4 py-2 rounded-full"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
                                 >
                                     DeFi Specialist
                                 </Badge>
@@ -656,7 +656,7 @@ export function TeamSection() {
                                 <Button
                                     size="sm"
                                     variant="outline"
-                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
                                             "https://www.linkedin.com/in/jorge-s-064365190/",
@@ -676,7 +676,7 @@ export function TeamSection() {
                                 <Button
                                     size="sm"
                                     variant="outline"
-                                    className="border-neutral-200 hover:bg-neutral-50 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
                                             "https://x.com/KingJojajito",

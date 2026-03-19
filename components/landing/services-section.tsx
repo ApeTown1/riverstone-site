@@ -102,14 +102,14 @@ function MobileServiceDropdown({
     return (
         <div className="mb-4">
             <button
-                className="w-full flex items-center gap-4 py-4 px-4 bg-white/90 rounded-2xl shadow group border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
+                className="w-full flex items-center gap-4 py-4 px-4 bg-white/90 dark:bg-neutral-800 rounded-2xl shadow group border border-neutral-200 dark:border-neutral-700 focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
                 onClick={() => setOpen((o) => !o)}
                 aria-expanded={open}
             >
                 <span className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-2xl shadow-lg">
                     {icon}
                 </span>
-                <span className="flex-1 text-left text-lg font-bold text-neutral-900 flex items-center gap-2">
+                <span className="flex-1 text-left text-lg font-bold text-neutral-900 dark:text-white flex items-center gap-2">
                     {title}
                     {link ? (
                         <ArrowUpRight className="h-4 w-4 text-emerald-500" />
@@ -119,10 +119,10 @@ function MobileServiceDropdown({
             </button>
             {open && (
                 <div className="px-4 pb-4 pt-2">
-                    <div className="text-neutral-600 text-base font-light leading-relaxed mb-2">{description}</div>
+                    <div className="text-neutral-600 dark:text-neutral-300 text-base font-light leading-relaxed mb-2">{description}</div>
                     <ul className="space-y-3 text-neutral-600">
                         {bullets.map((b) => (
-                            <li key={b} className="flex items-center text-base">
+                            <li key={b} className="flex items-center text-base dark:text-neutral-300">
                                 <CheckCircle className="h-5 w-5 text-emerald-500 mr-3 flex-shrink-0" />
                                 {b}
                             </li>
@@ -170,16 +170,16 @@ export function ServicesSection() {
     }, []);
 
     return (
-        <section id="services" className="pt-20 pb-24 bg-white/60 backdrop-blur-sm">
+        <section id="services" className="pt-20 pb-24 bg-white/60 dark:bg-neutral-950 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
                     <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 text-neutral-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                         Our Services
                     </Badge>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 tracking-tight">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">
                         Strategic Advisory That Drives Growth
                     </h2>
-                    <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
+                    <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-4xl mx-auto font-light leading-relaxed">
                     We shape fundraising and go-to-market plans that deliver revenue, users, and market presence.
                     </p>
                 </div>
@@ -209,20 +209,20 @@ export function ServicesSection() {
                                     rel="noopener noreferrer"
                                     className="block"
                                 >
-                                    <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
+                                    <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
                                         <CardHeader className="pb-6">
                                             <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                                                 {service.icon}
                                             </div>
-                                            <CardTitle className="text-neutral-900 text-xl font-bold">
+                                            <CardTitle className="text-neutral-900 dark:text-white text-xl font-bold">
                                                 {service.title}
                                             </CardTitle>
-                                            <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                            <CardDescription className="text-neutral-600 dark:text-neutral-300 text-base font-light leading-relaxed">
                                                 {service.description}
                                             </CardDescription>
                                         </CardHeader>
                                         <CardContent>
-                                            <ul className="space-y-4 text-neutral-600">
+                                            <ul className="space-y-4 text-neutral-600 dark:text-neutral-300">
                                                 {service.bullets.map((b) => (
                                                     <li key={b} className="flex items-center text-base">
                                                         <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />
@@ -230,7 +230,7 @@ export function ServicesSection() {
                                                     </li>
                                                 ))}
                                             </ul>
-                                            <div className="mt-6 pt-4 border-t border-neutral-200 flex items-center justify-between text-sm font-semibold text-emerald-700">
+                                            <div className="mt-6 pt-4 border-t border-neutral-200 dark:border-neutral-700 flex items-center justify-between text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                                                 <span>Learn More →</span>
                                                 <ArrowUpRight className="h-4 w-4 text-emerald-700" />
                                             </div>
@@ -238,7 +238,7 @@ export function ServicesSection() {
                                     </Card>
                                 </a>
                             ) : (
-                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
+                                <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl group transition-all duration-500 hover:scale-105 cursor-pointer">
                                     <CardHeader className="pb-6">
                                         <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                                             {service.icon}
@@ -251,7 +251,7 @@ export function ServicesSection() {
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent>
-                                        <ul className="space-y-4 text-neutral-600">
+                                        <ul className="space-y-4 text-neutral-600 dark:text-neutral-300">
                                             {service.bullets.map((b) => (
                                                 <li key={b} className="flex items-center text-base">
                                                     <CheckCircle className="h-5 w-5 text-emerald-500 mr-4 flex-shrink-0" />

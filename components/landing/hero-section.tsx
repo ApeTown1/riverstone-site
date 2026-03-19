@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export function HeroSection() {
     return (
-        <section className="relative py-10 lg:py-16 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/50 via-stone-50/30 to-neutral-100/50" />
+        <section className="relative py-10 lg:py-16 overflow-hidden dark:bg-neutral-950">
+            <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/50 via-stone-50/30 to-neutral-100/50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.05),transparent_50%)] bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.03),transparent_50%)]" />
 
             <div className="container mx-auto px-4 lg:px-6 relative">
@@ -23,14 +23,14 @@ export function HeroSection() {
                     </div>
                     {/* Text - below image on mobile */}
                     <div className="flex flex-col items-center sm:items-start text-center sm:text-left w-full max-w-2xl mx-auto sm:mx-0 order-2 sm:order-1">
-                        <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight dark:text-white">
                             <span>Startup Advisory for</span>{"\n"}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 block">Web3 Founders</span>{"\n"}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 dark:from-neutral-100 dark:via-white dark:to-neutral-200 block">Web3 Founders</span>{"\n"}
                             <span>Who Play to Win</span>{"\n"}
                         </h1>
                     </div>
                 </div>
-                <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 leading-relaxed font-light max-w-2xl mx-auto mt-2 text-center">
+                <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light max-w-2xl mx-auto mt-2 text-center">
                     Riverstone is a Web3 first startup advisory. We help startups raise smarter, tell sharper stories, and scale.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
@@ -47,7 +47,7 @@ export function HeroSection() {
                         <Button
                             size="lg"
                             variant="outline"
-                            className="w-full sm:w-auto border-2 border-neutral-200 text-neutral-700 hover:bg-neutral-50 px-10 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg"
+                            className="w-full sm:w-auto border-2 border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 px-10 py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg"
                         >
                             View Our Track Record
                         </Button>
@@ -55,26 +55,26 @@ export function HeroSection() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 pt-8 sm:pt-12 w-full">
                     <div className="text-center group">
-                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                             4 Years
                         </div>
-                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 font-medium mt-1 sm:mt-2">
+                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
                             Team Since 2021
                         </div>
                     </div>
                     <div className="text-center group">
-                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                             Global
                         </div>
-                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 font-medium mt-1 sm:mt-2">
+                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
                             Reach & Experience
                         </div>
                     </div>
                     <div className="text-center group">
-                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                             Since 2024
                         </div>
-                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 font-medium mt-1 sm:mt-2">
+                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
                             Riverstone Founded
                         </div>
                     </div>

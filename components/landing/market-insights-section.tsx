@@ -91,13 +91,13 @@ export function MarketInsightsSection() {
     }, []);
 
     return (
-        <section id="insights" className="pt-8 pb-24 bg-white/60 backdrop-blur-sm">
+        <section id="insights" className="pt-8 pb-24 bg-white/60 dark:bg-neutral-950 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
                     <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 text-neutral-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                         Market Intelligence
                     </Badge>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 tracking-tight">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">
                         Strategic Insights, Research, and Blog
                     </h2>
                 </div>
@@ -107,14 +107,14 @@ export function MarketInsightsSection() {
                         <div className="flex flex-wrap justify-center gap-4 sm:grid sm:grid-cols-3 sm:gap-6">
                             {/* Bitcoin */}
                             <a href="https://www.coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener noreferrer" className="block">
-                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                                <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
                                     <div className="flex items-center justify-between mb-2 sm:mb-4">
-                                        <div className="text-sm font-semibold text-neutral-500">
+                                        <div className="text-sm font-semibold text-neutral-500 dark:text-neutral-400">
                                             Bitcoin
                                         </div>
                                         <TrendingUp className="h-5 w-5 text-emerald-500" />
                                     </div>
-                                    <div className="text-2xl sm:text-3xl font-bold text-neutral-900 whitespace-nowrap">
+                                    <div className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white whitespace-nowrap">
                                         {loading || prices.bitcoin.price === null ? '—' : `$${prices.bitcoin.price.toLocaleString()}`}
                                     </div>
                                     <div className={`text-xs sm:text-sm font-semibold ${prices.bitcoin.change !== null && prices.bitcoin.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
@@ -125,14 +125,14 @@ export function MarketInsightsSection() {
 
                             {/* Ethereum */}
                             <a href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer" className="block">
-                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                                <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
                                     <div className="flex items-center justify-between mb-2 sm:mb-4">
-                                        <div className="text-sm font-semibold text-neutral-500">
+                                        <div className="text-sm font-semibold text-neutral-500 dark:text-neutral-400">
                                             Ethereum
                                         </div>
                                         <TrendingUp className="h-5 w-5 text-emerald-500" />
                                     </div>
-                                    <div className="text-2xl sm:text-3xl font-bold text-neutral-900 whitespace-nowrap">
+                                    <div className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white whitespace-nowrap">
                                         {loading || prices.ethereum.price === null ? '—' : `$${prices.ethereum.price.toLocaleString()}`}
                                     </div>
                                     <div className={`text-xs sm:text-sm font-semibold ${prices.ethereum.change !== null && prices.ethereum.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
@@ -143,14 +143,14 @@ export function MarketInsightsSection() {
 
                             {/* Solana */}
                             <a href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer" className="block">
-                                <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                                <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
                                     <div className="flex items-center justify-between mb-2 sm:mb-4">
-                                        <div className="text-sm font-semibold text-neutral-500">
+                                        <div className="text-sm font-semibold text-neutral-500 dark:text-neutral-400">
                                             Solana
                                         </div>
                                         <TrendingUp className="h-5 w-5 text-emerald-500" />
                                     </div>
-                                    <div className="text-2xl sm:text-3xl font-bold text-neutral-900 whitespace-nowrap">
+                                    <div className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white whitespace-nowrap">
                                         {loading || prices.solana.price === null ? '—' : `$${prices.solana.price.toLocaleString()}`}
                                     </div>
                                     <div className={`text-xs sm:text-sm font-semibold ${prices.solana.change !== null && prices.solana.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
@@ -165,13 +165,13 @@ export function MarketInsightsSection() {
                 {/* Blog Insights Section */}
                 <div className="mt-16 space-y-8">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                        <h3 className="text-3xl font-bold text-neutral-900 text-center sm:text-left">
+                        <h3 className="text-3xl font-bold text-neutral-900 dark:text-white text-center sm:text-left">
                             Latest from Our Substack
                         </h3>
                         <a href="https://apetown.substack.com/" target="_blank" rel="noopener noreferrer" className="flex justify-center sm:justify-end">
                             <Button
                                 variant="outline"
-                                className="border-neutral-200 text-neutral-700 hover:bg-neutral-50 px-6 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
+                                className="border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 px-6 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
                             >
                                 View All Posts
                                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -206,11 +206,11 @@ export function MarketInsightsSection() {
                                 ? Array.from({ length: 2 }).map((_, i) => (
                                       <div key={i} className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto p-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
                                           <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden h-full">
-                                              <div className="h-32 bg-neutral-200 animate-pulse" />
+                                              <div className="h-32 bg-neutral-200 dark:bg-neutral-700 animate-pulse" />
                                               <CardContent className="p-6">
-                                                  <div className="h-5 w-3/4 bg-neutral-200 rounded animate-pulse mb-3" />
-                                                  <div className="h-4 w-full bg-neutral-200 rounded animate-pulse mb-2" />
-                                                  <div className="h-4 w-5/6 bg-neutral-200 rounded animate-pulse" />
+                                                  <div className="h-5 w-3/4 bg-neutral-200 dark:bg-neutral-700 rounded animate-pulse mb-3" />
+                                                  <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded animate-pulse mb-2" />
+                                                  <div className="h-4 w-5/6 bg-neutral-200 dark:bg-neutral-700 rounded animate-pulse" />
                                               </CardContent>
                                           </Card>
                                       </div>
@@ -223,7 +223,7 @@ export function MarketInsightsSection() {
                                               rel="noopener noreferrer"
                                               className="block h-full"
                                           >
-                                              <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
+                                              <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
                                                   <div className="h-32 bg-gradient-to-br from-neutral-100 to-stone-100 relative">
                                                       {post.thumbnail && (
                                                           <Image
@@ -240,15 +240,15 @@ export function MarketInsightsSection() {
                                                       </div>
                                                   </div>
                                                   <CardContent className="p-6">
-                                                      <h4 className="text-lg font-bold break-words text-neutral-900 mb-2 group-hover:text-neutral-700 transition-colors">
+                                                      <h4 className="text-lg font-bold break-words text-neutral-900 dark:text-white mb-2 group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
                                                           {post.title}
                                                       </h4>
-                                                      <p className="text-sm leading-relaxed break-words text-neutral-600 mb-3 font-light">
+                                                      <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-3 font-light">
                                                           {`${post.description
                                                               .replace(/<[^>]*>?/gm, "")
                                                               .substring(0, 100)}...`}
                                                       </p>
-                                                      <div className="text-xs text-neutral-500">
+                                                      <div className="text-xs text-neutral-500 dark:text-neutral-400">
                                                           {new Date(
                                                               post.pubDate
                                                           ).toLocaleDateString("en-US", {
@@ -269,12 +269,12 @@ export function MarketInsightsSection() {
                     <div className="hidden md:grid md:grid-cols-2 gap-8">
                         {postsLoading
                             ? Array.from({ length: 2 }).map((_, i) => (
-                                  <Card key={i} className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden">
-                                      <div className="h-48 bg-neutral-200 animate-pulse" />
+                                  <Card key={i} className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden">
+                                      <div className="h-48 bg-neutral-200 dark:bg-neutral-700 animate-pulse" />
                                       <CardContent className="p-8">
-                                          <div className="h-6 w-3/4 bg-neutral-200 rounded animate-pulse mb-4" />
-                                          <div className="h-4 w-full bg-neutral-200 rounded animate-pulse mb-2" />
-                                          <div className="h-4 w-5/6 bg-neutral-200 rounded animate-pulse" />
+                                          <div className="h-6 w-3/4 bg-neutral-200 dark:bg-neutral-700 rounded animate-pulse mb-4" />
+                                          <div className="h-4 w-full bg-neutral-200 dark:bg-neutral-700 rounded animate-pulse mb-2" />
+                                          <div className="h-4 w-5/6 bg-neutral-200 dark:bg-neutral-700 rounded animate-pulse" />
                                       </CardContent>
                                   </Card>
                               ))
@@ -286,7 +286,7 @@ export function MarketInsightsSection() {
                                       key={post.guid}
                                       className="block"
                                   >
-                                      <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
+                                      <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
                                           <div className="h-48 bg-gradient-to-br from-neutral-100 to-stone-100 relative">
                                               {post.thumbnail && (
                                                   <Image
@@ -303,15 +303,15 @@ export function MarketInsightsSection() {
                                               </div>
                                           </div>
                                           <CardContent className="p-8">
-                                              <h4 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-700 transition-colors">
+                                              <h4 className="text-xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-neutral-700 dark:group-hover:text-neutral-200 transition-colors">
                                                   {post.title}
                                               </h4>
-                                              <p className="text-neutral-600 leading-relaxed mb-4 font-light text-sm">
+                                              <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4 font-light text-sm">
                                                   {`${post.description
                                                       .replace(/<[^>]*>?/gm, "")
                                                       .substring(0, 120)}...`}
                                               </p>
-                                              <div className="flex items-center justify-between text-sm text-neutral-500">
+                                              <div className="flex items-center justify-between text-sm text-neutral-500 dark:text-neutral-400">
                                                   <span>
                                                       {new Date(
                                                           post.pubDate
