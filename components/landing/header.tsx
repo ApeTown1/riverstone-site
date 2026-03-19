@@ -1,7 +1,7 @@
 "use client";
-
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { ThemeToggle } from "@/components/landing/theme-toggle";
 
 export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,7 +46,7 @@ export function Header() {
 
     return (
         <>
-            <header className="border-b border-white/20 bg-white/80 backdrop-blur-2xl fixed top-0 left-0 w-full z-50 shadow-sm">
+            <header className="border-b border-white/20 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/90 backdrop-blur-2xl fixed top-0 left-0 w-full z-50 shadow-sm">
                 <div className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between">
                     <Link href="/">
                         <div
@@ -56,11 +56,11 @@ export function Header() {
                             <img
                                 src="/riverstone-logo.svg"
                                 alt="Riverstone Logo"
-                                className="w-14 h-auto max-h-16 object-contain align-middle"
+                                className="w-14 h-auto max-h-16 object-contain align-middle dark:invert"
                                 style={{ minWidth: "40px" }}
                             />
                             <span
-                                className="text-2xl tracking-tight text-neutral-900"
+                                className="text-2xl tracking-tight text-neutral-900 dark:text-white"
                                 style={{
                                     fontFamily:
                                         "system-ui, -apple-system, sans-serif",
@@ -73,56 +73,58 @@ export function Header() {
                     </Link>
                     <nav
                         ref={navRef}
-                        className={`items-center space-x-10 ${
+                        className={`items-center space-x-8 ${
                             forceMobile ? "hidden" : "flex"
                         }`}
                     >
                         <Link
                             href="/about"
-                            className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105"
+                            className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
                         >
                             About
                         </Link>
                         <Link
                             href="/services"
-                            className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105"
+                            className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
                         >
                             Services
                         </Link>
                         <Link
                             href="/market-insights"
-                            className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105"
+                            className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
                         >
                             Market Insights
                         </Link>
                         <Link
                             href="/case-studies"
-                            className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105"
+                            className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
                         >
                             Case Studies
                         </Link>
                         <Link
                             href="/contact"
-                            className="text-sm font-semibold text-neutral-700 hover:text-neutral-900 transition-all duration-300 hover:scale-105"
+                            className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
                         >
                             Contact
                         </Link>
+                        <ThemeToggle />
                     </nav>
                     <div
                         className={`${
                             forceMobile ? "flex" : "hidden"
-                        } items-center relative`}
+                        } items-center gap-3 relative`}
                     >
+                        <ThemeToggle />
                         <button
                             ref={burgerButtonRef}
-                            className={`p-2 rounded-xl border border-neutral-300 bg-white/80 hover:bg-neutral-100 focus:outline-none transition-transform duration-200 ${
+                            className={`p-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-800/80 hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none transition-transform duration-200 ${
                                 mobileMenuOpen ? "scale-125" : "scale-100"
                             }`}
                             aria-label="Open menu"
                             onClick={handleBurgerClick}
                         >
                             <svg
-                                className="w-7 h-7 text-neutral-900"
+                                className="w-7 h-7 text-neutral-900 dark:text-white"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -136,7 +138,7 @@ export function Header() {
                             </svg>
                         </button>
                         <div
-                            className={`fixed z-50 w-56 bg-white shadow-2xl rounded-2xl flex flex-col p-4 space-y-4 border border-neutral-200 transition-all duration-300 ease-out ${
+                            className={`fixed z-50 w-56 bg-white dark:bg-neutral-900 shadow-2xl rounded-2xl flex flex-col p-4 space-y-4 border border-neutral-200 dark:border-neutral-700 transition-all duration-300 ease-out ${
                                 mobileMenuOpen
                                     ? "opacity-100 translate-y-0 pointer-events-auto"
                                     : "opacity-0 -translate-y-2 pointer-events-none"
@@ -145,35 +147,35 @@ export function Header() {
                         >
                             <Link
                                 href="/about"
-                                className="text-lg font-semibold text-neutral-700 hover:text-neutral-900"
+                                className="text-lg font-semibold text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white"
                                 onClick={handleMenuClose}
                             >
                                 About
                             </Link>
                             <Link
                                 href="/#services"
-                                className="text-lg font-semibold text-neutral-700 hover:text-neutral-900"
+                                className="text-lg font-semibold text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white"
                                 onClick={handleMenuClose}
                             >
                                 Services
                             </Link>
                             <Link
                                 href="/market-insights"
-                                className="text-lg font-semibold text-neutral-700 hover:text-neutral-900"
+                                className="text-lg font-semibold text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white"
                                 onClick={handleMenuClose}
                             >
                                 Market Insights
                             </Link>
                             <Link
                                 href="/case-studies"
-                                className="text-lg font-semibold text-neutral-700 hover:text-neutral-900"
+                                className="text-lg font-semibold text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white"
                                 onClick={handleMenuClose}
                             >
                                 Case Studies
                             </Link>
                             <Link
                                 href="/contact"
-                                className="text-lg font-semibold text-neutral-700 hover:text-neutral-900"
+                                className="text-lg font-semibold text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white"
                                 onClick={handleMenuClose}
                             >
                                 Contact
