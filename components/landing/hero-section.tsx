@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function HeroSection() {
     return (
-        <section className="relative py-10 lg:py-16 overflow-hidden dark:bg-neutral-950">
+        <section className="relative py-20 lg:py-28 overflow-hidden dark:bg-neutral-950">
             <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/50 via-stone-50/30 to-neutral-100/50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.05),transparent_50%)] bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.03),transparent_50%)]" />
 
@@ -30,10 +30,10 @@ export function HeroSection() {
                         </h1>
                     </div>
                 </div>
-                <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light max-w-2xl mx-auto mt-2 text-center">
+                <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light max-w-2xl mx-auto mt-8 text-center">
                     Riverstone is a Web3 first startup advisory. We help startups raise smarter, tell sharper stories, and scale.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12 w-full">
                     <a href="https://www.linkedin.com/company/riverstoneone" target="_blank" rel="noopener noreferrer">
                         <Button
                             size="lg"
@@ -52,32 +52,6 @@ export function HeroSection() {
                             View Our Track Record
                         </Button>
                     </Link>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 pt-8 sm:pt-12 w-full">
-                    <div className="text-center group">
-                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                            4 Years
-                        </div>
-                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
-                            Team Since 2021
-                        </div>
-                    </div>
-                    <div className="text-center group">
-                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                            Global
-                        </div>
-                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
-                            Reach & Experience
-                        </div>
-                    </div>
-                    <div className="text-center group">
-                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
-                            Since 2024
-                        </div>
-                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
-                            Riverstone Founded
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
