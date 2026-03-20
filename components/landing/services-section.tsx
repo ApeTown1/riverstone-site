@@ -173,7 +173,7 @@ export function ServicesSection() {
         <section id="services" className="pt-20 pb-24 bg-white/60 dark:bg-neutral-950 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
-                    <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 text-neutral-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
+                    <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 dark:from-neutral-800 dark:to-neutral-800 text-neutral-800 dark:text-neutral-200 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                         Our Services
                     </Badge>
                     <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">
@@ -243,10 +243,10 @@ export function ServicesSection() {
                                         <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                                             {service.icon}
                                         </div>
-                                        <CardTitle className="text-neutral-900 text-xl font-bold">
+                                        <CardTitle className="text-neutral-900 dark:text-white text-xl font-bold">
                                             {service.title}
                                         </CardTitle>
-                                        <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                        <CardDescription className="text-neutral-600 dark:text-neutral-300 text-base font-light leading-relaxed">
                                             {service.description}
                                         </CardDescription>
                                     </CardHeader>

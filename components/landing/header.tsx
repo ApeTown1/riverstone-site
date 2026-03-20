@@ -101,12 +101,6 @@ export function Header() {
                         >
                             Case Studies
                         </Link>
-                        <Link
-                            href="/contact"
-                            className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-all duration-300 hover:scale-105"
-                        >
-                            Contact
-                        </Link>
                         <ThemeToggle />
                     </nav>
                     <div
@@ -172,13 +166,6 @@ export function Header() {
                                 onClick={handleMenuClose}
                             >
                                 Case Studies
-                            </Link>
-                            <Link
-                                href="/contact"
-                                className="text-lg font-semibold text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white"
-                                onClick={handleMenuClose}
-                            >
-                                Contact
                             </Link>
                         </div>
                     </div>

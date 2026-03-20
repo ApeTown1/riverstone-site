@@ -16,7 +16,6 @@ const caseStudiesData = [
         logoHref: "https://www.polli.co/",
         logoSrc: "https://www.polli.co/wp-content/uploads/2025/06/logo.svg",
         logoAlt: "Polli",
-        logoClass: "",
         logoDarkBg: false,
         tags: ["DeFi", "Staking Infrastructure", "Solana · Cosmos · Avalanche"],
         badge: "Equity Investor",
@@ -29,49 +28,47 @@ const caseStudiesData = [
             "Conference strategy and on-the-ground execution at Cosmoverse and Breakpoint 2025",
             "Investor materials, fundraising positioning, and warm introductions to institutional targets",
         ],
-        impact: "A growing investor pipeline, an activated KOL network, and a community presence built from scratch. After an extended embedded partnership, Riverstone’s conviction in the founders and the market led to a direct equity stake in Polli — the kind of outcome that only happens when advisory becomes genuine alignment.",
+        impact: "A growing investor pipeline, an activated KOL network, and a community presence built from scratch. After an extended embedded partnership, Riverstone's conviction in the founders and the market led to a direct equity stake in Polli — the kind of outcome that only happens when advisory becomes genuine alignment.",
         serviceTags: ["Go-to-Market", "Growth Strategy", "Fundraising", "KOL & Community", "Equity Investment"],
         gradient: "from-emerald-50/80 to-green-50/80",
+        darkGradient: "dark:from-emerald-950/80 dark:to-green-950/80",
         badgeGradient: "from-emerald-100 to-green-100",
         badgeColor: "text-emerald-800",
         iconBg: "from-emerald-600 to-emerald-700",
         tagBg: "bg-emerald-100 text-emerald-700",
         serviceTagBg: "bg-emerald-50 text-emerald-700 border border-emerald-200",
-        links: [] as { label: string; href: string }[],
     },
     {
         id: "bolt",
         logoHref: "https://www.boltliquidity.io/",
         logoSrc: "https://cdn.prod.website-files.com/6759a9322ea96cfd6c863f39/67a249bd2b5352d8e0a6a432_H%20Lockup.svg",
         logoAlt: "Bolt",
-        logoClass: "",
         logoDarkBg: false,
         tags: ["DeFi", "Trading Infrastructure"],
         badge: "BD Partnership",
         headline: "Embedding Into the DeFi Ecosystem — BD That Actually Closes",
-        challenge: "Bolt needed more than a business development hire — it needed someone with the ecosystem relationships and commercial instincts to move fast, open the right doors, and turn conversations into live integrations. In DeFi, growth is won on partnerships, and the window to establish position doesn’t stay open long.",
+        challenge: "Bolt needed more than a business development hire — it needed someone with the ecosystem relationships and commercial instincts to move fast, open the right doors, and turn conversations into live integrations. In DeFi, growth is won on partnerships, and the window to establish position doesn't stay open long.",
         solution: [
             "End-to-end sales strategy and pipeline ownership",
             "Active sourcing of protocol integrations across the DeFi ecosystem",
             "Liquidity partnership facilitation with foundations and institutional players",
-            "Performance-linked deal structure ensuring Riverstone’s incentives are tied directly to outcomes generated",
+            "Performance-linked deal structure ensuring Riverstone's incentives are tied directly to outcomes generated",
         ],
         impact: "An active engagement where Riverstone operates as an embedded BD partner — not an external advisor. The pipeline continues to grow.",
         serviceTags: ["Business Development", "Ecosystem Integrations", "GTM", "Liquidity Strategy"],
         gradient: "from-sky-50/80 to-blue-50/80",
+        darkGradient: "dark:from-sky-950/80 dark:to-blue-950/80",
         badgeGradient: "from-sky-100 to-blue-100",
         badgeColor: "text-sky-800",
         iconBg: "from-sky-600 to-blue-700",
         tagBg: "bg-sky-100 text-sky-700",
         serviceTagBg: "bg-sky-50 text-sky-700 border border-sky-200",
-        links: [],
     },
     {
         id: "zynta",
         logoHref: "https://zynta.com/",
         logoSrc: "https://zynta.com/wp-content/uploads/2025/06/zynta-logo.svg",
         logoAlt: "Zynta",
-        logoClass: "",
         logoDarkBg: false,
         tags: ["Cross-Border Payments", "Regulated Stablecoin Infrastructure"],
         badge: "Fundraising & GTM",
@@ -83,22 +80,21 @@ const caseStudiesData = [
             "Curated introductions to strategic and corporate investors",
             "Full process management across the fundraising process",
         ],
-        impact: "Riverstone secured strategic and corporate investment for Zynta’s raise — and continues to support the business as it scales its GTM and corridor expansion.",
+        impact: "Riverstone secured strategic and corporate investment for Zynta's raise — and continues to support the business as it scales its GTM and corridor expansion.",
         serviceTags: ["Fundraising & Investor Strategy", "Narrative Development", "Institutional Positioning"],
         gradient: "from-amber-50/80 to-orange-50/80",
+        darkGradient: "dark:from-amber-950/80 dark:to-orange-950/80",
         badgeGradient: "from-amber-100 to-orange-100",
         badgeColor: "text-amber-800",
         iconBg: "from-amber-600 to-orange-600",
         tagBg: "bg-amber-100 text-amber-700",
         serviceTagBg: "bg-amber-50 text-amber-700 border border-amber-200",
-        links: [],
     },
     {
         id: "brilla",
-        logoHref: "",
-        logoSrc: "/truefi_1.png",
+        logoHref: "https://brila.finance/",
+        logoSrc: "/Brila-primary-logo-dark.svg",
         logoAlt: "Brilla",
-        logoClass: "",
         logoDarkBg: false,
         tags: ["On-Chain Credit", "a16z Portfolio Company"],
         badge: "M&A Advisory",
@@ -114,22 +110,18 @@ const caseStudiesData = [
         impact: "Riverstone delivered a clear, confident decision aligned with long-term strategic goals. What started as M&A advisory became a standing partnership — Brilla continues to work with Riverstone on research, strategy, and special projects.",
         serviceTags: ["M&A Advisory", "Financial Modelling", "Corporate Strategy", "Due Diligence"],
         gradient: "from-stone-50/80 to-neutral-50/80",
+        darkGradient: "dark:from-stone-900/80 dark:to-neutral-900/80",
         badgeGradient: "from-stone-100 to-neutral-100",
         badgeColor: "text-stone-800",
         iconBg: "from-neutral-700 to-neutral-800",
         tagBg: "bg-stone-100 text-stone-700",
         serviceTagBg: "bg-stone-50 text-stone-700 border border-stone-200",
-        links: [
-            { label: "Website", href: "https://brila.finance/" },
-            { label: "X", href: "https://x.com/TrueFiDAO" },
-        ],
     },
     {
         id: "ice",
         logoHref: "https://ice.io/",
         logoSrc: "https://ice.io/wp-content/uploads/2024/04/ion-logo-white.png",
         logoAlt: "Ice Open Network",
-        logoClass: "",
         logoDarkBg: true,
         tags: ["Web3 Gaming", "TON Ecosystem"],
         badge: "$10M Raise",
@@ -145,27 +137,16 @@ const caseStudiesData = [
         impact: "Delivered in seven days. The financial model became a core component of the investor pitch, helping the founders move conversations forward with clarity and confidence — supporting the path to a $10M raise.",
         serviceTags: ["Financial Modelling & Valuation", "Tokenomics", "Investor Materials"],
         gradient: "from-neutral-50/80 to-stone-50/80",
+        darkGradient: "dark:from-neutral-900/80 dark:to-stone-900/80",
         badgeGradient: "from-neutral-100 to-stone-100",
         badgeColor: "text-neutral-800",
         iconBg: "from-slate-700 to-slate-800",
         tagBg: "bg-neutral-200 text-neutral-700",
         serviceTagBg: "bg-neutral-100 text-neutral-700 border border-neutral-200",
-        links: [],
     },
 ];
 
 function ClientLogo({ study, className }: { study: typeof caseStudiesData[0]; className?: string }) {
-    const img = (
-        <img
-            src={study.logoSrc}
-            alt={study.logoAlt}
-            className={study.logoClass || ""}
-            style={{ maxHeight: "32px", width: "auto", objectFit: "contain", display: "block" }}
-        />
-    );
-    if (!study.logoHref) {
-        return <span className={`inline-flex items-center shrink-0 ${className ?? ""}`}>{img}</span>;
-    }
     return (
         <a
             href={study.logoHref}
@@ -174,7 +155,13 @@ function ClientLogo({ study, className }: { study: typeof caseStudiesData[0]; cl
             className={`inline-flex items-center shrink-0 ${className ?? ""}`}
             onClick={(e) => e.stopPropagation()}
         >
-            {img}
+            <span className="bg-neutral-100 dark:bg-neutral-700 rounded-lg px-4 py-2 inline-flex items-center" style={{ maxHeight: "56px" }}>
+                <img
+                    src={study.logoSrc}
+                    alt={study.logoAlt}
+                    style={{ maxHeight: "32px", width: "auto", objectFit: "contain", display: "block" }}
+                />
+            </span>
         </a>
     );
 }
@@ -184,12 +171,12 @@ function MobileDropdown({ label, children }: { label: string; children: React.Re
     return (
         <div className="mb-2">
             <button
-                className="w-full flex justify-between items-center py-2 px-3 bg-neutral-100 dark:bg-neutral-700 rounded-lg font-semibold text-neutral-800 dark:text-neutral-100 text-left focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
+                className="w-full flex justify-between items-center py-2 px-3 bg-neutral-100 dark:bg-neutral-800 rounded-lg font-semibold text-neutral-800 dark:text-neutral-200 text-left focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
                 onClick={() => setOpen((o) => !o)}
                 aria-expanded={open}
             >
                 <span>{label}</span>
-                <span className={`transform transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>&#9654;</span>
+                <span className={`transform transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>▶</span>
             </button>
             {open && (
                 <div className="mt-2 px-2 pb-2">{children}</div>
@@ -203,6 +190,8 @@ export function CaseStudiesSection() {
     const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
     const sectionRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const desktopContainerRef = useRef<HTMLDivElement>(null);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     const goToNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % caseStudiesData.length);
@@ -264,6 +253,22 @@ export function CaseStudiesSection() {
         return () => window.removeEventListener('selectCaseStudy', handleSelectCaseStudy);
     }, []);
 
+    useEffect(() => {
+        const container = desktopContainerRef.current;
+        if (!container) return;
+
+        const updateHeight = () => {
+            const activeEl = cardRefs.current[currentIndex];
+            if (!activeEl) return;
+            // Cards are scaled to 0.9 visually, so visual height = offsetHeight * 0.9
+            container.style.minHeight = `${activeEl.offsetHeight * 0.9 + 32}px`;
+        };
+
+        updateHeight();
+        window.addEventListener("resize", updateHeight);
+        return () => window.removeEventListener("resize", updateHeight);
+    }, [currentIndex]);
+
     return (
         <section
             id="case-studies"
@@ -285,6 +290,7 @@ export function CaseStudiesSection() {
 
                 {/* Mobile Swipe Carousel */}
                 <div className="block md:hidden mt-10 sm:mt-12 relative">
+                    {/* Left Arrow */}
                     <button
                         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
                         onClick={() => scrollToCard(-1)}
@@ -292,6 +298,7 @@ export function CaseStudiesSection() {
                     >
                         <ChevronLeft size={20} />
                     </button>
+                    {/* Right Arrow */}
                     <button
                         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black text-white p-3 rounded-full opacity-80 hover:opacity-100 transition-opacity"
                         onClick={() => scrollToCard(1)}
@@ -308,9 +315,10 @@ export function CaseStudiesSection() {
                             <div key={study.id} className="min-w-[90%] max-w-[90%] snap-center mx-auto p-4 flex-shrink-0">
                                 <Card
                                     id={study.id}
-                                    className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col min-h-[70vh] max-h-[85vh]`}
+                                    className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col min-h-[70vh]`}
                                 >
                                     <CardHeader className="bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm p-6 flex-shrink-0">
+                                        {/* Logo row */}
                                         <div className="flex items-start justify-between mb-3 gap-2">
                                             <ClientLogo study={study} />
                                             <Badge
@@ -319,6 +327,7 @@ export function CaseStudiesSection() {
                                                 {study.badge}
                                             </Badge>
                                         </div>
+                                        {/* Sector tags */}
                                         <div className="flex flex-wrap gap-1.5 mb-3">
                                             {study.tags.map((tag) => (
                                                 <span
@@ -329,7 +338,7 @@ export function CaseStudiesSection() {
                                                 </span>
                                             ))}
                                         </div>
-                                        <CardTitle className="text-lg font-bold leading-tight break-words hyphens-auto text-neutral-900 dark:text-white">
+                                        <CardTitle className="text-lg font-bold leading-tight break-words hyphens-auto text-neutral-900">
                                             {study.headline}
                                         </CardTitle>
                                     </CardHeader>
@@ -342,7 +351,7 @@ export function CaseStudiesSection() {
                                         <MobileDropdown label="The Solution">
                                             <ul className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 dark:text-neutral-300 space-y-2 font-light">
                                                 {study.solution.map((item) => (
-                                                    <li key={item}>&#8226; {item}</li>
+                                                    <li key={item}>• {item}</li>
                                                 ))}
                                             </ul>
                                         </MobileDropdown>
@@ -353,6 +362,7 @@ export function CaseStudiesSection() {
                                             <p className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 dark:text-neutral-300 font-light">
                                                 {study.impact}
                                             </p>
+                                            {/* Service tags */}
                                             <div className="flex flex-wrap gap-1.5 mt-3">
                                                 {study.serviceTags.map((tag) => (
                                                     <span
@@ -363,21 +373,6 @@ export function CaseStudiesSection() {
                                                     </span>
                                                 ))}
                                             </div>
-                                            {study.links.length > 0 && (
-                                                <div className="flex flex-wrap gap-1.5 mt-2">
-                                                    {study.links.map((link) => (
-                                                        <a
-                                                            key={link.label}
-                                                            href={link.href}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className={`px-2 py-0.5 text-[0.6rem] font-semibold rounded-full bg-transparent border border-stone-200 dark:border-stone-600 text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800/40 transition-colors`}
-                                                        >
-                                                            {link.label}
-                                                        </a>
-                                                    ))}
-                                                </div>
-                                            )}
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -388,7 +383,8 @@ export function CaseStudiesSection() {
 
                 {/* Desktop Roulette Carousel */}
                 <div className="hidden md:block relative mt-10 md:mt-12 lg:mt-14 xl:mt-16">
-                    <div className="relative flex items-center justify-center min-h-[350px] md:min-h-[630px] lg:min-h-[810px]">
+                    <div ref={desktopContainerRef} className="relative flex items-center justify-center">
+                        {/* Left Arrow */}
                         <button
                             onClick={goToPrev}
                             className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-70 hover:opacity-100"
@@ -397,6 +393,7 @@ export function CaseStudiesSection() {
                             <ChevronLeft className="h-6 w-6 text-white" />
                         </button>
 
+                        {/* Cards */}
                         <div className="relative w-full flex items-center justify-center h-full max-w-5xl mx-auto">
                             {caseStudiesData.map((study, index) => {
                                 const isActive = index === currentIndex;
@@ -444,12 +441,13 @@ export function CaseStudiesSection() {
                                     base += " scale-90 sm:scale-95 md:scale-100";
                                 }
                                 return (
-                                    <div key={study.id} className={base + " scale-90 sm:scale-95 md:scale-100"} style={style}>
+                                    <div key={study.id} ref={el => { cardRefs.current[index] = el; }} className={base + " scale-90 sm:scale-95 md:scale-100"} style={style}>
                                         <Card
                                             id={study.id}
-                                            className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-500 w-full max-w-5xl flex flex-col`}
+                                            className={`bg-gradient-to-br ${study.gradient} ${(study as any).darkGradient || ''} backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-500 w-full max-w-5xl flex flex-col`}
                                         >
                                             <CardHeader className="bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm p-8 md:p-10">
+                                                {/* Logo + badge row */}
                                                 <div className="flex items-start justify-between mb-4 gap-4">
                                                     <ClientLogo study={study} />
                                                     <Badge
@@ -458,6 +456,7 @@ export function CaseStudiesSection() {
                                                         {study.badge}
                                                     </Badge>
                                                 </div>
+                                                {/* Sector tags */}
                                                 <div className="flex flex-wrap gap-2 mb-5">
                                                     {study.tags.map((tag) => (
                                                         <span
@@ -468,7 +467,7 @@ export function CaseStudiesSection() {
                                                         </span>
                                                     ))}
                                                 </div>
-                                                <CardTitle className="text-3xl text-neutral-900 dark:text-white">
+                                                <CardTitle className="text-3xl text-neutral-900">
                                                     {study.headline}
                                                 </CardTitle>
                                             </CardHeader>
@@ -498,18 +497,19 @@ export function CaseStudiesSection() {
                                                         </h4>
                                                         <ul className="text-neutral-600 dark:text-neutral-300 space-y-3 font-light text-[65%] md:text-base">
                                                             {study.solution.map((item) => (
-                                                                <li key={item}>&#8226; {item}</li>
+                                                                <li key={item}>• {item}</li>
                                                             ))}
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div className="bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-neutral-100/50 dark:border-neutral-700/50 shadow-lg">
+                                                <div className="bg-white/90 dark:bg-neutral-800/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-neutral-100/50 dark:border-neutral-700/50 shadow-lg">
                                                     <h4 className="font-semibold text-neutral-900 dark:text-white mb-4 text-xl text-[65%] md:text-base">
                                                         The Impact
                                                     </h4>
                                                     <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed font-light text-[65%] md:text-base">
                                                         {study.impact}
                                                     </p>
+                                                    {/* Service tags */}
                                                     <div className="flex flex-wrap gap-2 mt-4">
                                                         {study.serviceTags.map((tag) => (
                                                             <span
@@ -520,21 +520,6 @@ export function CaseStudiesSection() {
                                                             </span>
                                                         ))}
                                                     </div>
-                                                    {study.links.length > 0 && (
-                                                        <div className="flex flex-wrap gap-2 mt-2">
-                                                            {study.links.map((link) => (
-                                                                <a
-                                                                    key={link.label}
-                                                                    href={link.href}
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    className="px-3 py-1 text-xs font-semibold rounded-full bg-transparent border border-stone-200 dark:border-stone-600 text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800/40 transition-colors"
-                                                                >
-                                                                    {link.label}
-                                                                </a>
-                                                            ))}
-                                                        </div>
-                                                    )}
                                                 </div>
                                             </CardContent>
                                         </Card>
@@ -543,6 +528,7 @@ export function CaseStudiesSection() {
                             })}
                         </div>
 
+                        {/* Right Arrow */}
                         <button
                             onClick={goToNext}
                             className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-black hover:bg-neutral-800 transition-all duration-300 opacity-70 hover:opacity-100"

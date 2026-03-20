@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Footer() {
     return (
-        <footer className="py-12 bg-neutral-50 border-t border-neutral-100">
+        <footer className="py-12 bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-100 dark:border-neutral-800">
             <div className="container mx-auto px-4 lg:px-6 text-center">
                 <div className="container mx-auto px-4 py-8 flex items-center justify-center">
                     <div className="w-40 md:w-56">
@@ -13,13 +13,13 @@ export function Footer() {
                                 alt="Riverstone logo"
                                 width={240}
                                 height={240}
-                                className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-200"
+                                className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-200 dark:invert"
                                 priority={false}
                             />
                         </Link>
                     </div>
                 </div>
-                <p className="text-sm text-neutral-500">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
                     © {new Date().getFullYear()} Riverstone. All rights
                     reserved.
                 </p>

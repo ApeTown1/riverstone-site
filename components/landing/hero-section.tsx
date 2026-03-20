@@ -34,7 +34,7 @@ export function HeroSection() {
                     Riverstone is a Web3 first startup advisory. We help startups raise smarter, tell sharper stories, and scale.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
-                    <Link href="/contact" passHref legacyBehavior>
+                    <a href="https://www.linkedin.com/company/riverstoneone" target="_blank" rel="noopener noreferrer">
                         <Button
                             size="lg"
                             className="w-full sm:w-auto bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-10 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg"
@@ -42,7 +42,7 @@ export function HeroSection() {
                             Message Us Now
                             <ArrowRight className="ml-3 h-5 w-5" />
                         </Button>
-                    </Link>
+                    </a>
                     <Link href="#case-studies" passHref legacyBehavior>
                         <Button
                             size="lg"
