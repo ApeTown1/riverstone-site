@@ -254,6 +254,17 @@ export function CaseStudiesSection() {
     }, []);
 
     useEffect(() => {
+        // Scroll mobile carousel to initial mobileActiveIndex on mount
+        const container = scrollRef.current;
+        if (!container || mobileActiveIndex === 0) return;
+        const firstChild = container.firstChild as HTMLElement;
+        if (!firstChild) return;
+        const cardWidth = firstChild.clientWidth;
+        container.scrollTo({ left: cardWidth * mobileActiveIndex, behavior: "instant" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
         const container = desktopContainerRef.current;
         if (!container) return;
 
