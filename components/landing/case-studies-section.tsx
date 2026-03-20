@@ -179,7 +179,7 @@ function MobileDropdown({ label, children }: { label: string; children: React.Re
                 <span className={`transform transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>▶</span>
             </button>
             {open && (
-                <div className="mt-2 px-2 pb-2">{children}</div>
+                <div className="mt-2 px-2 pb-2 dark:bg-neutral-800 dark:rounded-lg dark:text-white">{children}</div>
             )}
         </div>
     );
