@@ -93,8 +93,8 @@ const caseStudiesData = [
     {
         id: "brilla",
         logoHref: "https://brila.finance/",
-        logoSrc: "/Brila-primary-logo-dark.svg",
-        logoAlt: "Brilla",
+        logoSrc: "/truefi_1.png",
+        logoAlt: "TrueFi",
         logoDarkBg: false,
         tags: ["On-Chain Credit", "a16z Portfolio Company"],
         badge: "M&A Advisory",
@@ -107,7 +107,7 @@ const caseStudiesData = [
             "Data room coordination and legal team alignment",
             "Strategic guidance through to transaction close",
         ],
-        impact: "Riverstone delivered a clear, confident decision aligned with long-term strategic goals. What started as M&A advisory became a standing partnership — Brilla continues to work with Riverstone on research, strategy, and special projects.",
+        impact: "Riverstone delivered a clear, confident decision aligned with long-term strategic goals. What started as M&A advisory became a standing partnership — TrueFi continues to work with Riverstone on research, strategy, and special projects.",
         serviceTags: ["M&A Advisory", "Financial Modelling", "Corporate Strategy", "Due Diligence"],
         gradient: "from-stone-50/80 to-neutral-50/80",
         darkGradient: "dark:from-stone-900/80 dark:to-neutral-900/80",
@@ -179,7 +179,7 @@ function MobileDropdown({ label, children }: { label: string; children: React.Re
                 <span className={`transform transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>▶</span>
             </button>
             {open && (
-                <div className="mt-2 px-2 pb-2">{children}</div>
+                <div className="mt-2 px-2 pb-2 dark:bg-neutral-800 dark:rounded-lg dark:text-white">{children}</div>
             )}
         </div>
     );
