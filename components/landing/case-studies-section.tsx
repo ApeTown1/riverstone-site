@@ -95,6 +95,7 @@ const caseStudiesData = [
         logoHref: "https://brila.finance/",
         logoSrc: "/truefi_1.png",
         logoAlt: "TrueFi",
+        logoWidth: 120,
         logoDarkBg: false,
         tags: ["On-Chain Credit", "a16z Portfolio Company"],
         badge: "M&A Advisory",
@@ -159,7 +160,7 @@ function ClientLogo({ study, className }: { study: typeof caseStudiesData[0]; cl
                 <img
                     src={study.logoSrc}
                     alt={study.logoAlt}
-                    style={{ maxHeight: "32px", width: "auto", objectFit: "contain", display: "block" }}
+                    style={{ maxHeight: "32px", width: (study as any).logoWidth ? `${(study as any).logoWidth}px` : "auto", objectFit: "contain", display: "block" }}
                 />
             </span>
         </a>
