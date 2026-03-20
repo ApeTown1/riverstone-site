@@ -95,7 +95,7 @@ const caseStudiesData = [
         logoHref: "https://brila.finance/",
         logoSrc: "/truefi_1.png",
         logoAlt: "TrueFi",
-        logoWidth: 120,
+        logoWidth: 99,
         logoDarkBg: false,
         tags: ["On-Chain Credit", "a16z Portfolio Company"],
         badge: "M&A Advisory",
