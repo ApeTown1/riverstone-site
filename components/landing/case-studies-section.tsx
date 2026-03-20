@@ -322,7 +322,7 @@ export function CaseStudiesSection() {
                                         <div className="flex items-start justify-between mb-3 gap-2">
                                             <ClientLogo study={study} />
                                             <Badge
-                                                className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-2 py-1 text-[0.6rem] font-semibold rounded-full shrink-0`}
+                                                className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} dark:from-neutral-700 dark:to-neutral-700 dark:text-neutral-100 border-0 px-2 py-1 text-[0.6rem] font-semibold rounded-full shrink-0`}
                                             >
                                                 {study.badge}
                                             </Badge>
@@ -338,7 +338,7 @@ export function CaseStudiesSection() {
                                                 </span>
                                             ))}
                                         </div>
-                                        <CardTitle className="text-lg font-bold leading-tight break-words hyphens-auto text-neutral-900">
+                                        <CardTitle className="text-lg font-bold leading-tight break-words hyphens-auto text-neutral-900 dark:text-white">
                                             {study.headline}
                                         </CardTitle>
                                     </CardHeader>
@@ -451,7 +451,7 @@ export function CaseStudiesSection() {
                                                 <div className="flex items-start justify-between mb-4 gap-4">
                                                     <ClientLogo study={study} />
                                                     <Badge
-                                                        className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} border-0 px-4 py-2 text-sm font-semibold rounded-full shrink-0`}
+                                                        className={`bg-gradient-to-r ${study.badgeGradient} ${study.badgeColor} dark:from-neutral-700 dark:to-neutral-700 dark:text-neutral-100 border-0 px-4 py-2 text-sm font-semibold rounded-full shrink-0`}
                                                     >
                                                         {study.badge}
                                                     </Badge>
@@ -467,7 +467,7 @@ export function CaseStudiesSection() {
                                                         </span>
                                                     ))}
                                                 </div>
-                                                <CardTitle className="text-3xl text-neutral-900">
+                                                <CardTitle className="text-3xl text-neutral-900 dark:text-white">
                                                     {study.headline}
                                                 </CardTitle>
                                             </CardHeader>
