@@ -1,12 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSection() {
     return (
-        <section className="relative py-20 lg:py-28 overflow-hidden dark:bg-neutral-950">
+        <section className="relative py-10 lg:py-16 overflow-hidden dark:bg-neutral-950">
             <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/50 via-stone-50/30 to-neutral-100/50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.05),transparent_50%)] bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.03),transparent_50%)]" />
 
@@ -17,7 +16,7 @@ export function HeroSection() {
                         <img
                             src="/riverstone-logo.svg"
                             alt="Riverstone Logo"
-                            className="w-[80%] sm:w-48 md:w-[220px] lg:w-[440px] h-auto max-w-full object-contain mx-auto dark:invert"
+                            className="w-[80%] sm:w-48 md:w-[220px] lg:w-[440px] h-auto max-w-full object-contain mx-auto"
                             style={{ minWidth: '108px' }}
                         />
                     </div>
@@ -30,19 +29,10 @@ export function HeroSection() {
                         </h1>
                     </div>
                 </div>
-                <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light max-w-2xl mx-auto mt-8 text-center">
+                <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light max-w-2xl mx-auto mt-2 text-center">
                     Riverstone is a Web3 first startup advisory. We help startups raise smarter, tell sharper stories, and scale.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12 w-full">
-                    <a href="https://www.linkedin.com/company/riverstoneone" target="_blank" rel="noopener noreferrer">
-                        <Button
-                            size="lg"
-                            className="w-full sm:w-auto bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-10 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg"
-                        >
-                            Message Us Now
-                            <ArrowRight className="ml-3 h-5 w-5" />
-                        </Button>
-                    </a>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
                     <Link href="#case-studies" passHref legacyBehavior>
                         <Button
                             size="lg"
