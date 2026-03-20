@@ -12,6 +12,7 @@ export function MarketInsightsSection() {
         bitcoin: { price: null as number | null, change: null as number | null },
         ethereum: { price: null as number | null, change: null as number | null },
         solana: { price: null as number | null, change: null as number | null },
+        hyperliquid: { price: null as number | null, change: null as number | null },
     });
     const [posts, setPosts] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
@@ -55,12 +56,17 @@ export function MarketInsightsSection() {
                         price: data.solana.usd,
                         change: data.solana.usd_24h_change,
                     },
+                    hyperliquid: {
+                        price: data.hyperliquid?.usd ?? null,
+                        change: data.hyperliquid?.usd_24h_change ?? null,
+                    },
                 });
             } catch {
                 setPrices({
                     bitcoin: { price: null, change: null },
                     ethereum: { price: null, change: null },
                     solana: { price: null, change: null },
+                    hyperliquid: { price: null, change: null },
                 });
             }
             setLoading(false);
@@ -155,6 +161,23 @@ export function MarketInsightsSection() {
                                     </div>
                                     <div className={`text-xs sm:text-sm font-semibold ${prices.solana.change !== null && prices.solana.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
                                         {loading || prices.solana.change === null ? '' : `${prices.solana.change > 0 ? '+' : ''}${prices.solana.change.toFixed(2)}% (24h)`}
+                                    </div>
+                                </Card>
+                            </a>
+                            {/* Hyperliquid */}
+                            <a href="https://www.coingecko.com/en/coins/hyperliquid" target="_blank" rel="noopener noreferrer" className="block">
+                                <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl p-4 sm:p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                                    <div className="flex items-center justify-between mb-2 sm:mb-4">
+                                        <div className="text-sm font-semibold text-neutral-500 dark:text-neutral-400">
+                                            Hyperliquid
+                                        </div>
+                                        <TrendingUp className="h-5 w-5 text-emerald-500" />
+                                    </div>
+                                    <div className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white whitespace-nowrap">
+                                        {loading || prices.hyperliquid.price === null ? '—' : `$${prices.hyperliquid.price.toLocaleString()}`}
+                                    </div>
+                                    <div className={`text-xs sm:text-sm font-semibold ${prices.hyperliquid.change !== null && prices.hyperliquid.change > 0 ? 'text-emerald-500' : 'text-red-500'}`}>
+                                        {loading || prices.hyperliquid.change === null ? '' : `${prices.hyperliquid.change > 0 ? '+' : ''}${prices.hyperliquid.change.toFixed(2)}% (24h)`}
                                     </div>
                                 </Card>
                             </a>
