@@ -186,8 +186,8 @@ function MobileDropdown({ label, children }: { label: string; children: React.Re
 }
 
 export function CaseStudiesSection() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(3);
+    const [mobileActiveIndex, setMobileActiveIndex] = useState(3);
     const sectionRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const desktopContainerRef = useRef<HTMLDivElement>(null);
