@@ -243,10 +243,10 @@ export function ServicesSection() {
                                         <div className="w-16 h-16 bg-gradient-to-br from-neutral-700 to-neutral-800 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                                             {service.icon}
                                         </div>
-                                        <CardTitle className="text-neutral-900 text-xl font-bold">
+                                        <CardTitle className="text-neutral-900 dark:text-white text-xl font-bold">
                                             {service.title}
                                         </CardTitle>
-                                        <CardDescription className="text-neutral-600 text-base font-light leading-relaxed">
+                                        <CardDescription className="text-neutral-600 dark:text-neutral-300 text-base font-light leading-relaxed">
                                             {service.description}
                                         </CardDescription>
                                     </CardHeader>
