@@ -95,7 +95,6 @@ const caseStudiesData = [
         logoHref: "https://brila.finance/",
         logoSrc: "/truefi_1.png",
         logoAlt: "TrueFi",
-        logoWidth: 99,
         logoDarkBg: false,
         tags: ["On-Chain Credit", "a16z Portfolio Company"],
         badge: "M&A Advisory",
@@ -156,13 +155,13 @@ function ClientLogo({ study, className }: { study: typeof caseStudiesData[0]; cl
             className={`inline-flex items-center shrink-0 ${className ?? ""}`}
             onClick={(e) => e.stopPropagation()}
         >
-            <span className="bg-neutral-100 dark:bg-neutral-700 rounded-lg px-4 py-2 inline-flex items-center" style={{ maxHeight: "56px" }}>
+            <div style={{ height: "48px", display: "flex", alignItems: "center" }}>
                 <img
                     src={study.logoSrc}
                     alt={study.logoAlt}
-                    style={{ maxHeight: "32px", width: (study as any).logoWidth ? `${(study as any).logoWidth}px` : "auto", objectFit: "contain", display: "block" }}
+                    style={{ height: "36px", width: "auto", objectFit: "contain", display: "block" }}
                 />
-            </span>
+            </div>
         </a>
     );
 }
