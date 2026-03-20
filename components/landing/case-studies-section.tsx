@@ -31,6 +31,7 @@ const caseStudiesData = [
         impact: "A growing investor pipeline, an activated KOL network, and a community presence built from scratch. After an extended embedded partnership, Riverstone's conviction in the founders and the market led to a direct equity stake in Polli — the kind of outcome that only happens when advisory becomes genuine alignment.",
         serviceTags: ["Go-to-Market", "Growth Strategy", "Fundraising", "KOL & Community", "Equity Investment"],
         gradient: "from-emerald-50/80 to-green-50/80",
+        darkGradient: "dark:from-emerald-950/80 dark:to-green-950/80",
         badgeGradient: "from-emerald-100 to-green-100",
         badgeColor: "text-emerald-800",
         iconBg: "from-emerald-600 to-emerald-700",
@@ -56,6 +57,7 @@ const caseStudiesData = [
         impact: "An active engagement where Riverstone operates as an embedded BD partner — not an external advisor. The pipeline continues to grow.",
         serviceTags: ["Business Development", "Ecosystem Integrations", "GTM", "Liquidity Strategy"],
         gradient: "from-sky-50/80 to-blue-50/80",
+        darkGradient: "dark:from-sky-950/80 dark:to-blue-950/80",
         badgeGradient: "from-sky-100 to-blue-100",
         badgeColor: "text-sky-800",
         iconBg: "from-sky-600 to-blue-700",
@@ -81,6 +83,7 @@ const caseStudiesData = [
         impact: "Riverstone secured strategic and corporate investment for Zynta's raise — and continues to support the business as it scales its GTM and corridor expansion.",
         serviceTags: ["Fundraising & Investor Strategy", "Narrative Development", "Institutional Positioning"],
         gradient: "from-amber-50/80 to-orange-50/80",
+        darkGradient: "dark:from-amber-950/80 dark:to-orange-950/80",
         badgeGradient: "from-amber-100 to-orange-100",
         badgeColor: "text-amber-800",
         iconBg: "from-amber-600 to-orange-600",
@@ -107,6 +110,7 @@ const caseStudiesData = [
         impact: "Riverstone delivered a clear, confident decision aligned with long-term strategic goals. What started as M&A advisory became a standing partnership — Brilla continues to work with Riverstone on research, strategy, and special projects.",
         serviceTags: ["M&A Advisory", "Financial Modelling", "Corporate Strategy", "Due Diligence"],
         gradient: "from-stone-50/80 to-neutral-50/80",
+        darkGradient: "dark:from-stone-900/80 dark:to-neutral-900/80",
         badgeGradient: "from-stone-100 to-neutral-100",
         badgeColor: "text-stone-800",
         iconBg: "from-neutral-700 to-neutral-800",
@@ -133,6 +137,7 @@ const caseStudiesData = [
         impact: "Delivered in seven days. The financial model became a core component of the investor pitch, helping the founders move conversations forward with clarity and confidence — supporting the path to a $10M raise.",
         serviceTags: ["Financial Modelling & Valuation", "Tokenomics", "Investor Materials"],
         gradient: "from-neutral-50/80 to-stone-50/80",
+        darkGradient: "dark:from-neutral-900/80 dark:to-stone-900/80",
         badgeGradient: "from-neutral-100 to-stone-100",
         badgeColor: "text-neutral-800",
         iconBg: "from-slate-700 to-slate-800",
@@ -150,16 +155,7 @@ function ClientLogo({ study, className }: { study: typeof caseStudiesData[0]; cl
             className={`inline-flex items-center shrink-0 ${className ?? ""}`}
             onClick={(e) => e.stopPropagation()}
         >
-            <span
-                style={{
-                    background: "#f3f4f6",
-                    borderRadius: "8px",
-                    padding: "8px 16px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    maxHeight: "56px",
-                }}
-            >
+            <span className="bg-neutral-100 dark:bg-neutral-700 rounded-lg px-4 py-2 inline-flex items-center" style={{ maxHeight: "56px" }}>
                 <img
                     src={study.logoSrc}
                     alt={study.logoAlt}
@@ -175,7 +171,7 @@ function MobileDropdown({ label, children }: { label: string; children: React.Re
     return (
         <div className="mb-2">
             <button
-                className="w-full flex justify-between items-center py-2 px-3 bg-neutral-100 rounded-lg font-semibold text-neutral-800 text-left focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
+                className="w-full flex justify-between items-center py-2 px-3 bg-neutral-100 dark:bg-neutral-800 rounded-lg font-semibold text-neutral-800 dark:text-neutral-200 text-left focus:outline-none focus:ring-2 focus:ring-emerald-300 transition"
                 onClick={() => setOpen((o) => !o)}
                 aria-expanded={open}
             >
@@ -277,17 +273,17 @@ export function CaseStudiesSection() {
         <section
             id="case-studies"
             ref={sectionRef}
-            className="py-16 md:py-20 bg-gradient-to-br from-neutral-50 to-stone-50"
+            className="py-16 md:py-20 bg-gradient-to-br from-neutral-50 to-stone-50 dark:from-neutral-950 dark:to-neutral-950"
         >
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-8">
                     <Badge className="bg-gradient-to-r from-emerald-100 to-green-100 text-emerald-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                         Case Studies
                     </Badge>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 tracking-tight">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">
                         Driving Impact Through Financial Expertise
                     </h2>
-                    <p className="text-xl text-neutral-600 max-w-4xl mx-auto font-light leading-relaxed">
+                    <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-4xl mx-auto font-light leading-relaxed">
                         Case studies showcasing bespoke strategies, actionable insight, and proven outcomes.
                     </p>
                 </div>
@@ -321,7 +317,7 @@ export function CaseStudiesSection() {
                                     id={study.id}
                                     className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-xl rounded-3xl overflow-hidden transition-all duration-500 w-full flex flex-col min-h-[70vh]`}
                                 >
-                                    <CardHeader className="bg-white/95 backdrop-blur-sm p-6 flex-shrink-0">
+                                    <CardHeader className="bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm p-6 flex-shrink-0">
                                         {/* Logo row */}
                                         <div className="flex items-start justify-between mb-3 gap-2">
                                             <ClientLogo study={study} />
@@ -348,22 +344,22 @@ export function CaseStudiesSection() {
                                     </CardHeader>
                                     <CardContent className="space-y-4 p-4 overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-300">
                                         <MobileDropdown label="The Challenge">
-                                            <div className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 font-light">
+                                            <div className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 dark:text-neutral-300 font-light">
                                                 {study.challenge}
                                             </div>
                                         </MobileDropdown>
                                         <MobileDropdown label="The Solution">
-                                            <ul className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 space-y-2 font-light">
+                                            <ul className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 dark:text-neutral-300 space-y-2 font-light">
                                                 {study.solution.map((item) => (
                                                     <li key={item}>• {item}</li>
                                                 ))}
                                             </ul>
                                         </MobileDropdown>
-                                        <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-neutral-100/50 shadow-lg">
-                                            <h4 className="font-semibold text-neutral-900 mb-3 text-sm">
+                                        <div className="bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm p-4 rounded-xl border border-neutral-100/50 dark:border-neutral-700/50 shadow-lg">
+                                            <h4 className="font-semibold text-neutral-900 dark:text-white mb-3 text-sm">
                                                 The Impact
                                             </h4>
-                                            <p className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 font-light">
+                                            <p className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 dark:text-neutral-300 font-light">
                                                 {study.impact}
                                             </p>
                                             {/* Service tags */}
@@ -448,9 +444,9 @@ export function CaseStudiesSection() {
                                     <div key={study.id} ref={el => { cardRefs.current[index] = el; }} className={base + " scale-90 sm:scale-95 md:scale-100"} style={style}>
                                         <Card
                                             id={study.id}
-                                            className={`bg-gradient-to-br ${study.gradient} backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-500 w-full max-w-5xl flex flex-col`}
+                                            className={`bg-gradient-to-br ${study.gradient} ${(study as any).darkGradient || ''} backdrop-blur-sm border-0 shadow-2xl rounded-3xl overflow-hidden transition-all duration-500 w-full max-w-5xl flex flex-col`}
                                         >
-                                            <CardHeader className="bg-white/95 backdrop-blur-sm p-8 md:p-10">
+                                            <CardHeader className="bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm p-8 md:p-10">
                                                 {/* Logo + badge row */}
                                                 <div className="flex items-start justify-between mb-4 gap-4">
                                                     <ClientLogo study={study} />
@@ -478,7 +474,7 @@ export function CaseStudiesSection() {
                                             <CardContent className="space-y-8 p-8 md:p-10">
                                                 <div className="grid md:grid-cols-2 gap-8 md:gap-12">
                                                     <div className="space-y-6">
-                                                        <h4 className="font-semibold text-neutral-900 flex items-center text-xl text-[65%] md:text-base">
+                                                        <h4 className="font-semibold text-neutral-900 dark:text-white flex items-center text-xl text-[65%] md:text-base">
                                                             <div
                                                                 className={`w-8 h-8 bg-gradient-to-br ${study.iconBg} rounded-xl flex items-center justify-center mr-3`}
                                                             >
@@ -486,12 +482,12 @@ export function CaseStudiesSection() {
                                                             </div>
                                                             The Challenge
                                                         </h4>
-                                                        <p className="text-neutral-600 leading-relaxed font-light text-[65%] md:text-base">
+                                                        <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed font-light text-[65%] md:text-base">
                                                             {study.challenge}
                                                         </p>
                                                     </div>
                                                     <div className="space-y-6">
-                                                        <h4 className="font-semibold text-neutral-900 flex items-center text-xl text-[65%] md:text-base">
+                                                        <h4 className="font-semibold text-neutral-900 dark:text-white flex items-center text-xl text-[65%] md:text-base">
                                                             <div
                                                                 className="w-8 h-8 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center mr-3"
                                                             >
@@ -499,18 +495,18 @@ export function CaseStudiesSection() {
                                                             </div>
                                                             The Solution
                                                         </h4>
-                                                        <ul className="text-neutral-600 space-y-3 font-light text-[65%] md:text-base">
+                                                        <ul className="text-neutral-600 dark:text-neutral-300 space-y-3 font-light text-[65%] md:text-base">
                                                             {study.solution.map((item) => (
                                                                 <li key={item}>• {item}</li>
                                                             ))}
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div className="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-neutral-100/50 shadow-lg">
-                                                    <h4 className="font-semibold text-neutral-900 mb-4 text-xl text-[65%] md:text-base">
+                                                <div className="bg-white/90 dark:bg-neutral-800/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-neutral-100/50 dark:border-neutral-700/50 shadow-lg">
+                                                    <h4 className="font-semibold text-neutral-900 dark:text-white mb-4 text-xl text-[65%] md:text-base">
                                                         The Impact
                                                     </h4>
-                                                    <p className="text-neutral-600 leading-relaxed font-light text-[65%] md:text-base">
+                                                    <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed font-light text-[65%] md:text-base">
                                                         {study.impact}
                                                     </p>
                                                     {/* Service tags */}

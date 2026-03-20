@@ -94,7 +94,7 @@ export function MarketInsightsSection() {
         <section id="insights" className="pt-8 pb-24 bg-white/60 dark:bg-neutral-950 backdrop-blur-sm">
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="text-center space-y-6 mb-20">
-                    <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 text-neutral-800 border-0 px-6 py-3 text-sm font-semibold rounded-full">
+                    <Badge className="bg-gradient-to-r from-neutral-100 to-stone-100 dark:from-neutral-800 dark:to-neutral-800 text-neutral-800 dark:text-neutral-200 border-0 px-6 py-3 text-sm font-semibold rounded-full">
                         Market Intelligence
                     </Badge>
                     <h2 className="text-4xl lg:text-6xl font-bold text-neutral-900 dark:text-white tracking-tight">
@@ -224,7 +224,7 @@ export function MarketInsightsSection() {
                                               className="block h-full"
                                           >
                                               <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
-                                                  <div className="h-32 bg-gradient-to-br from-neutral-100 to-stone-100 relative">
+                                                  <div className="h-32 bg-gradient-to-br from-neutral-100 to-stone-100 dark:from-neutral-700 dark:to-neutral-800 relative">
                                                       {post.thumbnail && (
                                                           <Image
                                                               src={post.thumbnail}
@@ -287,7 +287,7 @@ export function MarketInsightsSection() {
                                       className="block"
                                   >
                                       <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl hover:shadow-2xl transition-all duration-500 hover:scale-105 group overflow-hidden h-full">
-                                          <div className="h-48 bg-gradient-to-br from-neutral-100 to-stone-100 relative">
+                                          <div className="h-48 bg-gradient-to-br from-neutral-100 to-stone-100 dark:from-neutral-700 dark:to-neutral-800 relative">
                                               {post.thumbnail && (
                                                   <Image
                                                       src={post.thumbnail}
