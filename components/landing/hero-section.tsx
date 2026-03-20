@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSection() {
@@ -33,6 +34,15 @@ export function HeroSection() {
                     Riverstone is a Web3 first startup advisory. We help startups raise smarter, tell sharper stories, and scale.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
+                    <a href="https://www.linkedin.com/company/riverstoneone" target="_blank" rel="noopener noreferrer">
+                        <Button
+                            size="lg"
+                            className="w-full sm:w-auto bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white font-semibold px-10 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg"
+                        >
+                            Message Us Now
+                            <ArrowRight className="ml-3 h-5 w-5" />
+                        </Button>
+                    </a>
                     <Link href="#case-studies" passHref legacyBehavior>
                         <Button
                             size="lg"
@@ -42,6 +52,32 @@ export function HeroSection() {
                             View Our Track Record
                         </Button>
                     </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 pt-8 sm:pt-12 w-full">
+                    <div className="text-center group">
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                            4 Years
+                        </div>
+                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
+                            Team Since 2021
+                        </div>
+                    </div>
+                    <div className="text-center group">
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                            Global
+                        </div>
+                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
+                            Reach & Experience
+                        </div>
+                    </div>
+                    <div className="text-center group">
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-neutral-800 to-neutral-900 dark:from-neutral-100 dark:to-white bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                            Since 2024
+                        </div>
+                        <div className="text-xs sm:text-sm lg:text-base text-neutral-500 dark:text-neutral-400 font-medium mt-1 sm:mt-2">
+                            Riverstone Founded
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

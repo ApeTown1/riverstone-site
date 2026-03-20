@@ -16,7 +16,6 @@ const caseStudiesData = [
         logoHref: "https://www.polli.co/",
         logoSrc: "https://www.polli.co/wp-content/uploads/2025/06/logo.svg",
         logoAlt: "Polli",
-        logoHeight: 28,
         logoDarkBg: false,
         tags: ["DeFi", "Staking Infrastructure", "Solana · Cosmos · Avalanche"],
         badge: "Equity Investor",
@@ -44,7 +43,6 @@ const caseStudiesData = [
         logoHref: "https://www.boltliquidity.io/",
         logoSrc: "https://cdn.prod.website-files.com/6759a9322ea96cfd6c863f39/67a249bd2b5352d8e0a6a432_H%20Lockup.svg",
         logoAlt: "Bolt",
-        logoHeight: 22,
         logoDarkBg: false,
         tags: ["DeFi", "Trading Infrastructure"],
         badge: "BD Partnership",
@@ -71,7 +69,6 @@ const caseStudiesData = [
         logoHref: "https://zynta.com/",
         logoSrc: "https://zynta.com/wp-content/uploads/2025/06/zynta-logo.svg",
         logoAlt: "Zynta",
-        logoHeight: 28,
         logoDarkBg: false,
         tags: ["Cross-Border Payments", "Regulated Stablecoin Infrastructure"],
         badge: "Fundraising & GTM",
@@ -98,7 +95,6 @@ const caseStudiesData = [
         logoHref: "https://brila.finance/",
         logoSrc: "/truefi_1.png",
         logoAlt: "TrueFi",
-        logoHeight: 36,
         logoDarkBg: false,
         tags: ["On-Chain Credit", "a16z Portfolio Company"],
         badge: "M&A Advisory",
@@ -126,7 +122,6 @@ const caseStudiesData = [
         logoHref: "https://ice.io/",
         logoSrc: "https://ice.io/wp-content/uploads/2024/04/ion-logo-white.png",
         logoAlt: "Ice Open Network",
-        logoHeight: 32,
         logoDarkBg: true,
         tags: ["Web3 Gaming", "TON Ecosystem"],
         badge: "$10M Raise",
@@ -160,13 +155,13 @@ function ClientLogo({ study, className }: { study: typeof caseStudiesData[0]; cl
             className={`inline-flex items-center shrink-0 ${className ?? ""}`}
             onClick={(e) => e.stopPropagation()}
         >
-            <div style={{ background: "#f3f4f6", borderRadius: "8px", padding: "8px 16px", display: "inline-flex", alignItems: "center", justifyContent: "center", height: "56px" }}>
+            <span className="bg-neutral-100 dark:bg-neutral-700 rounded-lg px-4 py-2 inline-flex items-center" style={{ maxHeight: "56px" }}>
                 <img
                     src={study.logoSrc}
                     alt={study.logoAlt}
-                    style={{ height: `${(study as any).logoHeight ?? 28}px`, width: "auto", objectFit: "contain", display: "block" }}
+                    style={{ maxHeight: "32px", width: "auto", objectFit: "contain", display: "block" }}
                 />
-            </div>
+            </span>
         </a>
     );
 }
