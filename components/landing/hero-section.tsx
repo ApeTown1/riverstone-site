@@ -16,7 +16,7 @@ export function HeroSection() {
                         <img
                             src="/riverstone-logo.svg"
                             alt="Riverstone Logo"
-                            className="w-[80%] sm:w-48 md:w-[220px] lg:w-[440px] h-auto max-w-full object-contain mx-auto"
+                            className="w-[80%] sm:w-48 md:w-[220px] lg:w-[440px] h-auto max-w-full object-contain mx-auto dark:invert"
                             style={{ minWidth: '108px' }}
                         />
                     </div>
