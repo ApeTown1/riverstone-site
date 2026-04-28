@@ -23,6 +23,7 @@ const services = [
         icon: <Users className="h-8 w-8 text-white" />,
         title: "Corporate & Investor Services",
         link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-Corporate-Investor-Services-32517b522e41807e97ecc59f9f3155c4",
+        problem: "You're facing a complex transaction and need someone who's done this before.",
         description:
             "We help founders and operators navigate complex transactions — from rigorous financial modeling and defensible valuations to hands-on M&A execution from first number to final close.",
         bullets: [
@@ -36,6 +37,7 @@ const services = [
         icon: <TrendingUp className="h-8 w-8 text-white" />,
         title: "Fundraising & Investor Strategy",
         link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-Fundraising-Services-07a2ba45a819498aad73fbb330a7090c",
+        problem: "You need the right investors — not just any investors.",
         description:
             "We connect exceptional founders with the right investors — through warm relationships, strategic positioning, and hands-on process management from first meeting to close.",
         bullets: [
@@ -49,6 +51,7 @@ const services = [
         icon: <Target className="h-8 w-8 text-white" />,
         title: "Go-to-Market & Ecosystem Launch",
         link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-Go-to-Market-Ecosystem-Launch-32217b522e4180f7a282f79b4ed09805",
+        problem: "You're building something great. Getting the right people to notice it is a different skill.",
         description:
             "We embed with your team to own the ecosystem relationships, protocol partnerships, and BD execution that most founding teams don't have the bandwidth or network to build fast enough.",
         bullets: [
@@ -62,6 +65,7 @@ const services = [
         icon: <Globe className="h-8 w-8 text-white" />,
         title: "Public Relations & Narrative Strategy",
         link: "https://riverstonecap.notion.site/Riverstone-Capital-Advisory-PR-Services-and-Case-Studies-29517b522e4180e08970fb6817aaa8ee",
+        problem: "Your product is strong. Your story needs to match it.",
         description:
             "Full-service PR that builds credibility where it counts — tier-1 media, podcasts, speaking stages, and thought leadership that investors and partners actually read.",
         bullets: [
@@ -75,6 +79,7 @@ const services = [
         icon: <BarChart3 className="h-8 w-8 text-white" />,
         title: "Financial Modeling & Valuation",
         link: null,
+        problem: "Investors will stress-test every number. We make sure yours hold.",
         description:
             "Institutional-grade financial models and valuations built to align with investor criteria and support capital raises.",
         bullets: [
@@ -88,12 +93,14 @@ const services = [
 function MobileServiceDropdown({
     icon,
     title,
+    problem,
     description,
     bullets,
     link,
 }: {
     icon: React.ReactNode;
     title: string;
+    problem: string;
     description: string;
     bullets: string[];
     link?: string | null;
@@ -119,6 +126,7 @@ function MobileServiceDropdown({
             </button>
             {open && (
                 <div className="px-4 pb-4 pt-2">
+                    <p className="text-neutral-900 dark:text-white text-base font-bold leading-relaxed mb-2">{problem}</p>
                     <div className="text-neutral-600 dark:text-neutral-300 text-base font-light leading-relaxed mb-2">{description}</div>
                     <ul className="space-y-3 text-neutral-600">
                         {bullets.map((b) => (
@@ -191,6 +199,7 @@ export function ServicesSection() {
                             key={service.title}
                             icon={service.icon}
                             title={service.title}
+                            problem={service.problem}
                             description={service.description}
                             bullets={service.bullets}
                             link={service.link}
@@ -217,8 +226,9 @@ export function ServicesSection() {
                                             <CardTitle className="text-neutral-900 dark:text-white text-xl font-bold">
                                                 {service.title}
                                             </CardTitle>
-                                            <CardDescription className="text-neutral-600 dark:text-neutral-300 text-base font-light leading-relaxed">
-                                                {service.description}
+                                            <CardDescription className="text-neutral-600 dark:text-neutral-300 text-base leading-relaxed space-y-2">
+                                                <span className="block font-bold text-neutral-900 dark:text-white">{service.problem}</span>
+                                                <span className="block font-light">{service.description}</span>
                                             </CardDescription>
                                         </CardHeader>
                                         <CardContent>

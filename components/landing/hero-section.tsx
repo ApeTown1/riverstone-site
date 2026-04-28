@@ -23,14 +23,13 @@ export function HeroSection() {
                     {/* Text - below image on mobile */}
                     <div className="flex flex-col items-center sm:items-start text-center sm:text-left w-full max-w-2xl mx-auto sm:mx-0 order-2 sm:order-1">
                         <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight dark:text-white">
-                            <span>Startup Advisory for</span>{"\n"}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 dark:from-neutral-100 dark:via-white dark:to-neutral-200 block">Web3 Founders</span>{"\n"}
-                            <span>Who Play to Win</span>{"\n"}
+                            <span>Where Traditional Finance Meets</span>{"\n"}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 via-neutral-900 to-neutral-700 dark:from-neutral-100 dark:via-white dark:to-neutral-200 block">Web3 Execution.</span>{"\n"}
                         </h1>
                     </div>
                 </div>
                 <p className="text-lg sm:text-base md:text-xl lg:text-2xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light max-w-2xl mx-auto mt-2 text-center">
-                    Riverstone is a Web3 first startup advisory. We help startups raise smarter, tell sharper stories, and scale.
+                    Riverstone is a Web3 advisory built on institutional finance foundations. We help founders raise smarter, go to market faster, and build the kind of credibility that serious investors respect.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mt-8 w-full">
                     <Link href="#case-studies" passHref legacyBehavior>

@@ -20,15 +20,10 @@ const caseStudiesData = [
         tags: ["DeFi", "Staking Infrastructure", "Solana · Cosmos · Avalanche"],
         badge: "Equity Investor",
         headline: "From Staking Platform to Market Presence — Built From the Ground Up",
-        challenge: "Polli had a genuinely differentiated product — a staking optimisation and liquidity platform solving real inefficiencies in the validator market — but lacked the marketing infrastructure, community presence, and investor narrative to match its technical ambition. The founders needed a partner who could own growth end-to-end while they stayed focused on building.",
-        solution: [
-            "Full-stack GTM execution: KOL campaign management across 30–50 influencers in crypto trading and alpha communities",
-            "Alpha group partnerships and onboarding across Solana, Cosmos, and Avalanche ecosystems",
-            "Social media ownership, narrative development, and co-marketing campaigns with Lava, Kii, and Osmosis",
-            "Conference strategy and on-the-ground execution at Cosmoverse and Breakpoint 2025",
-            "Investor materials, fundraising positioning, and warm introductions to institutional targets",
-        ],
-        impact: "A growing investor pipeline, an activated KOL network, and a community presence built from scratch. After an extended embedded partnership, Riverstone's conviction in the founders and the market led to a direct equity stake in Polli — the kind of outcome that only happens when advisory becomes genuine alignment.",
+        hook: "We came in as advisors. We stayed as investors.",
+        challenge: "Polli had built a genuinely differentiated staking optimisation platform — solving real inefficiencies in the validator market across Solana, Cosmos, and Avalanche. The product was strong. The problem was everything around it: no marketing infrastructure, no community presence, no investor narrative. The founders needed a partner who could own growth end-to-end while they stayed focused on building.",
+        solution: "We ran a full-stack GTM from scratch. That meant managing KOL campaigns across 30-50 influencers, building alpha group partnerships across three ecosystems, taking ownership of social media and narrative development, co-marketing with Lava, Kii, and Osmosis, executing conference strategy at Cosmoverse and Breakpoint 2025, and building investor materials and warm introductions in parallel. Nothing was handed off. We owned it.",
+        impact: "A growing investor pipeline. An activated KOL network. A community presence built from zero. And — after an extended embedded partnership — a direct equity stake from Riverstone. That last part matters: we don’t take equity in clients. We took it in Polli because we believed in the founders and the market. That’s what genuine alignment looks like.",
         serviceTags: ["Go-to-Market", "Growth Strategy", "Fundraising", "KOL & Community", "Equity Investment"],
         gradient: "from-emerald-50/80 to-green-50/80",
         darkGradient: "dark:from-emerald-950/80 dark:to-green-950/80",
@@ -47,14 +42,10 @@ const caseStudiesData = [
         tags: ["DeFi", "Trading Infrastructure"],
         badge: "BD Partnership",
         headline: "Embedding Into the DeFi Ecosystem — BD That Actually Closes",
-        challenge: "Bolt needed more than a business development hire — it needed someone with the ecosystem relationships and commercial instincts to move fast, open the right doors, and turn conversations into live integrations. In DeFi, growth is won on partnerships, and the window to establish position doesn't stay open long.",
-        solution: [
-            "End-to-end sales strategy and pipeline ownership",
-            "Active sourcing of protocol integrations across the DeFi ecosystem",
-            "Liquidity partnership facilitation with foundations and institutional players",
-            "Performance-linked deal structure ensuring Riverstone's incentives are tied directly to outcomes generated",
-        ],
-        impact: "An active engagement where Riverstone operates as an embedded BD partner — not an external advisor. The pipeline continues to grow.",
+        hook: "In DeFi, the window to establish position doesn’t stay open long. We moved fast.",
+        challenge: "Bolt needed more than a BD hire — it needed someone with the ecosystem relationships and commercial instincts to open the right doors and convert conversations into live integrations, quickly. In DeFi, growth is won through partnerships. Speed and network are everything.",
+        solution: "We took full ownership of BD strategy and pipeline. That meant active sourcing of protocol integrations across the DeFi ecosystem, liquidity partnership facilitation with foundations and institutional players, and a performance-linked deal structure that tied our incentives directly to outcomes — not hours.",
+        impact: "An active, growing pipeline. Riverstone isn’t a vendor on this engagement — we’re an embedded partner. The difference shows in the results.",
         serviceTags: ["Business Development", "Ecosystem Integrations", "GTM", "Liquidity Strategy"],
         gradient: "from-sky-50/80 to-blue-50/80",
         darkGradient: "dark:from-sky-950/80 dark:to-blue-950/80",
@@ -73,14 +64,10 @@ const caseStudiesData = [
         tags: ["Cross-Border Payments", "Regulated Stablecoin Infrastructure"],
         badge: "Fundraising & GTM",
         headline: "Institutional Positioning and Capital for the Next Generation of Cross-Border Finance",
-        challenge: "Zynta (formerly GlobaChain) is building regulated stablecoin rails for cross-border payments across Africa, Canada, and the EU — a credible business in a large and underserved market. To reach their next phase, they needed both a sharper institutional narrative and the right capital partners behind them.",
-        solution: [
-            "Full institutional narrative and messaging architecture across enterprise, regulated FI, and public sector audiences",
-            "Pitch materials, investor positioning, and outreach strategy built end-to-end",
-            "Curated introductions to strategic and corporate investors",
-            "Full process management across the fundraising process",
-        ],
-        impact: "Riverstone secured strategic and corporate investment for Zynta's raise — and continues to support the business as it scales its GTM and corridor expansion.",
+        hook: "A credible business needed an institutional voice. We built it.",
+        challenge: "Zynta is building regulated stablecoin rails for cross-border payments across Africa, Canada, and the EU. A real business in a large, underserved market — but without the institutional narrative or investor relationships to match its ambition. They needed both a sharper story and the right capital behind them.",
+        solution: "We built the institutional narrative from the ground up — messaging architecture across enterprise, regulated FI, and public sector audiences. Then we ran the full fundraising process: pitch materials, investor positioning, curated introductions to strategic and corporate investors, and end-to-end process management.",
+        impact: "Strategic and corporate investment secured. The raise is closed. Riverstone continues to support Zynta as it scales GTM and expands into new corridors. This is what we mean by staying in the room.",
         serviceTags: ["Fundraising & Investor Strategy", "Narrative Development", "Institutional Positioning"],
         gradient: "from-amber-50/80 to-orange-50/80",
         darkGradient: "dark:from-amber-950/80 dark:to-orange-950/80",
@@ -99,15 +86,10 @@ const caseStudiesData = [
         tags: ["On-Chain Credit", "a16z Portfolio Company"],
         badge: "M&A Advisory",
         headline: "M&A Mediation as a Strategic Growth Catalyst",
-        challenge: "An Andreessen Horowitz portfolio company bringing debt infrastructure on-chain faced a pivotal decision: acquire a target company to accelerate its roadmap, or build the capability internally? They needed more than an opinion — they needed a structured framework, a defensible valuation, and someone to sit in the room and guide the negotiation.",
-        solution: [
-            "Full business valuation and multi-scenario sensitivity analysis",
-            "Dynamic acquire-vs-build decision modelling",
-            "Mediation between buyer and seller through the full negotiation process",
-            "Data room coordination and legal team alignment",
-            "Strategic guidance through to transaction close",
-        ],
-        impact: "Riverstone delivered a clear, confident decision aligned with long-term strategic goals. What started as M&A advisory became a standing partnership — TrueFi continues to work with Riverstone on research, strategy, and special projects.",
+        hook: "An a16z portfolio company needed a decision, not a deck. We delivered one.",
+        challenge: "A leading on-chain credit protocol backed by Andreessen Horowitz faced a pivotal strategic question: acquire a target company to accelerate its roadmap, or build the capability internally? They needed a structured framework, a defensible valuation, and someone to sit in the room and guide the negotiation to a confident outcome.",
+        solution: "We built the full decision architecture: business valuation, multi-scenario sensitivity analysis, dynamic acquire-vs-build modelling, mediation between buyer and seller through the negotiation, data room coordination, and legal team alignment. Every moving part, covered.",
+        impact: "A clear, confident decision — aligned with long-term strategic goals and made with full analytical backing. What started as M&A advisory became a standing partnership. TrueFi continues to work with Riverstone on research, strategy, and special projects.",
         serviceTags: ["M&A Advisory", "Financial Modelling", "Corporate Strategy", "Due Diligence"],
         gradient: "from-stone-50/80 to-neutral-50/80",
         darkGradient: "dark:from-stone-900/80 dark:to-neutral-900/80",
@@ -126,15 +108,10 @@ const caseStudiesData = [
         tags: ["Web3 Gaming", "TON Ecosystem"],
         badge: "$10M Raise",
         headline: "Building the Financial Narrative That Made a Nine-Figure Valuation Credible",
-        challenge: "A high-potential Web3 gaming startup in the TON ecosystem needed to justify a $100M valuation to professional investors — and needed it done in under a week. The ask was complex: model both token dynamics and product revenue, benchmark against Web2 and Web3 comparables, and present it all in a way that sophisticated investors would find credible rather than inflated.",
-        solution: [
-            "Full valuation discovery: revenue-based, asset-based, and hybrid modelling",
-            "Web2 and Web3 comparable benchmarking across key metrics",
-            "Dual revenue model covering product revenue and token dynamics",
-            "Dynamic, investor-ready financial model built for real-time scenario adjustments",
-            "Narrative integration — valuation findings woven directly into the investor pitch",
-        ],
-        impact: "Delivered in seven days. The financial model became a core component of the investor pitch, helping the founders move conversations forward with clarity and confidence — supporting the path to a $10M raise.",
+        hook: "Seven days. One financial model. A $10M raise.",
+        challenge: "A high-potential Web3 gaming startup in the TON ecosystem needed to justify a $100M valuation to professional investors — in under a week. The ask was complex: model both token dynamics and product revenue, benchmark against Web2 and Web3 comparables, and present it in a way that sophisticated investors would find credible rather than inflated.",
+        solution: "Full valuation discovery across three methodologies: revenue-based, asset-based, and hybrid. Web2 and Web3 comparable benchmarking. A dual revenue model covering product revenue and token dynamics. A dynamic, investor-ready financial model built for real-time scenario adjustments. And narrative integration — valuation findings woven directly into the investor pitch.",
+        impact: "Delivered in seven days. The model became a core component of the investor pitch — giving the founders the confidence and clarity to move conversations forward. The raise closed at $10M. The valuation held.",
         serviceTags: ["Financial Modelling & Valuation", "Tokenomics", "Investor Materials"],
         gradient: "from-neutral-50/80 to-stone-50/80",
         darkGradient: "dark:from-neutral-900/80 dark:to-stone-900/80",
@@ -352,6 +329,9 @@ export function CaseStudiesSection() {
                                         <CardTitle className="text-lg font-bold leading-tight break-words hyphens-auto text-neutral-900 dark:text-white">
                                             {study.headline}
                                         </CardTitle>
+                                        <p className="text-sm italic text-neutral-500 dark:text-neutral-400 mt-2">
+                                            {study.hook}
+                                        </p>
                                     </CardHeader>
                                     <CardContent className="space-y-4 p-4 overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-gray-300">
                                         <MobileDropdown label="The Challenge">
@@ -360,11 +340,9 @@ export function CaseStudiesSection() {
                                             </div>
                                         </MobileDropdown>
                                         <MobileDropdown label="The Solution">
-                                            <ul className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 dark:text-neutral-300 space-y-2 font-light">
-                                                {study.solution.map((item) => (
-                                                    <li key={item}>• {item}</li>
-                                                ))}
-                                            </ul>
+                                            <p className="text-sm leading-relaxed break-words hyphens-auto text-neutral-600 dark:text-neutral-300 font-light">
+                                                {study.solution}
+                                            </p>
                                         </MobileDropdown>
                                         <div className="bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm p-4 rounded-xl border border-neutral-100/50 dark:border-neutral-700/50 shadow-lg">
                                             <h4 className="font-semibold text-neutral-900 dark:text-white mb-3 text-sm">
@@ -481,6 +459,9 @@ export function CaseStudiesSection() {
                                                 <CardTitle className="text-3xl text-neutral-900 dark:text-white">
                                                     {study.headline}
                                                 </CardTitle>
+                                                <p className="text-base italic text-neutral-500 dark:text-neutral-400 mt-2">
+                                                    {study.hook}
+                                                </p>
                                             </CardHeader>
                                             <CardContent className="space-y-8 p-8 md:p-10">
                                                 <div className="grid md:grid-cols-2 gap-8 md:gap-12">
@@ -506,11 +487,9 @@ export function CaseStudiesSection() {
                                                             </div>
                                                             The Solution
                                                         </h4>
-                                                        <ul className="text-neutral-600 dark:text-neutral-300 space-y-3 font-light text-[65%] md:text-base">
-                                                            {study.solution.map((item) => (
-                                                                <li key={item}>• {item}</li>
-                                                            ))}
-                                                        </ul>
+                                                        <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed font-light text-[65%] md:text-base">
+                                                            {study.solution}
+                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div className="bg-white/90 dark:bg-neutral-800/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-neutral-100/50 dark:border-neutral-700/50 shadow-lg">

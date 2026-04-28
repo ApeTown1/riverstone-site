@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 
 export function AboutSection() {
@@ -14,27 +15,13 @@ export function AboutSection() {
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-16 items-start text-left">
-                        <div className="space-y-8">
-                            <p className="text-base md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
-                            Riverstone isn’t an agency — we’re a high-conviction advisory. We combine deep traditional finance experience with hands-on execution in Web3, helping founders tie every strategic thread — PR, go-to-market, fundraising, and valuations — into one cohesive story.
-                            </p>
-                            <p className="text-base md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
-                            Most firms offer fragmented support across marketing, comms, and capital; we ensure these elements are tightly aligned so nothing falls through the cracks when it matters most.
-                            </p>
-                            <p className="text-base md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
-                            Our edge is execution with precision. We don’t just “make intros” — we coach founders on how to present, pitch, and follow up with investors. We prepare your decks, hone your messaging, sit with you on investor calls, and guide the negotiation. We know what investors need to hear, when they need to hear it, and how to move deals from interest to commitment.
-                            </p>
-                        </div>
-
-                        <div className="space-y-8">
-                            <p className="text-base md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
-                            Where others forward a deck and hope for the best, we train you to win the second meeting — because that’s when the real opportunity begins. We protect our investor network by only sharing quality. We train founders to avoid rookie mistakes. And we don’t just care about deliverables — we care about outcomes.
-                            </p>
-                            <p className="text-base md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
-                            Riverstone was built for founders who are serious, coachable, and ready to grow. We take on a small number of clients at a time, integrate deeply into each team, and deliver work that turns brand equity into real-world traction. Our partners — from investors to media to ecosystems — trust our name. We guard that trust by only backing teams we believe in, and putting everything behind them.
-                            </p>
-                        </div>
+                    <div className="max-w-4xl mx-auto text-left space-y-6">
+                        <h3 className="text-3xl lg:text-4xl font-bold text-neutral-900 dark:text-white">
+                            Built Different.
+                        </h3>
+                        <p className="text-base md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed font-light">
+                            Most advisory firms offer fragmented support &mdash; a deck here, an intro there. Riverstone is different. We combine deep institutional finance experience with hands-on Web3 execution, and we stay in the room until the job is done. We&apos;ve built financial models that justified nine-figure valuations. We&apos;ve run BD strategies that turned protocol partnerships into live integrations. We&apos;ve coached founders through term sheets, investor negotiations, and M&amp;A decisions. We don&apos;t just open doors. We help you walk through them.
+                        </p>
                     </div>
                 </div>
             </div>

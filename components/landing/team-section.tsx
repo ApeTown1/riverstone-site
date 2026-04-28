@@ -89,7 +89,7 @@ export function TeamSection() {
                         className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4"
                         style={{ WebkitOverflowScrolling: "touch" }}
                     >
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                        <div className="min-w-[90%] max-w-[90%] snap-center mx-auto px-4 py-6 sm:px-6 rounded-3xl shadow-xl flex-shrink-0">
                             <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
@@ -111,7 +111,7 @@ export function TeamSection() {
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
                                     <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
-                                        Brings a foundation in equity research, corporate finance, and venture capital to lead Riverstone's global advisory practice. Maintains relationships with 400+ VCs while specializing in crypto infrastructure and institutional capital formation.
+                                        Co-founded Riverstone with roots in equity research, corporate finance, and venture capital. An early blockchain believer with experience across SaaS, fintech, and Web3, Asher operates between Tel Aviv and New York — connecting founders with the right people at the right time.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
@@ -169,7 +169,7 @@ export function TeamSection() {
                             </Card>
                         </div>
 
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                        <div className="min-w-[90%] max-w-[90%] snap-center mx-auto px-4 py-6 sm:px-6 rounded-3xl shadow-xl flex-shrink-0">
                             <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
@@ -233,7 +233,7 @@ export function TeamSection() {
                             </Card>
                         </div>
 
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                        <div className="min-w-[90%] max-w-[90%] snap-center mx-auto px-4 py-6 sm:px-6 rounded-3xl shadow-xl flex-shrink-0">
                             <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
@@ -255,7 +255,7 @@ export function TeamSection() {
                                 </CardHeader>
                                 <CardContent className="px-6 pb-8">
                                     <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
-                                        Former private equity consultant who now pioneers systematic investment approaches in crypto markets. Combines theoretical physics background with institutional-grade quantitative methodologies for emerging digital assets.
+                                        A finance major and corporate finance and private equity consultant specialising in M&A and strategy, Ryan brings institutional-grade financial discipline to Web3. Based in Cape Town, he has hands-on startup experience — including co-founding two ventures — and is passionate about crypto and blockchain as transformative emerging technologies.
                                     </p>
                                     <div className="flex justify-center space-x-2">
                                         <Badge
@@ -293,7 +293,7 @@ export function TeamSection() {
                             </Card>
                         </div>
 
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                        <div className="min-w-[90%] max-w-[90%] snap-center mx-auto px-4 py-6 sm:px-6 rounded-3xl shadow-xl flex-shrink-0">
                             <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
                                 <CardHeader className="pb-6 pt-10">
                                     <div className="relative mx-auto mb-6">
@@ -398,7 +398,7 @@ export function TeamSection() {
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
-                                Brings a foundation in equity research, corporate finance, and venture capital to lead Riverstone's global advisory practice. Maintains relationships with 400+ VCs across the ecosystem while specializing in crypto infrastructure and institutional capital formation. Combines traditional finance expertise with hands-on Web3 experience to guide early-stage growth companies through strategic positioning and investor relations.
+                                Co-founded Riverstone with roots in equity research, corporate finance, and venture capital. An early blockchain believer with experience across SaaS, fintech, and Web3, Asher operates between Tel Aviv and New York — connecting founders with the right people at the right time.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
@@ -538,7 +538,7 @@ export function TeamSection() {
                         </CardHeader>
                         <CardContent className="px-8 pb-10">
                             <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
-                                Former private equity consultant with deep M&A and strategy experience who now pioneers systematic investment approaches in crypto markets. Develops algorithmic trading strategies with superior risk-adjusted returns while combining theoretical physics background with practical Web3 execution. Brings institutional-grade quantitative methodologies to emerging digital asset opportunities.
+                                A finance major and corporate finance and private equity consultant specialising in M&A and strategy, Ryan brings institutional-grade financial discipline to Web3. Based in Cape Town, he has hands-on startup experience — including co-founding two ventures — demonstrating strong project management and leadership. Passionate about crypto and blockchain as transformative emerging technologies.
                             </p>
                             <div className="flex justify-center space-x-3">
                                 <Badge
