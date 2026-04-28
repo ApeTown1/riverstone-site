@@ -175,6 +175,70 @@ export function TeamSection() {
                                     <div className="relative mx-auto mb-6">
                                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                                         <Image
+                                            src="/Mike.jpeg"
+                                            alt="Mike Weinstein"
+                                            width={96}
+                                            height={96}
+                                            className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover w-24 h-24"
+                                        />
+                                    </div>
+                                    <CardTitle className="text-lg font-bold break-words text-neutral-900 dark:text-white">
+                                        Mike Weinstein
+                                    </CardTitle>
+                                    <CardDescription className="text-sm font-medium text-emerald-700">
+                                        Managing Partner, Institutional Services
+                                    </CardDescription>
+                                </CardHeader>
+                                <CardContent className="px-6 pb-8">
+                                    <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
+                                        Mike brings over a decade of institutional private equity experience across London and New York, now based in Zagreb, Croatia. After starting his career in investment banking at Bank of America Merrill Lynch, he spent a decade in private equity, investing over $1 billion and working alongside some of the world's largest private equity managers.
+                                    </p>
+                                    <div className="flex justify-center space-x-2">
+                                        <Badge
+                                            variant="secondary"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
+                                        >
+                                            Private Equity
+                                        </Badge>
+                                        <Badge
+                                            variant="secondary"
+                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
+                                        >
+                                            Institutional Capital
+                                        </Badge>
+                                    </div>
+                                    <div className="flex justify-center space-x-3 mt-4">
+                                        <Button
+                                            size="sm"
+                                            variant="outline"
+                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
+                                            onClick={() =>
+                                                window.open(
+                                                    "https://www.linkedin.com/in/michael-weinstein/",
+                                                    "_blank"
+                                                )
+                                            }
+                                        >
+                                            <svg
+                                                className="w-3 h-3 mr-1"
+                                                fill="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                            </svg>
+                                            LinkedIn
+                                        </Button>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
+                            <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
+                                <CardHeader className="pb-6 pt-10">
+                                    <div className="relative mx-auto mb-6">
+                                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                                        <Image
                                             src="/Ryan.jpeg"
                                             alt="Ryan Berelowitz"
                                             width={96}
@@ -214,26 +278,6 @@ export function TeamSection() {
                                             className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
                                             onClick={() =>
                                                 window.open(
-                                                    "https://www.linkedin.com/in/ryan-berelowitz-69a426107/",
-                                                    "_blank"
-                                                )
-                                            }
-                                        >
-                                            <svg
-                                                className="w-3 h-3 mr-1"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                                            </svg>
-                                            LinkedIn
-                                        </Button>
-                                        <Button
-                                            size="sm"
-                                            variant="outline"
-                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
-                                            onClick={() =>
-                                                window.open(
                                                     "https://x.com/Kay_the_great_",
                                                     "_blank"
                                                 )
@@ -243,70 +287,6 @@ export function TeamSection() {
                                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                             </svg>
                                             X
-                                        </Button>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-
-                        <div className="min-w-[90%] max-w-[90%] max-h-[80vh] snap-center mx-auto px-4 py-6 sm:px-6 overflow-y-auto rounded-3xl shadow-xl flex-shrink-0">
-                            <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group h-full">
-                                <CardHeader className="pb-6 pt-10">
-                                    <div className="relative mx-auto mb-6">
-                                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-                                        <Image
-                                            src="/Mike.jpeg"
-                                            alt="Mike Weinstein"
-                                            width={96}
-                                            height={96}
-                                            className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover w-24 h-24"
-                                        />
-                                    </div>
-                                    <CardTitle className="text-lg font-bold break-words text-neutral-900 dark:text-white">
-                                        Mike Weinstein
-                                    </CardTitle>
-                                    <CardDescription className="text-sm font-medium text-emerald-700">
-                                        Managing Partner, Institutional Services
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="px-6 pb-8">
-                                    <p className="text-sm leading-relaxed break-words text-neutral-600 dark:text-neutral-300 mb-4 font-light">
-                                        After over a decade in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice, helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
-                                    </p>
-                                    <div className="flex justify-center space-x-2">
-                                        <Badge
-                                            variant="secondary"
-                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
-                                        >
-                                            Private Equity
-                                        </Badge>
-                                        <Badge
-                                            variant="secondary"
-                                            className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full text-xs"
-                                        >
-                                            Institutional Capital
-                                        </Badge>
-                                    </div>
-                                    <div className="flex justify-center space-x-3 mt-4">
-                                        <Button
-                                            size="sm"
-                                            variant="outline"
-                                            className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-xl transition-all duration-300 hover:scale-105 text-xs"
-                                            onClick={() =>
-                                                window.open(
-                                                    "https://www.linkedin.com/in/michael-weinstein/",
-                                                    "_blank"
-                                                )
-                                            }
-                                        >
-                                            <svg
-                                                className="w-3 h-3 mr-1"
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                                            </svg>
-                                            LinkedIn
                                         </Button>
                                     </div>
                                 </CardContent>
@@ -480,6 +460,68 @@ export function TeamSection() {
                             <div className="relative mx-auto mb-6">
                                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
                                 <Image
+                                    src="/Mike.jpeg"
+                                    alt="Mike Weinstein"
+                                    width={120}
+                                    height={120}
+                                    className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover"
+                                />
+                            </div>
+                            <CardTitle className="text-neutral-900 dark:text-white text-2xl">
+                                Mike Weinstein
+                            </CardTitle>
+                            <CardDescription className="text-emerald-700 font-semibold text-lg">
+                                Managing Partner, Institutional Services
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="px-8 pb-10">
+                            <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
+                                Mike brings over a decade of institutional private equity experience across London and New York, now based in Zagreb, Croatia. After starting his career in investment banking at Bank of America Merrill Lynch, he spent a decade in private equity, investing over $1 billion and working alongside some of the world's largest private equity managers.
+                            </p>
+                            <div className="flex justify-center space-x-3">
+                                <Badge
+                                    variant="secondary"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
+                                >
+                                    Private Equity
+                                </Badge>
+                                <Badge
+                                    variant="secondary"
+                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
+                                >
+                                    Institutional Capital
+                                </Badge>
+                            </div>
+                            <div className="flex justify-center space-x-4 mt-6">
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
+                                    onClick={() =>
+                                        window.open(
+                                            "https://www.linkedin.com/in/michael-weinstein/",
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <svg
+                                        className="w-4 h-4 mr-2"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                    LinkedIn
+                                </Button>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
+                        <CardHeader className="pb-6 pt-10">
+                            <div className="relative mx-auto mb-6">
+                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                                <Image
                                     src="/Ryan.jpeg"
                                     alt="Ryan Berelowitz"
                                     width={120}
@@ -519,26 +561,6 @@ export function TeamSection() {
                                     className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
                                     onClick={() =>
                                         window.open(
-                                            "https://www.linkedin.com/in/ryan-berelowitz-69a426107/",
-                                            "_blank"
-                                        )
-                                    }
-                                >
-                                    <svg
-                                        className="w-4 h-4 mr-2"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                                    </svg>
-                                    LinkedIn
-                                </Button>
-                                <Button
-                                    size="sm"
-                                    variant="outline"
-                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
-                                    onClick={() =>
-                                        window.open(
                                             "https://x.com/Kay_the_great_",
                                             "_blank"
                                         )
@@ -548,68 +570,6 @@ export function TeamSection() {
                                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                     </svg>
                                     X
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="bg-white/90 dark:bg-neutral-800 backdrop-blur-sm border-0 shadow-xl rounded-3xl text-center hover:shadow-2xl transition-all duration-500 hover:scale-105 group">
-                        <CardHeader className="pb-6 pt-10">
-                            <div className="relative mx-auto mb-6">
-                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-                                <Image
-                                    src="/Mike.jpeg"
-                                    alt="Mike Weinstein"
-                                    width={120}
-                                    height={120}
-                                    className="relative rounded-full border-4 border-white dark:border-neutral-700 shadow-xl object-cover"
-                                />
-                            </div>
-                            <CardTitle className="text-neutral-900 dark:text-white text-2xl">
-                                Mike Weinstein
-                            </CardTitle>
-                            <CardDescription className="text-emerald-700 font-semibold text-lg">
-                                Managing Partner, Institutional Services
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="px-8 pb-10">
-                            <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed text-lg font-light">
-                                After over a decade in London and NYC private equity, partnering with firms like KKR, Vista Equity, and Welsh Carson, Mike now leads Riverstone's institutional practice, helping Web3 funds develop the professional standards and documentation frameworks required by traditional investors. His expertise bridges the gap between crypto innovation and institutional capital requirements.
-                            </p>
-                            <div className="flex justify-center space-x-3">
-                                <Badge
-                                    variant="secondary"
-                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
-                                >
-                                    Private Equity
-                                </Badge>
-                                <Badge
-                                    variant="secondary"
-                                    className="bg-neutral-100 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-full"
-                                >
-                                    Institutional Capital
-                                </Badge>
-                            </div>
-                            <div className="flex justify-center space-x-4 mt-6">
-                                <Button
-                                    size="sm"
-                                    variant="outline"
-                                    className="border-neutral-200 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105"
-                                    onClick={() =>
-                                        window.open(
-                                            "https://www.linkedin.com/in/michael-weinstein/",
-                                            "_blank"
-                                        )
-                                    }
-                                >
-                                    <svg
-                                        className="w-4 h-4 mr-2"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                                    </svg>
-                                    LinkedIn
                                 </Button>
                             </div>
                         </CardContent>
